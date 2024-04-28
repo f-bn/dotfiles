@@ -47,5 +47,8 @@ echo "* Install vim plugin manager"
 curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim" \
   --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Change user default shell
+sudo chsh -s /usr/bin/zsh f-bn
+
 # Cleanup
 rm -rf "${TEMP_DIR}"
