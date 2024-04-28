@@ -1,0 +1,10 @@
+// Custom config
+//
+on_force_close "quit"
+session_serialization false
+ui {
+  pane_frames {
+    hide_session_name true
+    rounded_corners true
+  }
+}

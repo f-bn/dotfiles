@@ -1,0 +1,60 @@
+# - General settings -
+export PATH="$PATH:/snap/bin:$HOME/.local/bin"
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# ZSH Theme
+ZSH_THEME="gentoo"
+
+# Uncomment the following line to use case-sensitive completion.
+CASE_SENSITIVE="true"
+
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Disable window autotitle
+DISABLE_AUTO_TITLE="true"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+  zsh-autosuggestions
+  command-not-found
+  extract
+  fzf
+  direnv
+  docker
+  docker-compose
+  kubectl
+  helm
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# - User configuration -
+
+# General
+export EDITOR="vim"
+
+# Aliases
+alias vim="nvim"
+alias sysupdate="sudo apt update && sudo apt dist-upgrade -y"
+alias inc="incus"
+alias sd-run="docker run --runtime=sysbox-runc"
+alias zj="zellij"
+
+# SSH Agent
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval "$(ssh-agent -s)" >/dev/null
+  ssh-add $HOME/.ssh/id_ed25519 >/dev/null
+fi
+
+# ASDF
+. "$HOME/.asdf/asdf.sh"
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
