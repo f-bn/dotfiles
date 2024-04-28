@@ -16,7 +16,7 @@ This repository contains my dotfiles for my Linux environments (mostly using Ubu
 
 ### WSL2 + Cloud-Init
 
-Starting from *cloud-init* 24.1, *cloud-init* supports a WSL2 datasource and therefore WSL2 distribution can be provisionned by providing an `user-data` file (aka *cloud-config*) during the first boot. This allows you to bring your own custom distribution image and provision it in a standard and automated way. Regarding requirements, the image must at least include `systemd` and `cloud-init` packages.
+Starting from *cloud-init* 24.1, a new [WSL datasource](https://docs.cloud-init.io/en/latest/reference/datasources/wsl.html) has been added and therefore WSL2 distribution can be provisionned through *cloud-init* by providing a `cloud-config` configuration during the first boot. This allows you to bring your own custom distribution image and provision it in a standard and automated way. Regarding requirements, the image must at least include `systemd` and `cloud-init` packages.
 
 The file located in [cloud-init folder](./cloud-init/) must be placed at `%USERPROFILE%\.cloud-init\default.user-data`. As an example, we will import [an official Ubuntu 24.04 WSL image](https://cloud-images.ubuntu.com/wsl/releases/noble/current/) provided by Canonical: 
 
