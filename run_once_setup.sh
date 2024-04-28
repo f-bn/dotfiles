@@ -17,7 +17,7 @@ chmod +x "${INSTALL_DIR}/zellij"
 # Install Task
 echo "* Install Task"
 wget -q -O "${TEMP_DIR}/task.tar.gz" https://github.com/go-task/task/releases/latest/download/task_linux_amd64.tar.gz
-tar -xf "${TEMP_DIR}/task.tar.gz" -C "${INSTALL_DIR}"
+tar -xf "${TEMP_DIR}/task.tar.gz" -C "${INSTALL_DIR}" task
 chmod +x "${INSTALL_DIR}/task"
 
 # Install Minikube
