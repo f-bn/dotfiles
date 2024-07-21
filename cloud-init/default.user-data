@@ -19,13 +19,6 @@ write_files:
     content: |
       vm.max_map_count=262144
       vm.swappiness=5
-  - path: /etc/systemd/system/sysbox.service.d/override.conf
-    content: |
-      [Service]
-      Type=
-      Type=oneshot
-      ExecStart=
-      ExecStart=/bin/sh -c "/usr/bin/sysbox-mgr --version && /usr/bin/sysbox-fs --version"
   - path: /etc/docker/daemon.json
     content: |
       {
@@ -145,12 +138,8 @@ runcmd:
   - sysctl --system
   # Remove uneeded packages
   - apt remove -y --autoremove --purge unattended-upgrades rsyslog cron packagekit
-  # Install sysbox
-  - wget -O /tmp/sysbox-ce.deb https://downloads.nestybox.com/sysbox/releases/v0.6.4/sysbox-ce_0.6.4-0.linux_amd64.deb
-  - apt install -y /tmp/sysbox-ce.deb
   # Manage services
   - systemctl daemon-reload
-  - systemctl restart sysbox.service
   - systemctl disable --now docker.service
   - systemctl enable --now docker.socket
   # Install chezmoi
