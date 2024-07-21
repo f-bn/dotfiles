@@ -36,7 +36,6 @@ git clone -q https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.14.0
 
 # Install Python packages
 echo "* Install Python packages (using pipx)"
-pipx install -q git+https://github.com/aiven/aiven-client.git
 pipx install -q git+https://github.com/nathom/streamrip.git@v2.0.3
 
 # Install ohmyzsh
