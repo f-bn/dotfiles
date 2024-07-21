@@ -11,7 +11,7 @@ ZSH_THEME="gentoo"
 CASE_SENSITIVE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
 
 # Disable window autotitle
 DISABLE_AUTO_TITLE="true"
@@ -39,14 +39,22 @@ source $ZSH/oh-my-zsh.sh
 # - User configuration -
 
 # General
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # Aliases
 alias vim="nvim"
 alias sysupdate="sudo apt update && sudo apt dist-upgrade -y"
 alias inc="incus"
-alias sd-run="docker run --runtime=sysbox-runc"
 alias zj="zellij"
+
+# Containerized apps
+CONTAINER_APP_EXEC="docker run -ti --rm --user $(id -u):$(id -g) --net=host --read-only -v $PWD:$PWD -w $PWD"
+VALKEY_VERSION="7.2.5"
+REDIS_VERSION="7.2.5"
+
+alias valkey-cli="$CONTAINER_APP_EXEC --name app-valkey-cli-$(uuidgen -r) --entrypoint=valkey-cli docker.io/valkey/valkey:${VALKEY_VERSION}"
+alias redis-cli="$CONTAINER_APP_EXEC --name app-redis-cli-$(uuidgen -r) --entrypoint=redis-cli docker.io/redis:${REDIS_VERSION}"
+alias distrobuilder="docker run -ti --rm --net=host --privileged --read-only -v $PWD:/build --tmpfs /var/cache:rw,exec,dev --name app-distrobuilder-$(uuidgen -r) ghcr.io/f-bn/distrobuilder:edge"
 
 # SSH Agent
 if [ -z "$SSH_AUTH_SOCK" ] ; then
