@@ -8,3 +8,5 @@ ui {
     rounded_corners true
   }
 }
+simplified_ui true
+default_layout "compact"
