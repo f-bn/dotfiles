@@ -48,7 +48,7 @@ alias inc="incus"
 alias zj="zellij"
 
 # Containerized apps
-CONTAINER_APP_EXEC="docker run -ti --rm --user $(id -u):$(id -g) --net=host --read-only -v $PWD:$PWD -w $PWD"
+CONTAINER_APP_EXEC="docker run -ti --rm --user $(id -u):$(id -g) --net=host --read-only -v /mnt/c:/mnt/c -v $PWD:$PWD -w $PWD"
 VALKEY_VERSION="7.2.5"
 REDIS_VERSION="7.2.5"
 
