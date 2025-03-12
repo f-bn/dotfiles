@@ -49,11 +49,9 @@ alias zj="zellij"
 
 # Containerized apps
 CONTAINER_APP_EXEC="docker run -ti --rm --user $(id -u):$(id -g) --net=host --read-only -v /mnt/c:/mnt/c -v $PWD:$PWD -w $PWD"
-VALKEY_VERSION="7.2.5"
-REDIS_VERSION="7.2.5"
+VALKEY_VERSION="8.0.2"
 
-alias valkey-cli="$CONTAINER_APP_EXEC --name app-valkey-cli-$(uuidgen -r) --entrypoint=valkey-cli docker.io/valkey/valkey:${VALKEY_VERSION}"
-alias redis-cli="$CONTAINER_APP_EXEC --name app-redis-cli-$(uuidgen -r) --entrypoint=redis-cli docker.io/redis:${REDIS_VERSION}"
+alias valkey-cli="$CONTAINER_APP_EXEC --name app-valkey-cli-$(uuidgen -r) --entrypoint=valkey-cli ghcr.io/f-bn/valkey:${VALKEY_VERSION}"
 alias distrobuilder="docker run -ti --rm --net=host --privileged --read-only -v $PWD:/build --tmpfs /var/cache:rw,exec,dev --name app-distrobuilder-$(uuidgen -r) ghcr.io/f-bn/distrobuilder:edge"
 
 # SSH Agent
@@ -61,8 +59,3 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval "$(ssh-agent -s)" >/dev/null
   ssh-add $HOME/.ssh/id_ed25519 >/dev/null
 fi
-
-# ASDF
-. "$HOME/.asdf/asdf.sh"
-fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit && compinit
