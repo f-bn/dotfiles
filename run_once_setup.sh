@@ -30,10 +30,6 @@ echo "* Install Incus client"
 wget -q -O "${INSTALL_DIR}/incus" https://github.com/lxc/incus/releases/latest/download/bin.linux.incus.x86_64
 chmod +x "${INSTALL_DIR}/incus"
 
-# Install ASDF
-echo "* Install ASDF"
-git clone -q https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.14.0
-
 # Install Python packages
 echo "* Install Python packages (using pipx)"
 pipx install -q streamrip
