@@ -16,6 +16,10 @@ DISABLE_CORRECTION="true"
 # Disable window autotitle
 DISABLE_AUTO_TITLE="true"
 
+# Enable Docker option-stacking completion
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -32,6 +36,7 @@ plugins=(
   docker-compose
   kubectl
   helm
+  chezmoi
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -43,15 +48,12 @@ export EDITOR="nvim"
 
 # Aliases
 alias vim="nvim"
-alias sysupdate="sudo apt update && sudo apt dist-upgrade -y"
+alias sysupdate="sudo apt update && sudo apt dist-upgrade -y && sudo snap refresh"
 alias inc="incus"
 alias zj="zellij"
 
 # Containerized apps
 CONTAINER_APP_EXEC="docker run -ti --rm --user $(id -u):$(id -g) --net=host --read-only -v /mnt/c:/mnt/c -v $PWD:$PWD -w $PWD"
-VALKEY_VERSION="8.0.2"
-
-alias valkey-cli="$CONTAINER_APP_EXEC --name app-valkey-cli-$(uuidgen -r) --entrypoint=valkey-cli ghcr.io/f-bn/valkey:${VALKEY_VERSION}"
 alias distrobuilder="docker run -ti --rm --net=host --privileged --read-only -v $PWD:/build --tmpfs /var/cache:rw,exec,dev --name app-distrobuilder-$(uuidgen -r) ghcr.io/f-bn/distrobuilder:edge"
 
 # SSH Agent
