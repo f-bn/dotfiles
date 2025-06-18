@@ -33,21 +33,5 @@ chmod +x "${INSTALL_DIR}/incus"
 echo "* Install Python packages (using pipx)"
 pipx install -q --force exegol streamrip
 
-# Install vim plugin manager (vim-plug)
-echo "* Install vim plugin manager"
-curl -sfLo "${HOME/.local/share}/nvim/site/autoload/plug.vim" \
-  --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Install ohmyzsh
-echo "* Install ohmyzsh"
-git clone -q https://github.com/ohmyzsh/ohmyzsh.git "${HOME}/.oh-my-zsh"
-
-# Install ohmyzsh autosuggestions plugin
-echo "* Install ohmyzsh autosuggestions plugin"
-git clone -q https://github.com/zsh-users/zsh-autosuggestions "${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-
-# Change user default shell
-sudo chsh -s /usr/bin/zsh fbobin
-
 # Cleanup
 rm -rf "${TEMP_DIR}"
