@@ -42,6 +42,10 @@ curl -sfLo "${HOME/.local/share}/nvim/site/autoload/plug.vim" \
 echo "* Install ohmyzsh"
 git clone -q https://github.com/ohmyzsh/ohmyzsh.git "${HOME}/.oh-my-zsh"
 
+# Install ohmyzsh autosuggestions plugin
+echo "* Install ohmyzsh autosuggestions plugin"
+git clone -q https://github.com/zsh-users/zsh-autosuggestions "${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+
 # Change user default shell
 sudo chsh -s /usr/bin/zsh fbobin
 
