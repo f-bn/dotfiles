@@ -1,6 +1,7 @@
 {{ if eq .chezmoi.hostname "foton" -}}
 #!/usr/bin/env sh
 # dconf.ini: {{ include "dconf.ini" | sha256sum }}
+DCONF_BIN="$(which code)"
 echo "* Import GNOME configuration settings"
-exec "$(which dconf)" load / < {{ joinPath .chezmoi.sourceDir "dconf.ini" | quote }}
+${DCONF_BIN} load / < {{ joinPath .chezmoi.sourceDir "dconf.ini" | quote }}
 {{ end -}}
