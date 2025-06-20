@@ -1,6 +1,6 @@
 ### General informations
 
-This repository contains my dotfiles for my Linux environments.
+This repository contains my dotfiles for my Linux environments managed using `chezmoi`.
 
 * `buran`: Main workstation (Ubuntu 24.04 LTS on WSL2)
 * `foton`: Thinkpad P14s Gen 5 laptop (Ubuntu 25.04)
