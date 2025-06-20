@@ -2,5 +2,5 @@
 #!/usr/bin/env sh
 # dconf.ini: {{ include "dconf.ini" | sha256sum }}
 echo "* Import GNOME configuration settings"
-dconf load / < {{ joinPath .chezmoi.sourceDir "dconf.ini" | quote }}
+exec "$(which dconf)" load / < {{ joinPath .chezmoi.sourceDir "dconf.ini" | quote }}
 {{ end -}}
