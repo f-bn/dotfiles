@@ -16,3 +16,7 @@ This repository contains my dotfiles for my Linux environments managed using `ch
   ```shell
   $ chezmoi apply
   ```
+
+### References
+
+- Wallpaper by [Jules Marvin Eguilos](https://unsplash.com/s/photos/jules-marvin-eguilos)
