@@ -2,4 +2,5 @@ README.md
 dconf.ini
 {{- if ne .chezmoi.hostname "foton" }}
 dot_config/gtk-3.0
+dot_config/Code
 {{- end }}

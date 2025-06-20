@@ -1,0 +1,17 @@
+---
+vscode:
+  extensions:
+    - github.copilot
+    - github.vscode-github-actions
+    - golang.go
+    - hashicorp.hcl
+    - hashicorp.terraform
+    - ms-azuretools.vscode-containers
+    - ms-vscode-remote.remote-containers
+    - ms-kubernetes-tools.vscode-kubernetes-tools
+    - ms-python.python
+    - redhat.ansible
+    - redhat.vscode-yaml
+    - samuelcolvin.jinjahtml
+    - zhuangtongfa.material-theme
+    - pkief.material-icon-theme

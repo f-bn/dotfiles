@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# vscode.yaml: {{ include ".chezmoidata/vscode.yaml" | sha256sum }}
+echo "* Install VSCode extensions"
+{{ range .vscode.extensions -}}
+exec "$(which code)" --install-extension {{ . | quote }}
+{{ end -}}
