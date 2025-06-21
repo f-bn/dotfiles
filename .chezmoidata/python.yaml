@@ -1,0 +1,6 @@
+---
+python:
+  pipx:
+    packages:
+      - exegol
+      - streamrip

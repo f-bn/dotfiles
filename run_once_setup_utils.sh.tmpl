@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+INSTALL_DIR="$HOME/.local/bin"
+TEMP_DIR="$(mktemp -d)"
+
+function is_pipx_pkg_installed() {
+  local pkg="$1"
+  local installed_pkgs="$(pipx list --json)"
+  jq --arg pkg "${pkg}" -e '.venvs | has($pkg)' <<< ${installed_pkgs} >/dev/null 2>&1
+}
+
+mkdir -p "${INSTALL_DIR}"
+
+# Install Zellij
+echo "* Install Zellij"
+if [ ! -f "${INSTALL_DIR}/zellij" ]; then
+  wget -q -O "${TEMP_DIR}/zellij.tar.gz" https://github.com/zellij-org/zellij/releases/latest/download/zellij-x86_64-unknown-linux-musl.tar.gz
+  tar -xf "${TEMP_DIR}/zellij.tar.gz" -C "${INSTALL_DIR}"
+  chmod +x "${INSTALL_DIR}/zellij"
+else
+  echo "> Zellij already installed, skipping"
+fi
+
+# Install Task
+echo "* Install Task"
+if [ ! -f "${INSTALL_DIR}/task" ]; then
+  wget -q -O "${TEMP_DIR}/task.tar.gz" https://github.com/go-task/task/releases/latest/download/task_linux_amd64.tar.gz
+  tar -xf "${TEMP_DIR}/task.tar.gz" -C "${INSTALL_DIR}" task
+  chmod +x "${INSTALL_DIR}/task"
+else
+  echo "> Task already installed, skipping"
+fi
+
+# Install Minikube
+echo "* Install Minikube"
+if [ ! -f "${INSTALL_DIR}/minikube" ]; then
+  wget -q -O "${INSTALL_DIR}/minikube" https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  chmod +x "${INSTALL_DIR}/minikube"
+else
+  echo "> Minikube already installed, skipping"
+fi
+
+# Install Incus client
+echo "* Install Incus client"
+if [ ! -f "${INSTALL_DIR}/incus" ]; then
+  wget -q -O "${INSTALL_DIR}/incus" https://github.com/lxc/incus/releases/latest/download/bin.linux.incus.x86_64
+  chmod +x "${INSTALL_DIR}/incus"
+else
+  echo "> Incus client already installed, skipping"
+fi
+
+# Install Python packages
+echo "* Install Python packages (using pipx)"
+for pkg in {{ range .python.pipx.packages }}{{ . | quote }}{{ end }}; do
+  if ! is_pipx_pkg_installed "${pkg}"; then
+    pipx install -qq "${pkg}" || continue
+  else
+    echo "> '${pkg}' already installed, skipping"
+  fi
+done
+
+# Cleanup
+rm -rf "${TEMP_DIR}"
