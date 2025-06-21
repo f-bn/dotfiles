@@ -14,7 +14,6 @@ else
   echo "> Oh My Zsh already installed, skipping"
 fi
 
-
 # Install ohmyzsh autosuggestions plugin
 echo "* Install zsh autosuggestions plugin"
 if [ ! -d "${OMZ_PLUGIN_DIR}/zsh-autosuggestions" ]; then
