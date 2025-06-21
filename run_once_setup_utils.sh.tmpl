@@ -53,7 +53,7 @@ fi
 
 # Install Python packages
 echo "* Install Python packages (using pipx)"
-for pkg in {{ range .python.pipx.packages }}{{ . | quote }}{{ end }}; do
+for pkg in {{ join .python.pipx.packages "" }}; do
   if ! is_pipx_pkg_installed "${pkg}"; then
     pipx install -qq "${pkg}" || continue
   else
