@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.hostname "foton" -}}
+{{ if .laptop -}}
 #!/usr/bin/env sh
 # dconf.ini: {{ include "dconf.ini" | sha256sum }}
 DCONF_BIN="$(which dconf)"

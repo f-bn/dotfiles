@@ -1,6 +1,6 @@
 README.md
+{{- if not .laptop }}
 dconf.ini
-{{- if ne .chezmoi.hostname "foton" }}
 dot_config/gtk-3.0
 dot_config/Code
 dot_local/share/backgrounds

@@ -1,0 +1,16 @@
+{{/* Default variable values */}}
+{{- $is_laptop := false -}}
+{{- $is_workstation := false -}}
+
+{{/* Determine env based on hostname */}}
+{{- $hostname := .chezmoi.hostname -}}
+{{- if eq $hostname "foton" -}}
+{{-   $is_laptop = true -}}
+{{- else if eq $hostname "buran" -}}
+{{-   $is_workstation = true -}}
+{{- end -}}
+
+[data]
+hostname    = {{ $hostname | quote }}
+laptop      = {{ $is_laptop }}
+workstation = {{ $is_workstation }}
