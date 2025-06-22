@@ -2,8 +2,9 @@
 
 This repository contains my dotfiles for my Linux environments managed using `chezmoi`.
 
-* `buran`: Main workstation (Ubuntu 24.04 LTS on WSL2)
-* `foton`: Thinkpad P14s Gen 5 laptop (Ubuntu 25.04)
+Two environments are using these configurations:
+  - `buran`: My main workstation (running Ubuntu 24.04 LTS on WSL2)
+  - `foton`: My [laptop](https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadp/thinkpad-p14s-gen-5-14-inch-intel-mobile-workstation/len101t0106) (running Ubuntu 25.04 with GNOME :heart:)
 
 ### How-to
 
@@ -17,6 +18,16 @@ This repository contains my dotfiles for my Linux environments managed using `ch
   $ chezmoi apply
   ```
 
-### References
+### Tools references
+
+- chezmoi: https://github.com/twpayne/chezmoi
+- Incus: https://github.com/lxc/incus
+- Neovim: https://github.com/neovim/neovim
+- Oh My Zsh: https://github.com/ohmyzsh/ohmyzsh
+- pipx: https://github.com/pypa/pipx
+- vim-plug: https://github.com/junegunn/vim-plug
+- Zellij: https://github.com/zellij-org/zellij
+
+### Wallpapers
 
 - Wallpaper by [Jules Marvin Eguilos](https://unsplash.com/@jmeguilos)
