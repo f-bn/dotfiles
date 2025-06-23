@@ -3,5 +3,6 @@ dconf.ini
 {{- if not .laptop }}
 dot_config/gtk-3.0
 dot_config/Code
-dot_local/share/backgrounds
+dot_local/share
+dot_icons
 {{- end }}

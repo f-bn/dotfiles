@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Icon=feishin
+Name=Feishin
+Comment=A modern self-hosted music player
+Categories=Audio;Player
+Path=/home/fbobin/.local/bin
+Exec=feishin
+Terminal=false

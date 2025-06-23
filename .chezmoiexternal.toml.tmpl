@@ -59,3 +59,11 @@
     url = {{ gitHubLatestReleaseAssetURL "deviceinsight/kafkactl" "kafkactl_*_linux_amd64.tar.gz" | quote }}
     path = "kafkactl"
     executable = true
+
+{{- if .laptop }}
+# - Desktop Applications -
+[".local/bin/feishin"]
+    type = "file"
+    url = {{ gitHubLatestReleaseAssetURL "jeffvli/feishin" "Feishin-*-linux-x86_64.AppImage" | quote }}
+    executable = true
+{{- end }}
