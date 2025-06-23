@@ -6,3 +6,4 @@ dot_config/Code
 dot_local/share
 dot_icons
 {{- end }}
+.oh-my-zsh/cache/completions
