@@ -14,9 +14,13 @@ Two environments are using these configurations:
 ### How-to
 
 * Install `chezmoi`: https://www.chezmoi.io/install/
+* Login to Bitwarden with the CLI
+  ```shell
+  $ export BW_SESSION="$(bw login --raw)"
+  ```
 * Initialize the repository locally
   ```shell
-  $ chezmoi init git@github.com:f-bn/dotfiles.git
+  $ chezmoi init https://github.com/f-bn/dotfiles.git
   ```
 * Apply the changes
   ```shell
