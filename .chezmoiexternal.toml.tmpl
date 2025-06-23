@@ -23,13 +23,13 @@
 [".local/bin/zellij"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "zellij-org/zellij" "zellij-x86_64-unknown-linux-musl.tar.gz" | quote }}
-    path = zellij
+    path = "zellij"
     executable = true
 
 [".local/bin/task"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "go-task/task" "task_linux_amd64.tar.gz" | quote }}
-    path = task
+    path = "task"
     executable = true
 
 [".local/bin/minikube"]
@@ -45,11 +45,11 @@
 [".local/bin/dive"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "wagoodman/dive" "dive_*_linux_amd64.tar.gz" | quote }}
-    path = dive
+    path = "dive"
     executable = true
 
 [".local/bin/act"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "nektos/act" "act_Linux_x86_64.tar.gz" | quote }}
-    path = act
+    path = "act"
     executable = true
