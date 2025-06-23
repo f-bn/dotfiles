@@ -6,6 +6,11 @@ Two environments are using these configurations:
   - `buran`: My main workstation (running Ubuntu 24.04 LTS on WSL2)
   - `foton`: My [laptop](https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadp/thinkpad-p14s-gen-5-14-inch-intel-mobile-workstation/len101t0106) (running Ubuntu 25.04 with GNOME :heart:)
 
+**Requirements**
+
+* `chezmoi`
+* `bitwarden-cli`
+
 ### How-to
 
 * Install `chezmoi`: https://www.chezmoi.io/install/
@@ -20,6 +25,7 @@ Two environments are using these configurations:
 
 ### Tools references
 
+- Bitwarden: https://bitwarden.com/
 - chezmoi: https://github.com/twpayne/chezmoi
 - Incus: https://github.com/lxc/incus
 - Neovim: https://github.com/neovim/neovim
