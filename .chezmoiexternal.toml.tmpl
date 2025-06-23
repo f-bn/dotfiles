@@ -53,3 +53,9 @@
     url = {{ gitHubLatestReleaseAssetURL "nektos/act" "act_Linux_x86_64.tar.gz" | quote }}
     path = "act"
     executable = true
+
+[".local/bin/kafkactl"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "deviceinsight/kafkactl" "kafkactl_*_linux_amd64.tar.gz" | quote }}
+    path = "kafkactl"
+    executable = true
