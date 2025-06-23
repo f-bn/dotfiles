@@ -16,6 +16,9 @@ DISABLE_CORRECTION="true"
 # Disable window autotitle
 DISABLE_AUTO_TITLE="true"
 
+# Disable auto-updates (managed by chezmoi)
+DISABLE_AUTO_UPDATE=true
+
 # Enable Docker option-stacking completion
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
