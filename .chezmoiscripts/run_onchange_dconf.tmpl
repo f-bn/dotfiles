@@ -1,0 +1,7 @@
+{{ if .laptop -}}
+#!/usr/bin/env sh
+# dconf.ini: {{ include "gnome.dconf" | sha256sum }}
+DCONF_BIN="$(which dconf)"
+echo "* Import GNOME configuration settings"
+${DCONF_BIN} load / < {{ joinPath .chezmoi.sourceDir "gnome.dconf" | quote }}
+{{ end -}}
