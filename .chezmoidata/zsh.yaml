@@ -13,3 +13,10 @@ zsh:
     - helm
     - kubectl
     - zsh-autosuggestions
+  aliases:
+    vim: nvim
+    sysupdate: sudo apt update && sudo apt dist-upgrade -y && sudo snap refresh
+    inc: incus
+    zj: zellij
+    bwlogin: export BW_SESSION="$(bw login --raw)"
+    bwunlock: export BW_SESSION="$(bw unlock --raw)"

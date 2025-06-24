@@ -47,12 +47,9 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 
 # Aliases
-alias vim="nvim"
-alias sysupdate="sudo apt update && sudo apt dist-upgrade -y && sudo snap refresh"
-alias inc="incus"
-alias zj="zellij"
-alias bwlogin='export BW_SESSION="$(bw login --raw)"'
-alias bwunlock='export BW_SESSION="$(bw unlock --raw)"'
+{{- range $key, $value := .zsh.aliases }}
+alias {{ $key }}='{{ $value }}'
+{{- end }}
 
 # Containerized apps
 CONTAINER_APP_EXEC="docker run -ti --rm --user $(id -u):$(id -g) --net=host --read-only -v /mnt/c:/mnt/c -v $PWD:$PWD -w $PWD"
