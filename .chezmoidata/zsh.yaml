@@ -1,0 +1,14 @@
+---
+zsh:
+  theme: gentoo
+  plugins:
+    - chezmoi
+    - command-not-found
+    - direnv
+    - docker
+    - extract
+    - fzf
+    - git
+    - helm
+    - kubectl
+    - zsh-autosuggestions
