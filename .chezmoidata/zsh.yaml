@@ -20,3 +20,6 @@ zsh:
     zj: zellij
     bwlogin: export BW_SESSION="$(bw login --raw)"
     bwunlock: export BW_SESSION="$(bw unlock --raw)"
+  environment:
+    PATH: $PATH:/snap/bin:$HOME/.local/bin
+    EDITOR: nvim
