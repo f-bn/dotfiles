@@ -4,6 +4,5 @@ gnome.dconf
 dot_config/gtk-3.0
 dot_config/Code
 dot_local/share
-dot_icons
 {{- end }}
 .oh-my-zsh/cache/completions
