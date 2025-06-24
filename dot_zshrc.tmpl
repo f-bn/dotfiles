@@ -52,7 +52,6 @@ alias {{ $key }}='{{ $value }}'
 
 # Containerized apps
 CONTAINER_APP_EXEC="docker run -ti --rm --user $(id -u):$(id -g) --net=host --read-only -v /mnt/c:/mnt/c -v $PWD:$PWD -w $PWD"
-alias distrobuilder="docker run -ti --rm --net=host --privileged --read-only -v $PWD:/build --tmpfs /var/cache:rw,exec,dev --name app-distrobuilder-$(uuidgen -r) ghcr.io/f-bn/distrobuilder:edge"
 
 # SSH Agent
 if [ -z "$SSH_AUTH_SOCK" ] ; then
