@@ -41,3 +41,4 @@ Two environments are using these configurations:
 ### Wallpapers
 
 - Wallpaper by [Jules Marvin Eguilos](https://unsplash.com/@jmeguilos)
+- [D3Ext/aesthetic-wallpapers](https://github.com/D3Ext/aesthetic-wallpapers)
