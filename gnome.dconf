@@ -55,24 +55,22 @@ show-home=false
 edge-tiling=true
 experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
 
-[org/gnome/terminal/legacy/profiles:]
-list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9']
-
-[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
-visible-name='Default'
-font='Cascadia Mono PL 13'
-cursor-shape='underline'
+[org/gnome/Ptyxis]
+default-profile-uuid='4d25db42c21d080779cd522068693dbd'
+interface-style='dark'
+font-name='Cascadia Mono PL 13'
 use-system-font=false
-use-theme-colors=false
-use-theme-background=false
-use-theme-transparency=false
-use-transparent-background=true
-background-transparency-percent=5
-background-color='rgb(36,36,36)'
-foreground-color='rgb(211,215,207)'
-palette=['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
-bold-is-bright=true
+text-blink-mode='never'
 audible-bell=false
+visual-bell=false
+profile-uuids=['4d25db42c21d080779cd522068693dbd']
+
+[org/gnome/Ptyxis/Profiles/4d25db42c21d080779cd522068693dbd]
+label='Default'
+palette='tango-custom'
+login-shell=true
+bold-is-bright=true
+opacity=0.95
 
 [io/bassi/Amberol]
 background-play=false
