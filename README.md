@@ -35,6 +35,7 @@ Two environments are using these configurations:
 - Neovim: https://github.com/neovim/neovim
 - Oh My Zsh: https://github.com/ohmyzsh/ohmyzsh
 - pipx: https://github.com/pypa/pipx
+- Ptyxis: https://gitlab.gnome.org/chergert/ptyxis
 - vim-plug: https://github.com/junegunn/vim-plug
 - Zellij: https://github.com/zellij-org/zellij
 
