@@ -61,6 +61,7 @@ interface-style='dark'
 font-name='Cascadia Mono PL 12'
 use-system-font=false
 text-blink-mode='never'
+cursor-shape='underline'
 audible-bell=false
 visual-bell=false
 profile-uuids=['4d25db42c21d080779cd522068693dbd']
