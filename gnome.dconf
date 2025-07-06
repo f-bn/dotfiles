@@ -45,7 +45,7 @@ apps=['nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Dis
 name='X-GNOME-Shell-System.directory'
 
 [org/gnome/desktop/app-folders/folders/Utilities]
-apps=['org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop', 'org.gnome.seahorse.Application.desktop', 'info.desktop', 'yelp.desktop']
+apps=['org.gnome.Terminal.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop', 'org.gnome.seahorse.Application.desktop', 'info.desktop', 'yelp.desktop']
 name='X-GNOME-Shell-Utilities.directory'
 
 [org/gnome/shell/extensions/ding]
