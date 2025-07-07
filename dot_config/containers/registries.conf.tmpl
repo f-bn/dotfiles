@@ -1,0 +1,6 @@
+# See containers-registries.conf(5) for details
+unqualified-search-registries = [
+{{- range .containers.registries.unqualified-search-registries }}
+  {{ . | quote }},
+{{- end }}
+]
