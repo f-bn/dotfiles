@@ -1,7 +1,0 @@
----
-containers:
-  registries:
-    unqualified_search_registries:
-      - docker.io
-      - quay.io
-      - ghcr.io
