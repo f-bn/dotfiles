@@ -2,6 +2,12 @@
 # vscode.yaml: {{ include ".chezmoidata/vscode.yaml" | sha256sum }}
 VSCODE_BIN="$(which code)"
 echo "* Install VSCode extensions"
-{{ range .vscode.extensions -}}
+{{ range .vscode.extensions.base -}}
 "${VSCODE_BIN}" --install-extension {{ . | quote }} --force
+{{ end -}}
+# Install extensions that are not always needed in all environment (i.e theming in WSL2)
+{{ if .laptop -}}
+{{ range .vscode.extensions.extras -}}
+"${VSCODE_BIN}" --install-extension {{ . | quote }} --force
+{{ end -}}
 {{ end -}}
