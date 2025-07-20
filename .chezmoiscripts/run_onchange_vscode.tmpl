@@ -3,5 +3,5 @@
 VSCODE_BIN="$(which code)"
 echo "* Install VSCode extensions"
 {{ range .vscode.extensions -}}
-${VSCODE_BIN} --install-extension {{ . | quote }} --force
+"${VSCODE_BIN}" --install-extension {{ . | quote }} --force
 {{ end -}}
