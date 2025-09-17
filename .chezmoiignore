@@ -2,7 +2,6 @@ README.md
 gnome.dconf
 {{- if not .laptop }}
 dot_config/ghostty
-dot_config/gtk-3.0
 dot_config/Code
 dot_local/share
 {{- end }}
