@@ -6,6 +6,7 @@ font-size = 12
 theme = "Tango Dark Custom"
 background-opacity = 0.95
 background-blur = true
+bold-color = bright
 
 # Window
 window-padding-x = 8
