@@ -25,20 +25,12 @@ ZSH_COLORIZE_TOOL=chroma
 ZSH_COLORIZE_CHROMA_FORMATTER=terminal256
 ZSH_COLORIZE_STYLE="solarized-dark256"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Plugins
 plugins=(
 {{- range .zsh.plugins }}
   {{ . }}
 {{- end }}
 )
-
-source $ZSH/oh-my-zsh.sh
-
-# - User configuration -
 
 # Environment variables
 {{- range $key, $value := .zsh.environment }}
@@ -50,11 +42,10 @@ export {{ $key }}={{ $value | quote }}
 alias {{ $key }}='{{ $value }}'
 {{- end }}
 
-# Containerized apps
-CONTAINER_APP_EXEC="docker run -ti --rm --user $(id -u):$(id -g) --net=host --read-only -v /mnt/c:/mnt/c -v $PWD:$PWD -w $PWD"
-
 # SSH Agent
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval "$(ssh-agent -s)" >/dev/null
   ssh-add $HOME/.ssh/id_ed25519 >/dev/null
 fi
+
+source $ZSH/oh-my-zsh.sh
