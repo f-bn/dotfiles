@@ -1,0 +1,22 @@
+# Fonts
+font-family = "Cascadia Mono PL"
+font-size = 12
+
+# Theme
+theme = "Tango Dark Custom"
+background-opacity = 0.95
+background-blur = true
+
+# Window
+window-padding-x = 8
+window-padding-y = 8
+
+# Cursor
+cursor-style = "bar"
+cursor-style-blink = true
+
+# Bell
+bell-features = no-attention,no-title
+
+# Shell integrations
+shell-integration-features = cursor,sudo,title,ssh-env

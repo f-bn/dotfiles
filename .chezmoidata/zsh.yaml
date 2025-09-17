@@ -3,7 +3,6 @@ zsh:
   theme: gentoo
   plugins:
     - colorize
-    - chezmoi
     - command-not-found
     - direnv
     - docker
