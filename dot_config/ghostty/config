@@ -13,11 +13,13 @@ window-padding-x = 8
 window-padding-y = 8
 
 # Cursor
-cursor-style = bar
+cursor-style = underline
 cursor-style-blink = true
+cursor-opacity = 1
+adjust-cursor-thickness = 125%
 
 # Bell
 bell-features = no-attention,no-title
 
 # Shell integrations
-shell-integration-features = cursor,sudo,title,ssh-env
+shell-integration-features = sudo,title,ssh-env,no-cursor
