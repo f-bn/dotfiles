@@ -55,24 +55,6 @@ show-home=false
 edge-tiling=true
 experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
 
-[org/gnome/Ptyxis]
-default-profile-uuid='4d25db42c21d080779cd522068693dbd'
-interface-style='dark'
-font-name='Cascadia Mono PL 12'
-use-system-font=false
-text-blink-mode='never'
-cursor-shape='underline'
-audible-bell=false
-visual-bell=false
-profile-uuids=['4d25db42c21d080779cd522068693dbd']
-
-[org/gnome/Ptyxis/Profiles/4d25db42c21d080779cd522068693dbd]
-label='Default'
-palette='tango-custom'
-login-shell=true
-bold-is-bright=true
-opacity=0.95
-
 [io/bassi/Amberol]
 background-play=false
 enable-recoloring=true
