@@ -20,5 +20,5 @@ zsh:
     bwlogin: export BW_SESSION="$(bw login --raw)"
     bwunlock: export BW_SESSION="$(bw unlock --raw)"
   environment:
-    PATH: $HOME/.local/bin
+    PATH: $PATH:$HOME/.local/bin
     EDITOR: nvim
