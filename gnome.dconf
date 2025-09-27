@@ -21,11 +21,21 @@ automatic-timezone=true
 
 [org/gnome/desktop/interface]
 clock-show-weekday=true
-color-scheme='prefer-dark'
 show-battery-percentage=true
+color-scheme='prefer-dark'
+gtk-theme='Yaru-blue-dark'
+icon-theme='Yaru-blue-dark'
+font-name='Cantarell 11'
+document-font-name='Cantarell 12'
+monospace-font-name='Source Code Pro 11'
+font-antialiasing='rgba'
+font-hinting='slight'
+
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'
 
 [org/gnome/desktop/session]
-idle-delay=uint32 600
+idle-delay=uint32 900
 
 [org/gnome/desktop/privacy]
 old-files-age=uint32 7
@@ -37,23 +47,28 @@ tap-to-click=false
 two-finger-scrolling-enabled=true
 
 [org/gnome/shell]
-app-picker-layout=[{'System': <{'position': <0>}>, 'Utilities': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'bruno_bruno.desktop': <{'position': <4>}>, 'org.gnome.Papers.desktop': <{'position': <5>}>, 'org.gnome.Settings.desktop': <{'position': <6>}>, 'org.gnome.Showtime.desktop': <{'position': <7>}>, 'multipass_gui.desktop': <{'position': <8>}>, 'io.bassi.Amberol.desktop': <{'position': <9>}>, 'simple-scan.desktop': <{'position': <10>}>, 'org.gnome.TextEditor.desktop': <{'position': <11>}>, 'desktop-security-center_desktop-security-center.desktop': <{'position': <12>}>, 'update-manager.desktop': <{'position': <13>}>, 'software-properties-gtk.desktop': <{'position': <14>}>, 'org.gnome.Loupe.desktop': <{'position': <15>}>}]
-favorite-apps=['firefox_firefox.desktop','ghostty_ghostty.desktop','org.gnome.Nautilus.desktop','code_code.desktop','snap-store_snap-store.desktop','discord_discord.desktop','bitwarden_bitwarden.desktop']
-
-[org/gnome/desktop/app-folders/folders/System]
-apps=['nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.gnome.Sysprof.desktop', 'org.gnome.SystemMonitor.desktop', 'htop.desktop', 'org.gnome.PowerStats.desktop', 'gnome-session-properties.desktop', 'software-properties-drivers.desktop', 'firmware-updater_firmware-updater.desktop']
-name='X-GNOME-Shell-System.directory'
-
-[org/gnome/desktop/app-folders/folders/Utilities]
-apps=['org.gnome.Ptyxis.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop', 'org.gnome.seahorse.Application.desktop', 'info.desktop', 'org.gnome.Yelp.desktop', 'nvim.desktop', 'vim.desktop']
-name='X-GNOME-Shell-Utilities.directory'
-
-[org/gnome/shell/extensions/ding]
-show-home=false
+favorite-apps=['org.mozilla.firefox.desktop','org.gnome.Ptyxis.desktop','code.desktop','org.gnome.Nautilus.desktop','org.gnome.Software.desktop','com.discordapp.Discord.desktop','com.bitwarden.desktop']
 
 [org/gnome/mutter]
 edge-tiling=true
 experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
+
+[org/gnome/Ptyxis]
+default-profile-uuid='4d25db42c21d080779cd522068693dbd'
+interface-style='dark'
+font-name='Cascadia Mono PL 13'
+use-system-font=false
+text-blink-mode='never'
+audible-bell=false
+visual-bell=false
+profile-uuids=['4d25db42c21d080779cd522068693dbd']
+
+[org/gnome/Ptyxis/Profiles/4d25db42c21d080779cd522068693dbd]
+label='Default'
+palette='tango-custom'
+login-shell=true
+bold-is-bright=true
+opacity=0.95
 
 [io/bassi/Amberol]
 background-play=false

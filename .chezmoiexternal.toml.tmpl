@@ -27,13 +27,6 @@
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/task"]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "go-task/task" "task_linux_amd64.tar.gz" | quote }}
-    path = "task"
-    executable = true
-    refreshPeriod = "168h"
-
 [".local/bin/minikube"]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "kubernetes/minikube" "minikube-linux-amd64" | quote }}
@@ -63,6 +56,13 @@
 [".local/bin/kafkactl"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "deviceinsight/kafkactl" "kafkactl_*_linux_amd64.tar.gz" | quote }}
+    path = "kafkactl"
+    executable = true
+    refreshPeriod = "168h"
+
+[".local/bin/mise"]
+    type = "file"
+    url = {{ gitHubLatestReleaseAssetURL " jdx/mise " "mise-v*-linux-x64" | quote }}
     path = "kafkactl"
     executable = true
     refreshPeriod = "168h"

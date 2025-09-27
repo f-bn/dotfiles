@@ -14,12 +14,11 @@ zsh:
     - zsh-autosuggestions
   aliases:
     vim: nvim
-    sysupdate: sudo apt update && sudo apt dist-upgrade -y && sudo snap refresh
+    sysupdate: sudo dnf update -y && flatpak update -y
     inc: incus
     zj: zellij
     bwlogin: export BW_SESSION="$(bw login --raw)"
     bwunlock: export BW_SESSION="$(bw unlock --raw)"
-    distrobuilder: "docker run -ti --rm --net=host --privileged --read-only -v $PWD:/build --tmpfs /var/cache:rw,exec,dev --name app-distrobuilder-$(uuidgen -r) ghcr.io/f-bn/distrobuilder:edge"
   environment:
-    PATH: $PATH:/snap/bin:$HOME/.local/bin
+    PATH: $HOME/.local/bin
     EDITOR: nvim
