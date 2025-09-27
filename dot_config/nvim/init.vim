@@ -22,7 +22,6 @@ set ruler
 set ts=4 sts=4 sw=4
 syntax on
 colorscheme onedark
-set pastetoggle=<F10>
 
 " Indent
 let g:indentLine_char = '|'
