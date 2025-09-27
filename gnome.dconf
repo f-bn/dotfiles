@@ -8,6 +8,7 @@ show-mounts-network=false
 show-mounts-only-mounted=true
 custom-theme-shrink=true
 background-opacity=0.90
+disable-overview-on-startup=true
 
 [org/gnome/desktop/background]
 picture-uri='file:///home/fbobin/.local/share/backgrounds/wallpaper.jpg'
