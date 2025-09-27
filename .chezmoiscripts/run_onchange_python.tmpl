@@ -10,7 +10,7 @@ function is_pipx_pkg_installed() {
 
 # Install Python packages
 echo "* Install Python packages (using pipx)"
-for pkg in {{ range .python.pipx.packages }}{{ . | quote }} {{ end }}; do
+for pkg in {{ range .python.packages }}{{ . | quote }} {{ end }}; do
   if ! is_pipx_pkg_installed "${pkg}"; then
     pipx install -qq "${pkg}" || continue
   else
