@@ -47,6 +47,7 @@ tap-to-click=false
 two-finger-scrolling-enabled=true
 
 [org/gnome/shell]
+enabled-extensions=['dash-to-dock@micxgx.gmail.com']
 favorite-apps=['org.mozilla.firefox.desktop','org.gnome.Ptyxis.desktop','code.desktop','org.gnome.Nautilus.desktop','org.gnome.Software.desktop','com.discordapp.Discord.desktop','com.bitwarden.desktop']
 
 [org/gnome/mutter]
