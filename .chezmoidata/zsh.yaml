@@ -14,7 +14,8 @@ zsh:
     - zsh-autosuggestions
   aliases:
     vim: nvim
-    sysupdate: sudo dnf update -y && flatpak update -y
+    sysupdate: sudo dnf update -y
+    sysupdate-full: sudo dnf update -y && flatpak update -y
     inc: incus
     zj: zellij
     bwlogin: export BW_SESSION="$(bw login --raw)"
