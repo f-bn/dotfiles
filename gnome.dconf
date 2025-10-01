@@ -80,6 +80,9 @@ login-shell=true
 bold-is-bright=true
 opacity=0.95
 
+[org/gtk/settings/file-chooser]
+clock-format='24h'
+
 [io/bassi/Amberol]
 background-play=false
 enable-recoloring=true
