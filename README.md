@@ -4,7 +4,7 @@ This repository contains my dotfiles for my Linux environments managed using `ch
 
 Two environments are using these configurations:
   - `buran`: My main workstation (running Ubuntu 25.10 on WSL2)
-  - `foton`: My [laptop](https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadp/thinkpad-p14s-gen-5-14-inch-intel-mobile-workstation/len101t0106) (running Fedora 43 with GNOME :heart:)
+  - `foton`: My [laptop](https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadp/thinkpad-p14s-gen-5-14-inch-intel-mobile-workstation/len101t0106) (running Ubuntu 25.10 with GNOME :heart:)
 
 **Requirements**
 
