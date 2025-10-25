@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat << EOF
+Usage: syd [OPTIONS] IMAGE
+
+Launch a system container with Docker using systemd-compatible configuration.
+
+Arguments:
+  IMAGE     Docker image to run (must always be in last position).
+
+Options:
+  Any Docker run options can be passed and will be added to the default configuration.
+
+Default configuration:
+  - Detached mode (--detach)
+  - Required environment variables (--env container="docker")
+  - Stop signal set to SIGRTMIN+3 (--stop-signal=SIGRTMIN+3)
+  - Host cgroup namespace (--cgroupns=host)
+  - Host cgroup filesystem mounted (--volume /sys/fs/cgroup:/sys/fs/cgroup:rw)
+  - tmpfs mounts for /run, /run/lock, /tmp and /var/lib/journal
+
+Examples:
+  syd ghcr.io/f-bn/ubuntu:24.04-init
+  syd --name my-container --net=my-network ghcr.io/f-bn/ubuntu:24.04-init
+
+EOF
+  exit 0
+}
+
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+  usage
+elif [[ $# -eq 0 ]]; then
+  usage
+fi
+
+RUN_FLAGS=(
+  --detach
+  --tty
+  --env=container="docker"
+  --stop-signal=SIGRTMIN+3
+  --cgroupns=host
+  --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw
+  --tmpfs=/run
+  --tmpfs=/run/lock
+  --tmpfs=/tmp
+  --tmpfs=/var/lib/journal
+)
+
+echo "Launching system container with Docker"
+cid="$(docker run ${RUN_FLAGS[@]} $@ || exit 1)"
+ct="$(docker inspect ${cid} | jq '.[]' || exit 1)"
+
+echo "• ID: ${cid:0:12}"
+echo "• Name: $(jq -r '.Name' <<< ${ct} | tr -d '/')"
+echo "• IP Address (primary): $(jq -r '.NetworkSettings.IPAddress' <<< ${ct})"
+echo
+
+read -r -p "Do you want to open a shell in the container? (y/n) " -n 1 REPLY
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  docker exec -it "${cid}" /bin/bash
+fi
