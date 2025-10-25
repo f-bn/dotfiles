@@ -14,11 +14,12 @@ Options:
   Any Docker run options can be passed and will be added to the default configuration.
 
 Default configuration:
-  - Detached mode (--detach)
-  - Required environment variables (--env container="docker")
-  - Stop signal set to SIGRTMIN+3 (--stop-signal=SIGRTMIN+3)
-  - Host cgroup namespace (--cgroupns=host)
-  - Host cgroup filesystem mounted (--volume /sys/fs/cgroup:/sys/fs/cgroup:rw)
+  - Detached mode
+  - Pseudo-TTY
+  - Required environment variables (container="docker")
+  - Stop signal set to SIGRTMIN+3
+  - Host cgroup namespace
+  - Host cgroup filesystem mounted (/sys/fs/cgroup:rw)
   - tmpfs mounts for /run, /run/lock, /tmp and /var/lib/journal
 
 Examples:
