@@ -65,3 +65,10 @@
     url = {{ gitHubLatestReleaseAssetURL "jdx/mise" "mise-v*-linux-x64" | quote }}
     executable = true
     refreshPeriod = "168h"
+
+[".local/bin/k9s"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "derailed/k9s" "k9s_*_linux_amd64.tar.gz" | quote }}
+    path = "k9s"
+    executable = true
+    refreshPeriod = "168h"
