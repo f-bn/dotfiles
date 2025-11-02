@@ -42,4 +42,4 @@ Two environments are using these configurations:
 
 ### Wallpapers
 
-- Wallpaper by [Dillon Hunt](https://photography.dillon-hunt.com)
+- Wallpaper by [Daniel Sessler](https://danielsessler.photos/)
