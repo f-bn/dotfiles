@@ -14,7 +14,7 @@ zsh:
     - zsh-autosuggestions
   aliases:
     vim: nvim
-    sysupdate: sudo apt update && sudo apt upgrade -y && sudo snap refresh
+    sysupdate: sudo sh -c "apt update && apt upgrade -y && snap refresh"
     zj: zellij
     bwlogin: export BW_SESSION="$(bw login --raw)"
     bwunlock: export BW_SESSION="$(bw unlock --raw)"
