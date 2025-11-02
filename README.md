@@ -32,7 +32,6 @@ Two environments are using these configurations:
 
 - Bitwarden: https://bitwarden.com/
 - chezmoi: https://github.com/twpayne/chezmoi
-- Incus: https://github.com/lxc/incus
 - Neovim: https://github.com/neovim/neovim
 - Oh My Zsh: https://github.com/ohmyzsh/ohmyzsh
 - pipx: https://github.com/pypa/pipx

@@ -33,12 +33,6 @@
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/incus"]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "lxc/incus" "bin.linux.incus.x86_64" | quote }}
-    executable = true
-    refreshPeriod = "168h"
-
 [".local/bin/dive"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "wagoodman/dive" "dive_*_linux_amd64.tar.gz" | quote }}
