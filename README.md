@@ -32,6 +32,8 @@ Two environments are using these configurations:
 
 - Bitwarden: https://bitwarden.com/
 - chezmoi: https://github.com/twpayne/chezmoi
+- MongoDB Atlas CLI: https://www.mongodb.com/products/tools/atlas-cli
+- MongoDB Shell: https://www.mongodb.com/products/tools/shell
 - Neovim: https://github.com/neovim/neovim
 - Oh My Zsh: https://github.com/ohmyzsh/ohmyzsh
 - pipx: https://github.com/pypa/pipx
