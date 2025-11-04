@@ -73,3 +73,18 @@
     path = "butane"
     executable = true
     refreshPeriod = "168h"
+
+[".local/bin/atlas"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "mongodb/mongodb-atlas-cli" "mongodb-atlas-cli_*_linux_x86_64.tar.gz" | quote }}
+    path = "bin/atlas"
+    stripComponents = 1
+    executable = true
+    refreshPeriod = "168h"
+
+[".local/bin/mongosh"]
+    type = "archive-file"
+    url = https://downloads.mongodb.com/compass/mongosh-2.5.9-linux-x64.tgz
+    path = "bin/mongosh"
+    stripComponents = 1
+    executable = true
