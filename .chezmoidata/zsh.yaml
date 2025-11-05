@@ -19,5 +19,5 @@ zsh:
     bwlogin: export BW_SESSION="$(bw login --raw)"
     bwunlock: export BW_SESSION="$(bw unlock --raw)"
   environment:
-    PATH: $PATH:/snap/bin:$HOME/.local/bin:${KREW_ROOT:-$HOME/.krew}/bin
+    PATH: $PATH:/snap/bin:$HOME/.local/bin:$HOME/.krew/bin
     EDITOR: nvim
