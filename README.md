@@ -19,6 +19,10 @@ Two environments are using these configurations:
   ```shell
   $ export BW_SESSION="$(bw login --raw)"
   ```
+* Retrieve GitHub token
+  ```shell
+  $ export GITHUB_TOKEN="$(bw get password <item id>)"
+  ```
 * Initialize the repository locally
   ```shell
   $ chezmoi init https://github.com/f-bn/dotfiles.git

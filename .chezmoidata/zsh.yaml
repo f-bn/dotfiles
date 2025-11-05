@@ -18,6 +18,7 @@ zsh:
     zj: zellij
     bwlogin: export BW_SESSION="$(bw login --raw)"
     bwunlock: export BW_SESSION="$(bw unlock --raw)"
+    ghtoken: export GITHUB_TOKEN="$(bw get password 278887eb-97b2-4fb3-8d32-b38c013096d2)" 
   environment:
     PATH: $PATH:/snap/bin:$HOME/.local/bin:$HOME/.krew/bin
     EDITOR: nvim
