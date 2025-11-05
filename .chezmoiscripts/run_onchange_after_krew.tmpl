@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+if [ -f "${HOME}/.local/bin/krew" ]; then
+    echo "* Install krew kubectl plugin manager"
+    "${HOME}/.local/bin/krew" install krew
+fi
