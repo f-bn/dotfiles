@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# krew.yaml: {{ include ".chezmoidata/krew.yaml | sha256sum }}
+# krew.yaml: {{ include ".chezmoidata/krew.yaml" | sha256sum }}
 
 echo "* Install krew kubectl plugin manager"
 if [ -f "${HOME}/.local/bin/krew" ]; then
@@ -14,7 +14,7 @@ fi
 echo "* Install kubectl plugins (using krew)"
 for plugin in {{ range .krew.plugins }}{{ . | quote }} {{ end }}; do
     if ! kubectl krew list | grep -q "^${plugin}$"; then
-        kubectl krew install "${plugin}" || continue
+        "${HOME}/.local/bin/krew" install "${plugin}" || continue
     else
         echo "> '${plugin}' already installed, skipping"
     fi
