@@ -76,6 +76,14 @@
     executable = true
     refreshPeriod = "168h"
 
+[".local/bin/stern"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "stern/stern" "stern_*_linux_amd64.tar.gz" | quote }}
+    path = "stern"
+    stripComponents = 1
+    executable = true
+    refreshPeriod = "168h"
+
 # - MongoDB tools -
 [".local/bin/atlas"]
     type = "archive-file"
