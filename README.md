@@ -35,13 +35,21 @@ Two environments are using these configurations:
 ### Tools references
 
 - Bitwarden: https://bitwarden.com/
+- Butane: https://github.com/coreos/butane
 - chezmoi: https://github.com/twpayne/chezmoi
+- dive: https://github.com/wagoodman/dive
+- kafkactl: https://github.com/deviceinsight/kafkactl
+- Krew: https://krew.sigs.k8s.io/
+- k9s: https://k9scli.io/
+- Minikube: https://minikube.sigs.k8s.io
+- Mise: https://mise.jdx.dev/
 - MongoDB Atlas CLI: https://www.mongodb.com/products/tools/atlas-cli
 - MongoDB Shell: https://www.mongodb.com/products/tools/shell
 - Neovim: https://github.com/neovim/neovim
 - Oh My Zsh: https://github.com/ohmyzsh/ohmyzsh
 - pipx: https://github.com/pypa/pipx
 - Ptyxis: https://gitlab.gnome.org/chergert/ptyxis
+- Stern: https://github.com/stern/stern
 - vim-plug: https://github.com/junegunn/vim-plug
 - Zellij: https://github.com/zellij-org/zellij
 
