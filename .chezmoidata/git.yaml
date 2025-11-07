@@ -1,0 +1,8 @@
+---
+git:
+  user:
+    name: "f-bn"
+    email: "contact@fbobin.fr"
+  core:
+    editor: "nvim"
+    whitespace: "trailing-space,space-before-tab"

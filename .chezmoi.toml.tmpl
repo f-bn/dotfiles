@@ -10,13 +10,7 @@
 {{-   $is_workstation = true -}}
 {{- end -}}
 
-{{/* Variable data */}}
 [data]
-# General variables
 hostname    = {{ $hostname | quote }}
 laptop      = {{ $is_laptop }}
 workstation = {{ $is_workstation }}
-
-# Git variables
-git_user    = "f-bn"
-git_email   = "contact@fbobin.fr"
