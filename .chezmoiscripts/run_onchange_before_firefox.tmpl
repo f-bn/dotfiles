@@ -1,0 +1,28 @@
+{{ if .laptop -}}
+#!/usr/bin/env bash
+set -eo pipefail
+
+FF_DIR="${HOME}/snap/firefox/common/.mozilla/firefox"
+FF_PROFILE_NAME="custom"
+FF_PROFILE_DIR="${FF_DIR}/_${FF_PROFILE_NAME}"
+FF_PROFILE_CONTENT=$(cat <<- EOF
+[Profile1]
+Name=${FF_PROFILE_NAME}
+IsRelative=1
+Path=_${FF_PROFILE_NAME}
+Default=1
+EOF
+)
+
+echo "* Manage custom Firefox profile"
+if ! grep -q "Name=${FF_PROFILE_NAME}" "${FF_DIR}/profiles.ini"; then
+    # Create new profile
+    mkdir -p "${FF_PROFILE_DIR}"
+    crudini --ini-options=nospace --merge "${FF_DIR}/profiles.ini" <<< "${FF_PROFILE_CONTENT}"
+    # Unset existing profile as default
+    crudini --set "${FF_DIR}/profiles.ini" Profile0 Default 0
+    echo "> Custom profile created and set as default"
+else
+  echo "> Custom profile already exists, skipping"
+fi
+{{ end -}}

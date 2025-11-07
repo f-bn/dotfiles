@@ -8,8 +8,9 @@ Two environments are using these configurations:
 
 **Requirements**
 
-* `chezmoi`
 * `bw` (Bitwarden CLI)
+* `chezmoi`
+* `crudini` (to manipulate .ini files)
 
 ### How-to
 
@@ -37,6 +38,7 @@ Two environments are using these configurations:
 - Bitwarden: https://bitwarden.com/
 - Butane: https://github.com/coreos/butane
 - chezmoi: https://github.com/twpayne/chezmoi
+- crudini: https://github.com/pixelb/crudini
 - dive: https://github.com/wagoodman/dive
 - kafkactl: https://github.com/deviceinsight/kafkactl
 - Krew: https://krew.sigs.k8s.io/

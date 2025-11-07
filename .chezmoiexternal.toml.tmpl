@@ -1,3 +1,11 @@
+{{- if .laptop }}
+# - Firefox (Betterfox tweaks) -
+["snap/firefox/common/.mozilla/firefox/_custom/user.js"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/yokoffing/Betterfox/main/user.js"
+    refreshPeriod = "168h"
+{{- end }}
+
 # - ohmyzsh and plugins -
 [".oh-my-zsh"]
     type = "archive"
