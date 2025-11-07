@@ -61,6 +61,8 @@ use-system-font=false
 text-blink-mode='never'
 audible-bell=false
 visual-bell=false
+restore-session=false
+new-tab-position='next'
 profile-uuids=['4d25db42c21d080779cd522068693dbd']
 
 [org/gnome/Ptyxis/Profiles/4d25db42c21d080779cd522068693dbd]
@@ -69,6 +71,7 @@ palette='tango-custom'
 login-shell=true
 bold-is-bright=true
 opacity=0.95
+preserve-directory='never'
 
 [io/bassi/Amberol]
 background-play=false
