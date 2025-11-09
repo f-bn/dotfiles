@@ -28,6 +28,13 @@
     refreshPeriod = "168h"
 
 # - Utilities -
+[".local/bin/act"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "nektos/act" "act_Linux_x86_64.tar.gz" | quote }}
+    path = "act"
+    executable = true
+    refreshPeriod = "168h"
+
 [".local/bin/butane"]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "coreos/butane" "butane-x86_64-unknown-linux-gnu" | quote }}
