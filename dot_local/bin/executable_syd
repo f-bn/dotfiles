@@ -61,5 +61,5 @@ echo
 read -r -p "Do you want to open a shell in the container? (y/n) " -n 1 REPLY
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  docker exec -it "${cid}" /bin/bash
+  docker exec -it "${cid}" /usr/bin/login -f root
 fi
