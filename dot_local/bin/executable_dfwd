@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+CONTAINER=""
+PORT_MAPPING=""
+SOCAT_EXTRA_OPTS=()
+
+usage() {
+  cat << EOF
+Usage: dfwd CONTAINER PORT-MAPPING
+
+Forward a port dynamically from host to a Docker container (much like kubectl port-forward).
+
+Arguments:
+  CONTAINER         Docker container name
+  PORT-MAPPING      Port mapping in the following formats:
+                    - SRC_PORT:DST_PORT: explicit port mapping
+                    - PORT: container port (assigns random local host port)
+
+Options:
+  -v, --verbose     Enable verbose logging (socat 'd2' debug mode)
+  -h, --help        Display this help message
+
+Examples:
+  dfwd c1 8080:80
+  dfwd c1 80
+
+EOF
+}
+
+find_random_available_port() {
+  local port
+
+  while true; do
+    port=$(shuf -i 49152-65535 -n 1)
+    if ! ss -tln | grep -q ":${port} "; then
+      echo "$port"; return
+    fi
+  done
+}
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -v|--verbose)
+      SOCAT_EXTRA_OPTS+=("-d2"); shift ;;
+    -h|--help) 
+      usage ; exit 0 ;;
+    -*)
+      echo -e "Error: unknown option: $1\n"; usage ; exit 1 ;;
+    *)
+      if [[ -z "${CONTAINER}" ]]; then
+        CONTAINER="$1"
+      elif [[ -z "${PORT_MAPPING}" ]]; then
+        PORT_MAPPING="$1"
+      else
+        echo -e "Error: too many arguments\n"; usage ; exit 1
+      fi
+      shift
+      ;;
+  esac
+done
+
+if [[ -z "${CONTAINER}" || -z "${PORT_MAPPING}" ]]; then
+  echo -e "Error: CONTAINER and PORT-MAPPING are required\n"
+  usage
+fi
+
+CONTAINER_IP="$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "${CONTAINER}")"
+if [[ "${PORT_MAPPING}" =~ ^[0-9]+:[0-9]+$ ]]; then
+  SRC_PORT=$(awk -F: '{print $1}' <<< "${PORT_MAPPING}")
+  DST_PORT=$(awk -F: '{print $2}' <<< "${PORT_MAPPING}")
+elif [[ "${PORT_MAPPING}" =~ ^[0-9]+$ ]]; then
+  SRC_PORT="$(find_random_available_port)"
+  DST_PORT="${PORT_MAPPING}"
+else
+  echo -e "Error: PORT-MAPPING must be in format PORT or SRC_PORT:DST_PORT (e.g., 80 or 8080:80)"; usage
+  exit 1
+fi
+
+echo -e "Forwarding from 127.0.0.1:${SRC_PORT} -> ${CONTAINER}:${DST_PORT}\n"
+exec socat "${SOCAT_EXTRA_OPTS[@]}" TCP-LISTEN:"${SRC_PORT}",bind=127.0.0.1,reuseaddr,fork,nodelay TCP:"${CONTAINER_IP}":"${DST_PORT}"

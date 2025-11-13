@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+CONTAINER=""
+USER="root"
+
+usage() {
+  cat << EOF
+Usage: dshell CONTAINER [OPTIONS]
+
+Open an interactive shell in a Docker container easily.
+
+Arguments:
+  CONTAINER         Docker container name 
+
+Options:
+  -u, --user USER   User to run the shell as (default: root)
+  -h, --help        Display this help message
+
+Examples:
+  dshell c1
+  dshell c1 --user myuser
+
+EOF
+}
+
+generate_shell_command() {
+    local cmd
+    local login_path
+    local bash_path
+    
+    if login_path=$(docker exec "$CONTAINER" which login 2>/dev/null); then
+        cmd="docker exec -ti ${CONTAINER} ${login_path} -f ${USER}"
+    elif bash_path=$(docker exec "$CONTAINER" which bash 2>/dev/null); then
+        cmd="docker exec -ti -u ${USER} ${CONTAINER} ${bash_path} -l"
+    else
+        cmd="docker exec -ti -u ${USER} ${CONTAINER} sh -l"
+    fi
+    echo "$cmd"
+}
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help) 
+      usage ; exit 0 ;;
+    -u|--user)
+      USER="$2"; shift 2 ;;
+    -*) 
+      echo -e "Error: Unknown option: $1\n"; usage ; exit 1 ;;
+    *)
+      if [[ -n "$CONTAINER" ]]; then
+        echo -e "Error: Too many arguments\n"; usage ; exit 1
+      fi
+      CONTAINER="$1"; shift ;;
+  esac
+done
+
+if [[ -z "$CONTAINER" ]]; then
+  echo -e "Error: CONTAINER argument is required\n"
+  usage
+fi
+
+echo -e "Opening shell in container '${CONTAINER}' as user '${USER}'\n"
+exec $(generate_shell_command)
