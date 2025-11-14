@@ -18,7 +18,7 @@ Arguments:
                     - PORT: container port (assigns random local host port)
 
 Options:
-  -v, --verbose     Enable verbose logging (socat 'd2' debug mode)
+  -d, --debug       Enable debug logging (socat 'd3' debug mode)
   -h, --help        Display this help message
 
 Examples:
@@ -41,8 +41,8 @@ find_random_available_port() {
 
 while [[ $# -gt 0 ]]; do
   case $1 in
-    -v|--verbose)
-      SOCAT_EXTRA_OPTS+=("-d2"); shift ;;
+    -d|--debug)
+      SOCAT_EXTRA_OPTS+=("-d3"); shift ;;
     -h|--help) 
       usage ; exit 0 ;;
     -*)
