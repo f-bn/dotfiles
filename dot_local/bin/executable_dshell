@@ -28,10 +28,10 @@ generate_shell_command() {
     local cmd
     local login_path
     local bash_path
-    
-    if login_path=$(docker exec "$CONTAINER" which login 2>/dev/null); then
+
+    if login_path=$(docker exec "${CONTAINER}" which login 2>/dev/null); then
         cmd="docker exec -ti ${CONTAINER} ${login_path} -f ${USER}"
-    elif bash_path=$(docker exec "$CONTAINER" which bash 2>/dev/null); then
+    elif bash_path=$(docker exec "${CONTAINER}" which bash 2>/dev/null); then
         cmd="docker exec -ti -u ${USER} ${CONTAINER} ${bash_path} -l"
     else
         cmd="docker exec -ti -u ${USER} ${CONTAINER} sh -l"
@@ -55,9 +55,8 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ -z "$CONTAINER" ]]; then
-  echo -e "Error: CONTAINER argument is required\n"
-  usage
+if [[ -z "${CONTAINER}" ]]; then
+  echo -e "Error: CONTAINER argument is required\n"; usage; exit 1
 fi
 
 echo -e "Opening shell in container '${CONTAINER}' as user '${USER}'\n"
