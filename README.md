@@ -96,6 +96,14 @@ Before getting started, ensure you have the following tools installed:
 - 💻 [**Ptyxis**](https://gitlab.gnome.org/chergert/ptyxis) - Terminal emulator
 - 🪟 [**Zellij**](https://github.com/zellij-org/zellij) - A terminal workspace with batteries included
 
+### Custom Docker tooling
+
+These are wrappers for some specific Docker tasks (and also born from pure laziness to avoid doing some things manually :p)
+
+- 🐳 [**syd**](dot_local/bin/executable_syd) - Launch systemd-compatible Docker containers with a single command
+- 🔗 [**dshell**](dot_local/bin/executable_dshell) - Open an interactive shell in a Docker container easily
+- 🔀 [**dfwd**](dot_local/bin/executable_dfwd) - Forward ports dynamically from host to Docker containers (much like `kubectl port-forward` but locally)
+
 </details>
 
 ## 🎨 Credits
