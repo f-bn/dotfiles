@@ -13,21 +13,28 @@ Arguments:
 Options:
   Any Docker run options can be passed and will be added to the default configuration.
 
-Default configuration:
-  - Detached mode
-  - Pseudo-TTY
-  - Required environment variables (container="docker")
-  - Stop signal set to SIGRTMIN+3
-  - Host cgroup namespace
-  - Host cgroup filesystem mounted (/sys/fs/cgroup:rw)
-  - tmpfs mounts for /run, /run/lock, /tmp and /var/lib/journal
-
 Examples:
   syd ghcr.io/f-bn/ubuntu:24.04-init
   syd --name my-container --net=my-network ghcr.io/f-bn/ubuntu:24.04-init
 
 EOF
   exit 0
+}
+
+generate_shell_command() {
+    local cid="$1"
+    local cmd
+    local login_path
+    local bash_path
+
+    if login_path=$(docker exec "${cid}" which login 2>/dev/null); then
+        cmd="docker exec -ti ${cid} ${login_path} -f root"
+    elif bash_path=$(docker exec "${cid}" which bash 2>/dev/null); then
+        cmd="docker exec -ti -u ${USER} ${cid} ${bash_path} -l"
+    else
+        cmd="docker exec -ti -u ${USER} ${cid} sh -l"
+    fi
+    echo "$cmd"
 }
 
 if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
@@ -61,5 +68,5 @@ echo
 read -r -p "Do you want to open a shell in the container? (y/n) " -n 1 REPLY
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  docker exec -it "${cid}" /usr/bin/login -f root
+  exec $(generate_shell_command "${cid}")
 fi
