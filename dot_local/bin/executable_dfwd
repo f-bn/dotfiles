@@ -9,21 +9,21 @@ usage() {
   cat << EOF
 Usage: dfwd CONTAINER PORT-MAPPING
 
-Forward a port dynamically from host to a Docker container (much like kubectl port-forward).
+Forward a port dynamically from host to a Docker container (much like 'kubectl port-forward' but locally).
 
 Arguments:
-  CONTAINER         Docker container name
-  PORT-MAPPING      Port mapping in the following formats:
-                    - SRC_PORT:DST_PORT: explicit port mapping
-                    - PORT: container port (assigns random local host port)
+  CONTAINER       Docker container name
+  PORT-MAPPING    Port mapping in the following formats:
+                  - SRC_PORT:DST_PORT -> explicit port mapping
+                  - :DST_PORT -> only specify the container port, listen on a random port locally
 
 Options:
-  -d, --debug       Enable debug logging (socat 'd3' debug mode)
-  -h, --help        Display this help message
+  -d, --debug     Enable debug logging (socat 'd3' debug mode)
+  -h, --help      Display this help message
 
 Examples:
   dfwd c1 8080:80
-  dfwd c1 80
+  dfwd c1 :80
 
 EOF
 }
@@ -68,11 +68,11 @@ CONTAINER_IP="$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddre
 if [[ "${PORT_MAPPING}" =~ ^[0-9]+:[0-9]+$ ]]; then
   SRC_PORT=$(awk -F: '{print $1}' <<< "${PORT_MAPPING}")
   DST_PORT=$(awk -F: '{print $2}' <<< "${PORT_MAPPING}")
-elif [[ "${PORT_MAPPING}" =~ ^[0-9]+$ ]]; then
+elif [[ "${PORT_MAPPING}" =~ ^:[0-9]+$ ]]; then
   SRC_PORT="$(find_random_available_port)"
-  DST_PORT="${PORT_MAPPING}"
+  DST_PORT=$(awk -F: '{print $2}' <<< "${PORT_MAPPING}")
 else
-  echo -e "Error: PORT-MAPPING must be in format PORT or SRC_PORT:DST_PORT (e.g., 80 or 8080:80)"; usage; exit 1
+  echo -e "Error: PORT-MAPPING must be in format 'SRC_PORT:DST_PORT' or ':DST_PORT' (e.g. 8080:80 or :80)\n"; usage; exit 1
 fi
 
 echo -e "Forwarding from 127.0.0.1:${SRC_PORT} -> ${CONTAINER}:${DST_PORT}\n"
