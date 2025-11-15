@@ -64,7 +64,7 @@ if [[ -z "${CONTAINER}" || -z "${PORT_MAPPING}" ]]; then
   echo -e "Error: CONTAINER and PORT-MAPPING are required\n"; usage; exit 1
 fi
 
-CONTAINER_IP="$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "${CONTAINER}")"
+CONTAINER_IP="$(docker inspect -f '{{.NetworkSettings.IPAddress}}' "${CONTAINER}")"
 if [[ "${PORT_MAPPING}" =~ ^[0-9]+:[0-9]+$ ]]; then
   SRC_PORT=$(awk -F: '{print $1}' <<< "${PORT_MAPPING}")
   DST_PORT=$(awk -F: '{print $2}' <<< "${PORT_MAPPING}")
