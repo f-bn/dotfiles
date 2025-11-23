@@ -28,7 +28,7 @@ generate_shell_command() {
     local bash_path
 
     if login_path=$(docker exec "${cid}" which login 2>/dev/null); then
-        cmd="docker exec -ti ${cid} ${login_path} -f root"
+        cmd="docker exec -ti -u root ${cid} ${login_path} -f root"
     elif bash_path=$(docker exec "${cid}" which bash 2>/dev/null); then
         cmd="docker exec -ti -u ${USER} ${cid} ${bash_path} -l"
     else
