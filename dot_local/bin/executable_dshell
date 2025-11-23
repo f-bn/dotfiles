@@ -30,7 +30,7 @@ generate_shell_command() {
     local bash_path
 
     if login_path=$(docker exec "${CONTAINER}" which login 2>/dev/null); then
-        cmd="docker exec -ti ${CONTAINER} ${login_path} -f ${USER}"
+        cmd="docker exec -ti -u root ${CONTAINER} ${login_path} -f ${USER}"
     elif bash_path=$(docker exec "${CONTAINER}" which bash 2>/dev/null); then
         cmd="docker exec -ti -u ${USER} ${CONTAINER} ${bash_path} -l"
     else
