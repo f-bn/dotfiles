@@ -42,6 +42,13 @@
     executable = true
     refreshPeriod = "168h"
 
+[".local/bin/copilot"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "github/copilot-cli" "copilot-linux-x64.tar.gz" | quote }}
+    path = "copilot"
+    executable = true
+    refreshPeriod = "168h"
+
 [".local/bin/dive"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "wagoodman/dive" "dive_*_linux_amd64.tar.gz" | quote }}
