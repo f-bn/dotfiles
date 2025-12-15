@@ -1,0 +1,59 @@
+[downloads]
+{{- if .laptop }}
+folder = "/home/fbobin/Downloads"
+{{- else if .workstation }}
+folder = "/mnt/c/Users/fbobin/Downloads"
+{{- end }}
+disc_subdirectories = true
+concurrency = true
+max_connections = 5
+requests_per_minute = 60
+verify_ssl = true
+
+[qobuz]
+quality = 3
+download_booklets = true
+use_auth_token = false
+email_or_userid = ""
+password_or_token = ""
+app_id = ""
+
+[deezer]
+quality = 2
+arl = "{{ (bitwarden "item" "73c1941c-4387-44c3-8de2-b3b4013c67f6").login.password }}"
+use_deezloader = true
+deezloader_warnings = true
+
+[database]
+downloads_enabled = false
+failed_downloads_enabled = false
+
+[conversion]
+enabled = false
+
+[artwork]
+embed = true
+embed_size = "large"
+embed_max_width = -1
+save_artwork = true
+saved_max_width = -1
+
+[metadata]
+set_playlist_to_album = true
+renumber_playlist_tracks = true
+
+[filepaths]
+add_singles_to_folder = false
+folder_format = "{albumartist} - {title} ({year})"
+track_format = "{tracknumber:02}. {title}{explicit}"
+restrict_characters = false
+truncate_to = 120
+
+[cli]
+text_output = true
+progress_bars = true
+max_search_results = 100
+
+[misc]
+version = "2.0.6"
+check_for_updates = false
