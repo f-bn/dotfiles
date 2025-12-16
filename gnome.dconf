@@ -38,7 +38,7 @@ tap-to-click=false
 two-finger-scrolling-enabled=true
 
 [org/gnome/shell]
-favorite-apps=['firefox_firefox.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code_code.desktop','snap-store_snap-store.desktop','discord_discord.desktop','bitwarden_bitwarden.desktop']
+favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code_code.desktop','snap-store_snap-store.desktop','discord_discord.desktop','bitwarden_bitwarden.desktop']
 
 [org/gnome/shell/extensions/ding]
 show-home=false

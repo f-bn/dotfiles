@@ -31,7 +31,6 @@ Before getting started, ensure you have the following tools installed:
 
 - 🔐 **[Bitwarden CLI](https://bitwarden.com/help/cli/#download-and-install)** (`bw`)
 - ⚙️ **[chezmoi](https://www.chezmoi.io/install/)**
-- 🔧 **[crudini](https://github.com/pixelb/crudini)**
 
 ### Installation
 
@@ -88,7 +87,6 @@ Before getting started, ensure you have the following tools installed:
 - 🔐 [**Bitwarden**](https://bitwarden.com/) - Password manager
 - ⚙️ [**Butane**](https://github.com/coreos/butane) - Translates human-readable Butane Configs into machine-readable Ignition Configs
 - 🎛️ [**chezmoi**](https://github.com/twpayne/chezmoi) - Manage your dotfiles across multiple diverse machines, securely
-- 🔧 [**crudini**](https://github.com/pixelb/crudini) - A utility for manipulating ini files
 - 📦 [**pipx**](https://github.com/pypa/pipx) - Install and Run Python Applications in Isolated Environments
 
 ### Terminal
