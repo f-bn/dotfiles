@@ -70,6 +70,7 @@ Before getting started, ensure you have the following tools installed:
 
 ### Containers & Kubernetes
 
+- ⚙️ [**bootloose**](https://github.com/k0sproject/bootloose) - Manage containers that look like virtual machines
 - 🐳 [**dive**](https://github.com/wagoodman/dive) - A tool for exploring each layer in a docker image
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
 - ☸️ [**k0sctl**](https://github.com/k0sproject/k0sctl) - A bootstrapping and management tool for k0s clusters
