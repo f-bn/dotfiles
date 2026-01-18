@@ -111,4 +111,4 @@ These are wrappers for some specific Docker tasks (and also born from pure lazin
 
 ### Wallpapers
 
-Wallpaper by [**Daniel Sessler**](https://danielsessler.photos/)
+Wallpaper by [**Jack Anstey**](https://www.anstey.studio/)
