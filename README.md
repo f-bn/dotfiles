@@ -86,7 +86,7 @@ Before getting started, ensure you have the following tools installed:
 
 ### Utilities
 
-- 🔐 [**Bitwarden**](https://bitwarden.com/) - Password manager
+- 🔐 [**Bitwarden CLI**](https://bitwarden.com/) - Password manager
 - ⚙️ [**Butane**](https://github.com/coreos/butane) - Translates human-readable Butane Configs into machine-readable Ignition Configs
 - 🎛️ [**chezmoi**](https://github.com/twpayne/chezmoi) - Manage your dotfiles across multiple diverse machines, securely
 - 📦 [**pipx**](https://github.com/pypa/pipx) - Install and Run Python Applications in Isolated Environments
