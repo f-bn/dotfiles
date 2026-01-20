@@ -63,7 +63,6 @@ Before getting started, ensure you have the following tools installed:
 
 - 🚀 [**act**](https://github.com/nektos/act) - Run your GitHub Actions locally
 - 🤖 [**Copilot CLI**](https://github.com/github/copilot-cli) - GitHub Copilot CLI brings the power of Copilot coding agent directly to your terminal
-- 🛠️ [**Mise**](https://mise.jdx.dev/) - Development environment manager
 - ✏️ [**neovim**](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability
 - 🔌 [**vim-plug**](https://github.com/junegunn/vim-plug) - Minimalist Vim Plugin Manager
 - 💻 [**Visual Studio Code**](https://code.visualstudio.com/) - Code editing. Redefined

@@ -61,12 +61,6 @@
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/mise"]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "jdx/mise" "mise-v*-linux-x64" | quote }}
-    executable = true
-    refreshPeriod = "168h"
-
 [".local/bin/zellij"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "zellij-org/zellij" "zellij-x86_64-unknown-linux-musl.tar.gz" | quote }}
