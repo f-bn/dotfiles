@@ -11,6 +11,7 @@ zsh:
     - git
     - helm
     - kubectl
+    - uv
     - zsh-autosuggestions
   aliases:
     vim: nvim
