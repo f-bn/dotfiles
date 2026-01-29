@@ -70,11 +70,12 @@ Before getting started, ensure you have the following tools installed:
 
 ### Containers & Kubernetes
 
-- ⚙️ [**bootloose**](https://github.com/k0sproject/bootloose) - Manage containers that look like virtual machines
+- 🚀 [**bootloose**](https://github.com/k0sproject/bootloose) - Manage containers that look like virtual machines
+- 📦 [**distrobox**](https://distrobox.it/) - Use any Linux distribution inside your terminal
 - 🐳 [**dive**](https://github.com/wagoodman/dive) - A tool for exploring each layer in a docker image
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
 - ☸️ [**k0sctl**](https://github.com/k0sproject/k0sctl) - A bootstrapping and management tool for k0s clusters
-- 📦 [**Krew**](https://krew.sigs.k8s.io/) - kubectl plugin manager
+- ⚙️ [**Krew**](https://krew.sigs.k8s.io/) - kubectl plugin manager
 - ☸️ [**Minikube**](https://minikube.sigs.k8s.io) - Run Kubernetes locally
 - 🔍 [**stern**](https://github.com/stern/stern) - Multi pod and container log tailing for Kubernetes
 
