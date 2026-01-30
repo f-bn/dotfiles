@@ -1,0 +1,8 @@
+---
+distrobox:
+  manager: docker
+  generate_entry: false
+  default_name: toolbox
+  default_image: ghcr.io/f-bn/ubuntu:25.10-toolbox
+  additional_flags:
+    - "--env ZSH_DISABLE_COMPFIX=true"
