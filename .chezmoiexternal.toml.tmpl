@@ -27,12 +27,6 @@
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/bootloose"]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "k0sproject/bootloose" "bootloose-linux-amd64" | quote }}
-    executable = true
-    refreshPeriod = "168h"
-
 [".local/bin/butane"]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "coreos/butane" "butane-x86_64-unknown-linux-gnu" | quote }}
@@ -69,12 +63,6 @@
     refreshPeriod = "168h"
 
 # - Kubernetes tools -
-[".local/bin/k0sctl"]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "k0sproject/k0sctl" "k0sctl-linux-amd64" | quote }}
-    executable = true
-    refreshPeriod = "168h"
-
 [".local/bin/krew"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "kubernetes-sigs/krew" "krew-linux_amd64.tar.gz" | quote }}
@@ -114,7 +102,7 @@
 
 [".local/bin/mongosh"]
     type = "archive-file"
-    url = "https://downloads.mongodb.com/compass/mongosh-2.5.10-linux-x64.tgz"
+    url = "https://downloads.mongodb.com/compass/mongosh-2.6.0-linux-x64.tgz"
     path = "bin/mongosh"
     stripComponents = 1
     executable = true
