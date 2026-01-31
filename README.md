@@ -112,4 +112,4 @@ These are wrappers for some specific Docker tasks born from pure laziness to avo
 
 ### Wallpapers
 
-Wallpaper by [**Jack Anstey**](https://www.anstey.studio/)
+Wallpaper by [**Vincentiu Solomon**](https://www.vincentiusolomon.com/)
