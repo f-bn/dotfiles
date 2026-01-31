@@ -1,6 +1,7 @@
 {{ if .laptop -}}
 #!/usr/bin/env sh
-# gnome.dconf: {{ include "gnome.dconf" | sha256sum }}
+# dconf: {{ include "gnome.dconf" | sha256sum }}
+# wallpaper: {{ include "dot_local/share/backgrounds/wallpaper.jpg" | sha256sum }}
 DCONF_BIN="$(which dconf)"
 echo "* Import GNOME configuration settings"
 ${DCONF_BIN} load / < {{ joinPath .chezmoi.sourceDir "gnome.dconf" | quote }}
