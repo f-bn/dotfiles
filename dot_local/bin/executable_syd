@@ -21,22 +21,6 @@ EOF
   exit 0
 }
 
-generate_shell_command() {
-    local cid="$1"
-    local cmd
-    local login_path
-    local bash_path
-
-    if login_path=$(docker exec "${cid}" which login 2>/dev/null); then
-        cmd="docker exec -ti -u root ${cid} ${login_path} -f root"
-    elif bash_path=$(docker exec "${cid}" which bash 2>/dev/null); then
-        cmd="docker exec -ti -u ${USER} ${cid} ${bash_path} -l"
-    else
-        cmd="docker exec -ti -u ${USER} ${cid} sh -l"
-    fi
-    echo "$cmd"
-}
-
 if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
   usage
 elif [[ $# -eq 0 ]]; then
@@ -60,13 +44,7 @@ echo "Launching system container with Docker"
 cid="$(docker run ${RUN_FLAGS[@]} $@ || exit 1)"
 ct="$(docker inspect ${cid} | jq '.[]' || exit 1)"
 
-echo "• ID: ${cid:0:12}"
-echo "• Name: $(jq -r '.Name' <<< ${ct} | tr -d '/')"
-echo "• IP Address (primary): $(jq -r '.NetworkSettings.IPAddress' <<< ${ct})"
-echo
-
-read -r -p "Do you want to open a shell in the container? (y/n) " -n 1 REPLY
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  exec $(generate_shell_command "${cid}")
-fi
+printf '• ID: %s\n• Name: %s\n• IP Address (primary): %s\n\n' \
+  "${cid:0:12}" \
+  "$(jq -r '.Name' <<< ${ct} | tr -d '/')" \
+  "$(jq -r '.NetworkSettings.IPAddress' <<< ${ct})"
