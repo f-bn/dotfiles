@@ -41,10 +41,4 @@ RUN_FLAGS=(
 )
 
 echo "Launching system container with Docker"
-cid="$(docker run ${RUN_FLAGS[@]} $@ || exit 1)"
-ct="$(docker inspect ${cid} | jq '.[]' || exit 1)"
-
-printf '• ID: %s\n• Name: %s\n• IP Address (primary): %s\n\n' \
-  "${cid:0:12}" \
-  "$(jq -r '.Name' <<< ${ct} | tr -d '/')" \
-  "$(jq -r '.NetworkSettings.IPAddress' <<< ${ct})"
+exec docker run "${RUN_FLAGS[@]}" "$@"
