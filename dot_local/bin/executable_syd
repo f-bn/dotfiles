@@ -28,6 +28,7 @@ elif [[ $# -eq 0 ]]; then
 fi
 
 FLAGS=(
+  --entrypoint=/sbin/init
   --env=container="docker"
   --stop-signal=SIGRTMIN+3
   --cgroupns=host
