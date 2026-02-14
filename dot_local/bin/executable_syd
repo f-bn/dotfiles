@@ -27,9 +27,7 @@ elif [[ $# -eq 0 ]]; then
   usage
 fi
 
-RUN_FLAGS=(
-  --detach
-  --tty
+FLAGS=(
   --env=container="docker"
   --stop-signal=SIGRTMIN+3
   --cgroupns=host
@@ -40,5 +38,7 @@ RUN_FLAGS=(
   --tmpfs=/var/lib/journal
 )
 
-echo "Launching system container with Docker"
-exec docker run "${RUN_FLAGS[@]}" "$@"
+echo "Launching systemd container with Docker"
+CONTAINER=$(docker create "${FLAGS[@]}" "$@") || exit 1
+
+exec docker start "${CONTAINER}"
