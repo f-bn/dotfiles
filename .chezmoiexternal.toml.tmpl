@@ -48,6 +48,12 @@
     executable = true
     refreshPeriod = "168h"
 
+[".local/bin/mise"]
+    type = "file"
+    url = {{ gitHubLatestReleaseAssetURL "jdx/mise" "mise-v*-linux-x64" | quote }}
+    executable = true
+    refreshPeriod = "168h"
+
 [".local/bin/sops"]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "getsops/sops" "sops-*.linux.amd64" | quote }}
