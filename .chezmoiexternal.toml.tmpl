@@ -27,13 +27,6 @@
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/butane"]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "coreos/butane" "butane-x86_64-unknown-linux-gnu" | quote }}
-    path = "butane"
-    executable = true
-    refreshPeriod = "168h"
-
 [".local/bin/copilot"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "github/copilot-cli" "copilot-linux-x64.tar.gz" | quote }}
@@ -87,13 +80,6 @@
 [".local/bin/minikube"]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "kubernetes/minikube" "minikube-linux-amd64" | quote }}
-    executable = true
-    refreshPeriod = "168h"
-
-[".local/bin/stern"]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "stern/stern" "stern_*_linux_amd64.tar.gz" | quote }}
-    path = "stern"
     executable = true
     refreshPeriod = "168h"
 

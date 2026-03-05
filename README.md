@@ -75,7 +75,6 @@ Before getting started, ensure you have the following tools installed:
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
 - ⚙️ [**Krew**](https://krew.sigs.k8s.io/) - kubectl plugin manager
 - ☸️ [**Minikube**](https://minikube.sigs.k8s.io) - Run Kubernetes locally
-- 🔍 [**stern**](https://github.com/stern/stern) - Multi pod and container log tailing for Kubernetes
 
 ### Database & Messaging
 
@@ -86,7 +85,6 @@ Before getting started, ensure you have the following tools installed:
 ### Utilities
 
 - 🔐 [**Bitwarden CLI**](https://bitwarden.com/) - Password manager
-- ⚙️ [**Butane**](https://github.com/coreos/butane) - Translates human-readable Butane Configs into machine-readable Ignition Configs
 - 🎛️ [**chezmoi**](https://github.com/twpayne/chezmoi) - Manage your dotfiles across multiple diverse machines, securely
 - 🔒 [**SOPS**](https://github.com/getsops/sops) - Simple and flexible tool for managing secrets
 - ⚔️ [**Exegol**](https://github.com/ThePorgs/Exegol) - Fully featured and community-driven hacking environment
