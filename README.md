@@ -113,4 +113,4 @@ These are wrappers for some specific Docker tasks born from pure laziness to avo
 
 ### Wallpapers
 
-Wallpaper by [**Vincentiu Solomon**](https://www.vincentiusolomon.com/)
+Wallpaper by [**Luca Bravo**](https://unsplash.com/@lucabravo)
