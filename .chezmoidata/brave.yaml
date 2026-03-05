@@ -1,0 +1,15 @@
+---
+brave:
+  flags:
+    enable-features:
+      - AcceleratedVideoDecodeLinuxGL
+      - AcceleratedVideoDecodeLinuxZeroCopyGL
+      - AcceleratedVideoEncoder
+      - CanvasOopRasterization
+      - UseMultiPlaneFormatForHardwareVideo
+      - TouchpadOverscrollHistoryNavigation
+    disable-features:
+      - Vulkan
+    enable-zero-copy: true
+    enable-gpu-rasterization: true
+    ozone-platform-hint: auto

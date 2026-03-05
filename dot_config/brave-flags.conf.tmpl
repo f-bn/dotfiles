@@ -1,0 +1,10 @@
+{{ range $key, $value := .brave.flags -}}
+{{ if kindIs "bool" $value -}}
+{{ if $value }}--{{ $key }}
+{{ end -}}
+{{ else if kindIs "slice" $value -}}
+--{{ $key }}={{ join "," $value }}
+{{ else -}}
+--{{ $key }}={{ $value }}
+{{ end -}}
+{{ end -}}
