@@ -4,13 +4,13 @@ zsh:
   plugins:
     - colorize
     - command-not-found
-    - direnv
     - docker
     - extract
     - fzf
     - git
     - helm
     - kubectl
+    - mise
     - uv
     - zsh-autosuggestions
   aliases:
