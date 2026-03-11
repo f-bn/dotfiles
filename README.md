@@ -103,7 +103,7 @@ Before getting started, ensure you have the following tools installed:
 
 ### Wrappers
 
-Custom Docker wrappers born from pure laziness to avoid doing things manually:
+Custom Docker wrappers born from pure laziness to avoid doing things manually 😁
 
 - 🐳 [**syd**](dot_local/bin/executable_syd) - Launch systemd-compatible Docker containers with a single command
 - 🔗 [**dshell**](dot_local/bin/executable_dshell) - Open an interactive shell in a Docker container easily (`docker exec` is too much typing 🙈)
