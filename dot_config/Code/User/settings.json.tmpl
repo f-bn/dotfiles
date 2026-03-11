@@ -4,11 +4,20 @@
 {{- else }}
     "editor.fontSize": 14,
 {{- end }}
-    "editor.fontFamily": "Cascadia Mono",
+    "editor.fontFamily": "Cascadia Code",
     "editor.fontLigatures": true,
     "files.autoSave": "afterDelay",
     "workbench.colorTheme": "One Dark Pro Mix",
     "workbench.iconTheme": "vscode-icons",
     "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
-    "github.copilot.nextEditSuggestions.enabled": true
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "terminal.integrated.gpuAcceleration": "off",
+    "terminal.integrated.shellIntegration.enabled": false,
+    "terminal.integrated.fontFamily": "Cascadia Mono PL",
+    "terminal.integrated.fontLigatures": true,
+{{- if .laptop }}
+    "terminal.integrated.fontSize": 15
+{{- else }}
+    "terminal.integrated.fontSize": 14
+{{- end }}
 }
