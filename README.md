@@ -59,15 +59,9 @@ Before getting started, ensure you have the following tools installed:
 <details>
 <summary><b>Click to expand full toolset</b></summary>
 
-### Development Tools
+### AI Tools
 
-- 🚀 [**act**](https://github.com/nektos/act) - Run your GitHub Actions locally
 - 🤖 [**Copilot CLI**](https://github.com/github/copilot-cli) - GitHub Copilot CLI brings the power of Copilot coding agent directly to your terminal
-- 🔧 [**Mise**](https://github.com/jdx/mise) - The front-end to your dev env
-- ✏️ [**neovim**](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability
-- 📦 [**uv**](https://github.com/astral-sh/uv) - An extremely fast Python package installer and resolver, written in Rust
-- 🔌 [**vim-plug**](https://github.com/junegunn/vim-plug) - Minimalist Vim Plugin Manager
-- 💻 [**Visual Studio Code**](https://code.visualstudio.com/) - Code editing. Redefined
 
 ### Containers & Kubernetes
 
@@ -76,12 +70,31 @@ Before getting started, ensure you have the following tools installed:
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
 - ⚙️ [**Krew**](https://krew.sigs.k8s.io/) - kubectl plugin manager
 - ☸️ [**Minikube**](https://minikube.sigs.k8s.io) - Run Kubernetes locally
+- ✏️ **Wrappers** - Custom Docker wrappers born from pure laziness to avoid doing things manually
+   * 🐳 [**syd**](dot_local/bin/executable_syd) - Launch systemd-compatible Docker containers with a single command
+   * 🔗 [**dshell**](dot_local/bin/executable_dshell) - Open an interactive shell in a Docker container easily (`docker exec` is too much typing)
+   * 🔀 [**dfwd**](dot_local/bin/executable_dfwd) - Forward ports dynamically from host to running Docker containers (much like `kubectl port-forward` but locally)
 
 ### Database & Messaging
 
 - 📨 [**kafkactl**](https://github.com/deviceinsight/kafkactl) - Command Line Tool for managing Apache Kafka
 - 🌐 [**MongoDB Atlas CLI**](https://www.mongodb.com/products/tools/atlas-cli) - MongoDB Atlas CLI
 - 🍃 [**MongoDB Shell**](https://www.mongodb.com/products/tools/shell) - MongoDB CLI
+
+### Development Tools
+
+- 🚀 [**act**](https://github.com/nektos/act) - Run your GitHub Actions locally
+- 🔧 [**mise**](https://github.com/jdx/mise) - The front-end to your dev env
+- ✏️ [**neovim**](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability
+- 📦 [**uv**](https://github.com/astral-sh/uv) - An extremely fast Python package installer and resolver, written in Rust
+- 🔌 [**vim-plug**](https://github.com/junegunn/vim-plug) - Minimalist Vim Plugin Manager
+- 💻 [**Visual Studio Code**](https://code.visualstudio.com/) - Code editing. Redefined
+
+### Terminal
+
+- 🐚 [**oh-my-zsh**](https://github.com/ohmyzsh/ohmyzsh) - A delightful community-driven framework for managing your zsh configuration
+- 💻 [**Ptyxis**](https://gitlab.gnome.org/chergert/ptyxis) - Terminal emulator
+- 🪟 [**Zellij**](https://github.com/zellij-org/zellij) - A terminal workspace with batteries included
 
 ### Utilities
 
@@ -91,20 +104,6 @@ Before getting started, ensure you have the following tools installed:
 - ⚔️ [**Exegol**](https://github.com/ThePorgs/Exegol) - Fully featured and community-driven hacking environment
 - 📦 [**pipx**](https://github.com/pypa/pipx) - Install and Run Python Applications in Isolated Environments
 - 🎵 [**streamrip**](https://github.com/nathom/streamrip) - A scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer
-
-### Terminal
-
-- 🐚 [**oh-my-zsh**](https://github.com/ohmyzsh/ohmyzsh) - A delightful community-driven framework for managing your zsh configuration
-- 💻 [**Ptyxis**](https://gitlab.gnome.org/chergert/ptyxis) - Terminal emulator
-- 🪟 [**Zellij**](https://github.com/zellij-org/zellij) - A terminal workspace with batteries included
-
-### Custom Docker tooling
-
-These are wrappers for some specific Docker tasks born from pure laziness to avoid doing some things manually :p
-
-- 🐳 [**syd**](dot_local/bin/executable_syd) - Launch systemd-compatible Docker containers with a single command
-- 🔗 [**dshell**](dot_local/bin/executable_dshell) - Open an interactive shell in a Docker container easily
-- 🔀 [**dfwd**](dot_local/bin/executable_dfwd) - Forward ports dynamically from host to running Docker containers (much like `kubectl port-forward` but locally)
 
 </details>
 
