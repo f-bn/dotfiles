@@ -70,9 +70,9 @@ Before getting started, ensure you have the following tools installed:
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
 - ⚙️ [**Krew**](https://krew.sigs.k8s.io/) - kubectl plugin manager
 - ☸️ [**Minikube**](https://minikube.sigs.k8s.io) - Run Kubernetes locally
-- ✏️ **Wrappers** - Custom Docker wrappers born from pure laziness to avoid doing things manually
+- 📝 **Wrappers** - Custom Docker wrappers born from pure laziness to avoid doing things manually
    * 🐳 [**syd**](dot_local/bin/executable_syd) - Launch systemd-compatible Docker containers with a single command
-   * 🔗 [**dshell**](dot_local/bin/executable_dshell) - Open an interactive shell in a Docker container easily (`docker exec` is too much typing)
+   * 🔗 [**dshell**](dot_local/bin/executable_dshell) - Open an interactive shell in a Docker container easily (`docker exec` is too much typing 🙈)
    * 🔀 [**dfwd**](dot_local/bin/executable_dfwd) - Forward ports dynamically from host to running Docker containers (much like `kubectl port-forward` but locally)
 
 ### Database & Messaging
