@@ -70,10 +70,6 @@ Before getting started, ensure you have the following tools installed:
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
 - ⚙️ [**Krew**](https://krew.sigs.k8s.io/) - kubectl plugin manager
 - ☸️ [**Minikube**](https://minikube.sigs.k8s.io) - Run Kubernetes locally
-- 📝 **Wrappers** - Custom Docker wrappers born from pure laziness to avoid doing things manually
-   * 🐳 [**syd**](dot_local/bin/executable_syd) - Launch systemd-compatible Docker containers with a single command
-   * 🔗 [**dshell**](dot_local/bin/executable_dshell) - Open an interactive shell in a Docker container easily (`docker exec` is too much typing 🙈)
-   * 🔀 [**dfwd**](dot_local/bin/executable_dfwd) - Forward ports dynamically from host to running Docker containers (much like `kubectl port-forward` but locally)
 
 ### Database & Messaging
 
@@ -104,6 +100,14 @@ Before getting started, ensure you have the following tools installed:
 - ⚔️ [**Exegol**](https://github.com/ThePorgs/Exegol) - Fully featured and community-driven hacking environment
 - 📦 [**pipx**](https://github.com/pypa/pipx) - Install and Run Python Applications in Isolated Environments
 - 🎵 [**streamrip**](https://github.com/nathom/streamrip) - A scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer
+
+### Wrappers
+
+Custom Docker wrappers born from pure laziness to avoid doing things manually:
+
+- 🐳 [**syd**](dot_local/bin/executable_syd) - Launch systemd-compatible Docker containers with a single command
+- 🔗 [**dshell**](dot_local/bin/executable_dshell) - Open an interactive shell in a Docker container easily (`docker exec` is too much typing 🙈)
+- 🔀 [**dfwd**](dot_local/bin/executable_dfwd) - Forward ports dynamically from host to running Docker containers (much like `kubectl port-forward` but locally)
 
 </details>
 
