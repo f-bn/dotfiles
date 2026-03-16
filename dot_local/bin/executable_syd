@@ -30,7 +30,6 @@ FLAGS=(
   --tmpfs=/run
   --tmpfs=/run/lock
   --tmpfs=/tmp
-  --tmpfs=/var/lib/journal
 )
 HAS_ARGS=0
 
