@@ -18,7 +18,6 @@ Examples:
   syd --name my-container --net=my-network ghcr.io/f-bn/ubuntu:24.04-init
 
 EOF
-  exit 0
 }
 
 FLAGS=(
@@ -32,25 +31,26 @@ FLAGS=(
   --tmpfs=/tmp
   --tmpfs=/var/lib/journal
 )
-EXTRA_DOCKER_FLAGS=()
+HAS_ARGS=0
 
 while [[ $# -gt 0 ]]; do
   case $1 in
     -h|--help)
-      usage ;;
+      usage ; exit 0 ;;
     --name)
-      FLAGS+=(--hostname="$2")
-      EXTRA_DOCKER_FLAGS+=("$1" "$2"); shift 2 ;;
+      FLAGS+=(--name="$2" --hostname="$2");
+      shift 2 ;;
     *)
-      EXTRA_DOCKER_FLAGS+=("$1"); shift ;;
+      FLAGS+=("$1"); HAS_ARGS=1;
+      shift ;;
   esac
 done
 
-if [[ ${#EXTRA_DOCKER_FLAGS[@]} -eq 0 ]]; then
+if [[ $HAS_ARGS -eq 0 ]]; then
   usage
 fi
 
 echo "Launching systemd container with Docker"
-CONTAINER=$(docker create "${FLAGS[@]}" "${EXTRA_DOCKER_FLAGS[@]}") || exit 1
+CONTAINER=$(docker create "${FLAGS[@]}") || exit 1
 
 exec docker start "${CONTAINER}"
