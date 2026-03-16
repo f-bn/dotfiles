@@ -48,7 +48,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ $HAS_ARGS -eq 0 ]]; then
-  usage
+  usage ; exit 0 ;;
 fi
 
 echo "Launching systemd container with Docker"
