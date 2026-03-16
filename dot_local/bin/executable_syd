@@ -21,6 +21,7 @@ EOF
 }
 
 FLAGS=(
+  --tty=true
   --entrypoint=/sbin/init
   --env=container="docker"
   --stop-signal=SIGRTMIN+3
