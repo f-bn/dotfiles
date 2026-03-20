@@ -2,7 +2,6 @@
 zsh:
   theme: gentoo
   plugins:
-    - colorize
     - command-not-found
     - docker
     - extract
