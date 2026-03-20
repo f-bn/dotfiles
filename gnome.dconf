@@ -51,7 +51,7 @@ apps=['org.gnome.Papers.desktop','org.gnome.font-viewer.desktop', 'org.gnome.Cha
 
 [org/gnome/mutter]
 edge-tiling=true
-experimental-features=['scale-monitor-framebuffer', 'xwayland-native-scaling']
+experimental-features=['scale-monitor-framebuffer','xwayland-native-scaling','variable-refresh-rate']
 
 [org/gnome/Ptyxis]
 default-profile-uuid='4d25db42c21d080779cd522068693dbd'
