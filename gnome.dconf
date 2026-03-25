@@ -63,6 +63,7 @@ audible-bell=false
 visual-bell=false
 restore-session=false
 new-tab-position='next'
+cursor-shape='underline'
 profile-uuids=['4d25db42c21d080779cd522068693dbd']
 
 [org/gnome/Ptyxis/Profiles/4d25db42c21d080779cd522068693dbd]
