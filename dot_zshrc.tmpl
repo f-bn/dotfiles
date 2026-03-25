@@ -23,11 +23,6 @@ DISABLE_AUTO_UPDATE=true
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
-# Colorize settings
-ZSH_COLORIZE_TOOL=chroma
-ZSH_COLORIZE_CHROMA_FORMATTER=terminal256
-ZSH_COLORIZE_STYLE="solarized-dark256"
-
 # Plugins
 plugins=(
 {{- range .zsh.plugins }}
