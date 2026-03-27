@@ -21,7 +21,7 @@ Configuration is managed using `chezmoi` for seamless synchronization.
 | Machine | Description | OS |
 |---------|-------------|-----|
 | **buran** | Main workstation | Ubuntu 24.04 (WSL2) |
-| **foton** | [ThinkPad P14s Gen 5](https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadp/thinkpad-p14s-gen-5-14-inch-intel-mobile-workstation/len101t0106) | Ubuntu 25.10 + GNOME ❤️ |
+| **foton** | [ThinkPad P14s Gen 5](https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadp/thinkpad-p14s-gen-5-14-inch-intel-mobile-workstation/len101t0106) | Ubuntu 26.04 + GNOME ❤️ |
 
 ## 🚀 Quick Start
 
@@ -94,7 +94,7 @@ Before getting started, ensure you have the following tools installed:
 
 ### Utilities
 
-- 🔐 [**Bitwarden CLI**](https://bitwarden.com/) - Password manager
+- 🔐 [**Bitwarden CLI**](https://bitwarden.com/) - The command line vault
 - 🎛️ [**chezmoi**](https://github.com/twpayne/chezmoi) - Manage your dotfiles across multiple diverse machines, securely
 - 🔒 [**SOPS**](https://github.com/getsops/sops) - Simple and flexible tool for managing secrets
 - ⚔️ [**Exegol**](https://github.com/ThePorgs/Exegol) - Fully featured and community-driven hacking environment
