@@ -23,6 +23,9 @@ automatic-timezone=true
 clock-show-weekday=true
 color-scheme='prefer-dark'
 gtk-theme='Yaru-dark'
+font-name='Ubuntu Sans 12'
+document-font-name='Ubuntu Sans Mono 12'
+monospace-font-name='Sans 12'
 show-battery-percentage=true
 
 [org/gnome/desktop/session]
