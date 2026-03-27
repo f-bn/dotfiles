@@ -37,8 +37,16 @@ remove-old-trash-files=true
 tap-to-click=false
 two-finger-scrolling-enabled=true
 
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Control>Print'
+command='gradia --screenshot=INTERACTIVE'
+name='Open Gradia with Screenshot'
+
 [org/gnome/shell]
-favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code_code.desktop','snap-store_snap-store.desktop','discord_discord.desktop','bruno_bruno.desktop']
+favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code_code.desktop','snap-store_snap-store.desktop','discord_discord.desktop','bruno_bruno.desktop','gradia_gradia.desktop']
 
 [org/gnome/shell/extensions/ding]
 show-home=false
