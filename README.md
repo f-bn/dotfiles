@@ -94,6 +94,7 @@ Before getting started, ensure you have the following tools installed:
 
 ### Utilities
 
+- 🏰 [**age**](https://github.com/FiloSottile/age) - A simple, modern and secure encryption tool
 - 🔐 [**Bitwarden CLI**](https://bitwarden.com/) - The command line vault
 - 🎛️ [**chezmoi**](https://github.com/twpayne/chezmoi) - Manage your dotfiles across multiple diverse machines, securely
 - 🔒 [**SOPS**](https://github.com/getsops/sops) - Simple and flexible tool for managing secrets

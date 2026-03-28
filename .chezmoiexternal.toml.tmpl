@@ -27,6 +27,22 @@
     executable = true
     refreshPeriod = "168h"
 
+[".local/bin/age"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "FiloSottile/age" "age-*-linux-amd64.tar.gz" | quote }}
+    path = "age"
+    stripComponents = 1
+    executable = true
+    refreshPeriod = "168h"
+
+[".local/bin/age-keygen"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "FiloSottile/age" "age-*-linux-amd64.tar.gz" | quote }}
+    path = "age-keygen"
+    stripComponents = 1
+    executable = true
+    refreshPeriod = "168h"
+
 [".local/bin/copilot"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "github/copilot-cli" "copilot-linux-x64.tar.gz" | quote }}
