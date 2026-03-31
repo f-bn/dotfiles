@@ -79,10 +79,8 @@ Before getting started, ensure you have the following tools installed:
 
 ### Development Tools
 
-- 🚀 [**act**](https://github.com/nektos/act) - Run your GitHub Actions locally
 - 🔧 [**mise**](https://github.com/jdx/mise) - The front-end to your dev env
 - ✏️ [**neovim**](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability
-- 📦 [**uv**](https://github.com/astral-sh/uv) - An extremely fast Python package installer and resolver, written in Rust
 - 🔌 [**vim-plug**](https://github.com/junegunn/vim-plug) - Minimalist Vim Plugin Manager
 - 💻 [**Visual Studio Code**](https://code.visualstudio.com/) - Code editing. Redefined
 
@@ -94,10 +92,8 @@ Before getting started, ensure you have the following tools installed:
 
 ### Utilities
 
-- 🏰 [**age**](https://github.com/FiloSottile/age) - A simple, modern and secure encryption tool
 - 🔐 [**Bitwarden CLI**](https://bitwarden.com/) - The command line vault
 - 🎛️ [**chezmoi**](https://github.com/twpayne/chezmoi) - Manage your dotfiles across multiple diverse machines, securely
-- 🔒 [**SOPS**](https://github.com/getsops/sops) - Simple and flexible tool for managing secrets
 - ⚔️ [**Exegol**](https://github.com/ThePorgs/Exegol) - Fully featured and community-driven hacking environment
 - 📦 [**pipx**](https://github.com/pypa/pipx) - Install and Run Python Applications in Isolated Environments
 - 🎵 [**streamrip**](https://github.com/nathom/streamrip) - A scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer

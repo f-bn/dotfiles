@@ -20,29 +20,6 @@
     refreshPeriod = "168h"
 
 # - Utilities -
-[".local/bin/act"]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "nektos/act" "act_Linux_x86_64.tar.gz" | quote }}
-    path = "act"
-    executable = true
-    refreshPeriod = "168h"
-
-[".local/bin/age"]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "FiloSottile/age" "age-*-linux-amd64.tar.gz" | quote }}
-    path = "age"
-    stripComponents = 1
-    executable = true
-    refreshPeriod = "168h"
-
-[".local/bin/age-keygen"]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "FiloSottile/age" "age-*-linux-amd64.tar.gz" | quote }}
-    path = "age-keygen"
-    stripComponents = 1
-    executable = true
-    refreshPeriod = "168h"
-
 [".local/bin/copilot"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "github/copilot-cli" "copilot-linux-x64.tar.gz" | quote }}
@@ -67,12 +44,6 @@
 [".local/bin/mise"]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "jdx/mise" "mise-v*-linux-x64" | quote }}
-    executable = true
-    refreshPeriod = "168h"
-
-[".local/bin/sops"]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "getsops/sops" "sops-*.linux.amd64" | quote }}
     executable = true
     refreshPeriod = "168h"
 
