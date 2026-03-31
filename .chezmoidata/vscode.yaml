@@ -7,6 +7,7 @@ vscode:
       - golang.go
       - hashicorp.hcl
       - hashicorp.terraform
+      - hverlin.mise-vscode
       - ms-azuretools.vscode-containers
       - ms-vscode-remote.remote-containers
       - ms-kubernetes-tools.vscode-kubernetes-tools
@@ -14,6 +15,7 @@ vscode:
       - redhat.ansible
       - redhat.vscode-yaml
       - samuelcolvin.jinjahtml
+      - tamasfe.even-better-toml
     extras:
       - zhuangtongfa.material-theme
       - vscode-icons-team.vscode-icons
