@@ -97,6 +97,7 @@ Before getting started, ensure you have the following tools installed:
 - ⚔️ [**Exegol**](https://github.com/ThePorgs/Exegol) - Fully featured and community-driven hacking environment
 - 📦 [**pipx**](https://github.com/pypa/pipx) - Install and Run Python Applications in Isolated Environments
 - 🎵 [**streamrip**](https://github.com/nathom/streamrip) - A scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer
+- 📝 [**usage**](https://github.com/jdx/usage) - Used for completion in Mise
 
 ### Wrappers
 

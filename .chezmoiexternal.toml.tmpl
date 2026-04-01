@@ -47,6 +47,13 @@
     executable = true
     refreshPeriod = "168h"
 
+[".local/bin/usage"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "jdx/usage" "usage-x86_64-unknown-linux-gnu.tar.gz" | quote }}
+    path = "usage"
+    executable = true
+    refreshPeriod = "168h"
+
 [".local/bin/zellij"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "zellij-org/zellij" "zellij-x86_64-unknown-linux-musl.tar.gz" | quote }}
