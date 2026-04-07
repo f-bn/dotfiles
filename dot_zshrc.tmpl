@@ -35,6 +35,8 @@ plugins=(
 {{- end }}
 )
 
+source $ZSH/oh-my-zsh.sh
+
 # Environment variables
 {{- range $key, $value := .zsh.environment }}
 export {{ $key }}={{ $value | quote }}
@@ -45,10 +47,13 @@ export {{ $key }}={{ $value | quote }}
 alias {{ $key }}='{{ $value }}'
 {{- end }}
 
+# Completions commands
+{{- range $key, $value := .zsh.completions }}
+compdef _{{ $key }} {{ $value }}
+{{- end }}
+
 # SSH Agent
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval "$(ssh-agent -s)" >/dev/null
   ssh-add $HOME/.ssh/id_ed25519 >/dev/null
 fi
-
-source $ZSH/oh-my-zsh.sh
