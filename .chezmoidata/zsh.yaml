@@ -11,6 +11,7 @@ zsh:
     - kubectl
     - mise
     - uv
+    - zoxide
     - zsh-autosuggestions
   aliases:
     vim: nvim
@@ -24,3 +25,5 @@ zsh:
   environment:
     PATH: $PATH:/snap/bin:$HOME/.local/bin:$HOME/.krew/bin
     EDITOR: nvim
+  extra_configurations:
+    ZOXIDE_CMD_OVERRIDE: "cd"

@@ -19,6 +19,11 @@ DISABLE_AUTO_TITLE="true"
 # Disable auto-updates (managed by chezmoi)
 DISABLE_AUTO_UPDATE=true
 
+# Extra configurations vars
+{{- range $key, $value := .zsh.extra_configurations }}
+{{ $key }}={{ $value | quote }}
+{{- end }}
+
 # Enable Docker option-stacking completion
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
