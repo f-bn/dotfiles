@@ -14,15 +14,15 @@ zsh:
     - zoxide
     - zsh-autosuggestions
   aliases:
-    vim: nvim
-    sysupdate: sudo sh -c "apt update && apt upgrade -y && snap refresh"
-    zj: zellij
     bwlogin: export BW_SESSION="$(bw login --raw)"
     bwunlock: export BW_SESSION="$(bw unlock --raw)"
-    ghtoken: export GITHUB_TOKEN="$(bw get password 278887eb-97b2-4fb3-8d32-b38c013096d2)"
     dbx: distrobox
-    lsblk: lsblk -e1,7
     fd: fdfind
+    ghtoken: export GITHUB_TOKEN="$(bw get password 278887eb-97b2-4fb3-8d32-b38c013096d2)"
+    lsblk: lsblk -e1,7
+    sysupdate: sudo sh -c "apt update && apt upgrade -y && snap refresh"
+    vim: nvim
+    zj: zellij
   completions:
     fd: fdfind
   environment:
