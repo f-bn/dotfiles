@@ -95,9 +95,11 @@ Before getting started, ensure you have the following tools installed:
 - 🔐 [**Bitwarden CLI**](https://bitwarden.com/) - The command line vault
 - 🎛️ [**chezmoi**](https://github.com/twpayne/chezmoi) - Manage your dotfiles across multiple diverse machines, securely
 - ⚔️ [**Exegol**](https://github.com/ThePorgs/Exegol) - Fully featured and community-driven hacking environment
+- 🔍 [**fd**](https://github.com/sharkdp/fd) - A simple, fast and user-friendly alternative to find
 - 📦 [**pipx**](https://github.com/pypa/pipx) - Install and Run Python Applications in Isolated Environments
 - 🎵 [**streamrip**](https://github.com/nathom/streamrip) - A scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer
 - 📝 [**usage**](https://github.com/jdx/usage) - Used for completion in Mise
+- 📂 [**zoxide**](https://github.com/ajeetdsouza/zoxide) - A smarter cd command for your terminal
 
 ### Wrappers
 
