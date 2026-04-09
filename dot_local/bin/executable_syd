@@ -39,7 +39,7 @@ while [[ $# -gt 0 ]]; do
   case $1 in
     -h|--help)
       usage ; exit 0 ;;
-    --name)
+    -n|--name)
       FLAGS+=(--name="$2" --hostname="$2");
       shift 2 ;;
     *)
