@@ -1,6 +1,21 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+FLAGS=(
+  --detach=true
+  --tty=true
+  --entrypoint=/sbin/init
+  --env=container="docker"
+  --stop-signal=SIGRTMIN+3
+  --cgroupns=host
+  --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw
+  --tmpfs=/run
+  --tmpfs=/run/lock
+  --tmpfs=/tmp
+)
+
+HAS_ARGS=0
+
 usage() {
   cat << EOF
 Usage: syd [OPTIONS] IMAGE
@@ -20,19 +35,6 @@ Examples:
 EOF
 }
 
-FLAGS=(
-  --tty=true
-  --entrypoint=/sbin/init
-  --env=container="docker"
-  --stop-signal=SIGRTMIN+3
-  --cgroupns=host
-  --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw
-  --tmpfs=/run
-  --tmpfs=/run/lock
-  --tmpfs=/tmp
-)
-HAS_ARGS=0
-
 while [[ $# -gt 0 ]]; do
   case $1 in
     -h|--help)
@@ -51,6 +53,4 @@ if [[ $HAS_ARGS -eq 0 ]]; then
 fi
 
 echo "Launching systemd container with Docker"
-CONTAINER=$(docker create "${FLAGS[@]}") || exit 1
-
-exec docker start "${CONTAINER}"
+exec docker run "${FLAGS[@]}"
