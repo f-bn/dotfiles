@@ -64,7 +64,10 @@ if [[ -z "${CONTAINER}" || -z "${PORT_MAPPING}" ]]; then
   echo -e "Error: CONTAINER and PORT-MAPPING are required\n"; usage; exit 1
 fi
 
-CONTAINER_IP="$(docker inspect -f '{{.NetworkSettings.IPAddress}}' "${CONTAINER}")"
+CONTAINER_CONFIG=$(docker inspect -f json "${CONTAINER}")
+CONTAINER_NETWORK=$(jq -r '.[].HostConfig.NetworkMode' <<< "${CONTAINER_CONFIG}")
+CONTAINER_IP_ADDR=$(jq -r ".[].NetworkSettings.Networks.${CONTAINER_NETWORK}.IPAddress" <<< "${CONTAINER_CONFIG}")
+
 if [[ "${PORT_MAPPING}" =~ ^[0-9]+:[0-9]+$ ]]; then
   SRC_PORT=$(awk -F: '{print $1}' <<< "${PORT_MAPPING}")
   DST_PORT=$(awk -F: '{print $2}' <<< "${PORT_MAPPING}")
@@ -76,4 +79,4 @@ else
 fi
 
 echo -e "Forwarding from 127.0.0.1:${SRC_PORT} -> ${CONTAINER}:${DST_PORT}\n"
-exec socat "${SOCAT_EXTRA_OPTS[@]}" TCP-LISTEN:"${SRC_PORT}",bind=127.0.0.1,reuseaddr,fork,nodelay TCP:"${CONTAINER_IP}":"${DST_PORT}"
+exec socat "${SOCAT_EXTRA_OPTS[@]}" "TCP-LISTEN:${SRC_PORT},bind=127.0.0.1,fork,nodelay" "TCP:${CONTAINER_IP_ADDR}:${DST_PORT}"
