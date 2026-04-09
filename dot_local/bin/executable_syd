@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-FLAGS=(
+CONTAINER_FLAGS=(
   --detach=true
   --tty=true
   --entrypoint=/sbin/init
@@ -40,10 +40,10 @@ while [[ $# -gt 0 ]]; do
     -h|--help)
       usage ; exit 0 ;;
     -n|--name)
-      FLAGS+=(--name="$2" --hostname="$2");
+      CONTAINER_FLAGS+=(--name="$2" --hostname="$2");
       shift 2 ;;
     *)
-      FLAGS+=("$1"); HAS_ARGS=1;
+      CONTAINER_FLAGS+=("$1"); HAS_ARGS=1;
       shift ;;
   esac
 done
@@ -53,4 +53,4 @@ if [[ $HAS_ARGS -eq 0 ]]; then
 fi
 
 echo "Launching systemd container with Docker"
-exec docker run "${FLAGS[@]}"
+exec docker run "${CONTAINER_FLAGS[@]}"
