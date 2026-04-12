@@ -3,6 +3,7 @@ set -euo pipefail
 
 CONTAINER=""
 USER="root"
+LOGIN=0
 
 usage() {
   cat << EOF
@@ -14,35 +15,44 @@ Arguments:
   CONTAINER         Docker container name 
 
 Options:
-  -u, --user USER   User to run the shell as (default: root)
   -h, --help        Display this help message
+  -l, --login       Use login shell (default: false)
+  -u, --user USER   User to run the shell as (default: root)
 
 Examples:
   dshell c1
   dshell c1 --user myuser
+  dshell c1 --login --user myuser
 
 EOF
 }
 
 generate_shell_command() {
-    local cmd
-    local login_path
-    local bash_path
+    local user=$1
+    local container=$2
+    local login_flag=""
 
-    if login_path=$(docker exec "${CONTAINER}" which login 2>/dev/null); then
-        cmd="docker exec -ti -u root ${CONTAINER} ${login_path} -f ${USER}"
-    elif bash_path=$(docker exec "${CONTAINER}" which bash 2>/dev/null); then
-        cmd="docker exec -ti -u ${USER} ${CONTAINER} ${bash_path} -l"
-    else
-        cmd="docker exec -ti -u ${USER} ${CONTAINER} sh -l"
+    if [[ "${LOGIN}" -eq 1 ]]; then
+        if login_path=$(docker exec "${container}" which login 2>/dev/null); then
+            echo "docker exec -ti -u root ${container} ${login_path} -f ${user}"
+            return
+        fi
+        login_flag="-l"
     fi
-    echo "$cmd"
+
+    if bash_path=$(docker exec "${container}" which bash 2>/dev/null); then
+        echo "docker exec -ti -u ${user} ${container} ${bash_path} ${login_flag}"
+    else
+        echo "docker exec -ti -u ${user} ${container} sh ${login_flag}"
+    fi
 }
 
 while [[ $# -gt 0 ]]; do
   case $1 in
     -h|--help) 
       usage ; exit 0 ;;
+    -l|--login)
+      LOGIN=1 ; shift ;;
     -u|--user)
       USER="$2"; shift 2 ;;
     -*) 
@@ -60,4 +70,4 @@ if [[ -z "${CONTAINER}" ]]; then
 fi
 
 echo -e "Opening shell in container '${CONTAINER}' as user '${USER}'\n"
-exec $(generate_shell_command)
+exec $(generate_shell_command "${USER}" "${CONTAINER}")
