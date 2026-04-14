@@ -26,7 +26,10 @@ Arguments:
   IMAGE     Docker image to run (must always be in last position).
 
 Options:
-  Any Docker run options can be passed and will be added to the default configuration.
+  -h, --help       Display this help message
+  -n, --name NAME  Set container hostname
+
+  Any other Docker run options can be passed as-is and will be added to the configuration.
 
 Examples:
   syd ghcr.io/f-bn/ubuntu:24.04-init
