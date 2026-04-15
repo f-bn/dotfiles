@@ -14,6 +14,16 @@ CONTAINER_FLAGS=(
   --tmpfs=/tmp
 )
 
+# Container runtimes directories are mounted using anonymous volumes to bypass
+# overlayfs stacking (blocked by docker 'overlay2' driver) when using containerd
+# snapshotter on host (default since 29.x).
+NESTING_FLAGS=(
+  --privileged=true
+  --volume=/var/lib/containers
+  --volume=/var/lib/containerd
+  --volume=/var/lib/docker
+)
+
 HAS_ARGS=0
 
 usage() {
@@ -26,14 +36,21 @@ Arguments:
   IMAGE     Docker image to run (must always be in last position).
 
 Options:
-  -h, --help       Display this help message
-  -n, --name NAME  Set container hostname
+  -h, --help        Display this help message
+  -n, --name NAME   Set container hostname
+  -N, --nesting     Enable nested container/namespacing support
 
   Any other Docker run options can be passed as-is and will be added to the configuration.
 
 Examples:
+  # Launch a container with the default configuration:
   syd ghcr.io/f-bn/ubuntu:24.04-init
-  syd --name my-container --net=my-network ghcr.io/f-bn/ubuntu:24.04-init
+
+  # Launch a container with custom configurations:
+  syd --name c1 --net=my-network ghcr.io/f-bn/ubuntu:24.04-init
+
+  # Launch a container with nested container support:
+  syd --name c1 --nesting ghcr.io/f-bn/ubuntu:24.04-init
 
 EOF
 }
@@ -45,6 +62,9 @@ while [[ $# -gt 0 ]]; do
     -n|--name)
       CONTAINER_FLAGS+=(--name="$2" --hostname="$2");
       shift 2 ;;
+    -N|--nesting)
+      CONTAINER_FLAGS+=("${NESTING_FLAGS[@]}")
+      shift ;;
     *)
       CONTAINER_FLAGS+=("$1"); HAS_ARGS=1;
       shift ;;
