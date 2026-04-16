@@ -80,7 +80,6 @@ Before getting started, ensure you have the following tools installed:
 ### Development Tools
 
 - 🔧 [**mise**](https://github.com/jdx/mise) - The front-end to your dev env
-- ✏️ [**neovim**](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability
 - 🔌 [**vim-plug**](https://github.com/junegunn/vim-plug) - Minimalist Vim Plugin Manager
 - 💻 [**Visual Studio Code**](https://code.visualstudio.com/) - Code editing. Redefined
 

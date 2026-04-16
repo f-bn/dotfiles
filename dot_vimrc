@@ -1,0 +1,33 @@
+" Plugins
+call plug#begin()
+  Plug 'joshdick/onedark.vim'
+  Plug 'Yggdroot/indentLine'
+call plug#end()
+
+" Globals
+colorscheme onedark
+filetype plugin indent on
+syntax on
+
+" Settings
+set nocompatible
+set title
+set paste
+set number
+set ruler
+set cursorline
+set expandtab
+set smarttab
+set ts=4 sw=4
+set hlsearch
+set incsearch
+set showmatch
+set smartcase
+set confirm
+
+" IndentLine
+let g:indentLine_char = '|'
+let g:indentLine_color_term = 243
+
+" YAML
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2
