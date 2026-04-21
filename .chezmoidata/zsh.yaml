@@ -16,6 +16,7 @@ zsh:
   aliases:
     bwlogin: export BW_SESSION="$(bw login --raw)"
     bwunlock: export BW_SESSION="$(bw unlock --raw)"
+    cr: crane
     dbx: distrobox
     fd: fdfind
     ghtoken: export GITHUB_TOKEN="$(bw get password 278887eb-97b2-4fb3-8d32-b38c013096d2)"
