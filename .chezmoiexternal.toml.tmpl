@@ -27,6 +27,13 @@
     executable = true
     refreshPeriod = "24h"
 
+[".local/bin/crane"]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "google/go-containerregistry" "go-containerregistry_Linux_x86_64.tar.gz" | quote }}
+    path = "crane"
+    executable = true
+    refreshPeriod = "168h"
+
 [".local/bin/dive"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "wagoodman/dive" "dive_*_linux_amd64.tar.gz" | quote }}

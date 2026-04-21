@@ -65,6 +65,7 @@ Before getting started, ensure you have the following tools installed:
 
 ### Containers & Kubernetes
 
+- 🏗️ [**crane**](https://github.com/google/go-containerregistry) - Go library and CLIs for working with container registries
 - 📦 [**distrobox**](https://distrobox.it/) - Use any Linux distribution inside your terminal
 - 🐳 [**dive**](https://github.com/wagoodman/dive) - A tool for exploring each layer in a docker image
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
