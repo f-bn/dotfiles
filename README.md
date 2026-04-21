@@ -70,7 +70,7 @@ Before getting started, ensure you have the following tools installed:
 - 🐳 [**dive**](https://github.com/wagoodman/dive) - A tool for exploring each layer in a docker image
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
 - ⚙️ [**Krew**](https://krew.sigs.k8s.io/) - kubectl plugin manager
-- ☸️ [**Minikube**](https://minikube.sigs.k8s.io) - Run Kubernetes locally
+- ☸️ [**minikube**](https://minikube.sigs.k8s.io) - Run Kubernetes locally
 
 ### Database & Messaging
 
@@ -81,13 +81,14 @@ Before getting started, ensure you have the following tools installed:
 ### Development Tools
 
 - 🔧 [**mise**](https://github.com/jdx/mise) - The front-end to your dev env
+- ⌨️ [**vim**](https://www.vim.org/) - Highly configurable text editor built to make creating and changing any kind of text very efficient
 - 🔌 [**vim-plug**](https://github.com/junegunn/vim-plug) - Minimalist Vim Plugin Manager
 - 💻 [**Visual Studio Code**](https://code.visualstudio.com/) - Code editing. Redefined
 
 ### Terminal
 
 - 🐚 [**oh-my-zsh**](https://github.com/ohmyzsh/ohmyzsh) - A delightful community-driven framework for managing your zsh configuration
-- 💻 [**Ptyxis**](https://gitlab.gnome.org/chergert/ptyxis) - Terminal emulator
+- 💻 [**Ptyxis**](https://gitlab.gnome.org/chergert/ptyxis) - Your Container-Oriented Terminal for GNOME
 - 🪟 [**Zellij**](https://github.com/zellij-org/zellij) - A terminal workspace with batteries included
 
 ### Utilities
@@ -95,6 +96,7 @@ Before getting started, ensure you have the following tools installed:
 - 🔐 [**Bitwarden CLI**](https://bitwarden.com/) - The command line vault
 - 🎛️ [**chezmoi**](https://github.com/twpayne/chezmoi) - Manage your dotfiles across multiple diverse machines, securely
 - 🔍 [**fd**](https://github.com/sharkdp/fd) - A simple, fast and user-friendly alternative to find
+- 🔎 [**ripgrep**](https://github.com/burntsushi/ripgrep) - ripgrep recursively searches directories for a regex pattern while respecting your gitignore
 - 📝 [**usage**](https://github.com/jdx/usage) - Used for completion in Mise
 - 📂 [**zoxide**](https://github.com/ajeetdsouza/zoxide) - A smarter cd command for your terminal
 
