@@ -4,7 +4,7 @@ set -euo pipefail
 CONTAINER_FLAGS=(
   --detach=true
   --tty=true
-  --entrypoint=/sbin/init
+  --entrypoint=/usr/lib/systemd/systemd
   --env=container="docker"
   --stop-signal=SIGRTMIN+3
   --cgroupns=private
