@@ -2,7 +2,6 @@
 vscode:
   extensions:
     base:
-      - github.copilot
       - github.vscode-github-actions
       - golang.go
       - hashicorp.hcl
