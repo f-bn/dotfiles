@@ -49,7 +49,7 @@ command='gradia --screenshot=INTERACTIVE'
 name='Open Gradia with Screenshot'
 
 [org/gnome/shell]
-favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code_code.desktop','snap-store_snap-store.desktop','discord_discord.desktop','bruno_bruno.desktop','gradia_gradia.desktop']
+favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code_code.desktop','snap-store_snap-store.desktop','feishin.desktop','discord_discord.desktop','bruno_bruno.desktop']
 
 [org/gnome/shell/extensions/ding]
 show-home=false
