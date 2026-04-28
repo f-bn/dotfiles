@@ -1,0 +1,6 @@
+{
+  "credsStore": "{{- if .laptop }}secretservice{{- else }}wincred{{- end }}",
+  "cliPluginsExtraDirs": [
+    "{{ .chezmoi.homeDir }}/.docker/scout"
+  ]
+}
