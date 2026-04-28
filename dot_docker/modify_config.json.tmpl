@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+import json, sys
+
+current = json.loads(sys.stdin.read() or "{}")
+desired = {
+    "credsStore": "{{- if .laptop }}secretservice{{- else }}wincred{{- end }}",
+    "cliPluginsExtraDirs": ["{{ .chezmoi.homeDir }}/.docker/scout"],
+}
+
+# Merge current file values with desired values
+merged = current | desired
+
+print(json.dumps(merged, indent=2))
