@@ -19,32 +19,6 @@
     url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     refreshPeriod = "168h"
 
-# - Docker utilities -
-[".docker/cli-plugins/docker-buildx"]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "docker/buildx" "buildx-v*.linux-amd64" | quote }}
-    executable = true
-    refreshPeriod = "168h"
-
-[".docker/cli-plugins/docker-compose"]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "docker/compose" "docker-compose-linux-x86_64" | quote }}
-    executable = true
-    refreshPeriod = "168h"
-
-[".docker/cli-plugins/docker-scout"]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "docker/scout" "docker-scout_*_linux_amd64.tar.gz" | quote }}
-    path = "docker-scout"
-    executable = true
-    refreshPeriod = "168h"
-
-[".local/bin/docker-credential-secretservice"]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "docker/docker-credential-helpers" "docker-credential-secretservice-v*.linux-amd64" | quote }}
-    executable = true
-    refreshPeriod = "168h"
-
 # - Utilities -
 [".local/bin/copilot"]
     type = "archive-file"
@@ -116,15 +90,21 @@
     executable = true
     refreshPeriod = "168h"
 
-# - MongoDB tools -
-[".local/bin/atlas"]
+# - Docker utilities -
+[".docker/cli-plugins/docker-scout"]
     type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "mongodb/mongodb-atlas-cli" "mongodb-atlas-cli_*_linux_x86_64.tar.gz" | quote }}
-    path = "bin/atlas"
-    stripComponents = 1
+    url = {{ gitHubLatestReleaseAssetURL "docker/scout" "docker-scout_*_linux_amd64.tar.gz" | quote }}
+    path = "docker-scout"
     executable = true
     refreshPeriod = "168h"
 
+[".local/bin/docker-credential-secretservice"]
+    type = "file"
+    url = {{ gitHubLatestReleaseAssetURL "docker/docker-credential-helpers" "docker-credential-secretservice-v*.linux-amd64" | quote }}
+    executable = true
+    refreshPeriod = "168h"
+
+# - MongoDB utilities -
 [".local/bin/mongosh"]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "mongodb-js/mongosh" "mongosh-*-linux-x64.tgz" | quote }}
