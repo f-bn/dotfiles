@@ -55,6 +55,29 @@
     executable = true
     refreshPeriod = "168h"
 
+[docker-credential-secretservice]
+    type = "file"
+    url = {{ gitHubLatestReleaseAssetURL "docker/docker-credential-helpers" "docker-credential-secretservice-v*.linux-amd64" | quote }}
+    targetPath = ".local/bin/docker-credential-secretservice"
+    executable = true
+    refreshPeriod = "168h"
+
+[docker-scout]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "docker/scout" "docker-scout_*_linux_amd64.tar.gz" | quote }}
+    path = "docker-scout"
+    targetPath = ".docker/cli-plugins/docker-scout"
+    executable = true
+    refreshPeriod = "168h"
+
+[k9s]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "derailed/k9s" "k9s_Linux_amd64.tar.gz" | quote }}
+    targetPath = ".local/bin/k9s"
+    path = "k9s"
+    executable = true
+    refreshPeriod = "168h"
+
 [kafkactl]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "deviceinsight/kafkactl" "kafkactl_*_linux_amd64.tar.gz" | quote }}
@@ -63,10 +86,35 @@
     executable = true
     refreshPeriod = "168h"
 
+[krew]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "kubernetes-sigs/krew" "krew-linux_amd64.tar.gz" | quote }}
+    path = "krew-linux_amd64"
+    targetPath = ".local/bin/krew"
+    stripComponents = 1
+    executable = true
+    refreshPeriod = "168h"
+
 [mise]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "jdx/mise" "mise-v*-linux-x64" | quote }}
     targetPath = ".local/bin/mise"
+    executable = true
+    refreshPeriod = "168h"
+
+[minikube]
+    type = "file"
+    url = {{ gitHubLatestReleaseAssetURL "kubernetes/minikube" "minikube-linux-amd64" | quote }}
+    targetPath = ".local/bin/minikube"
+    executable = true
+    refreshPeriod = "168h"
+
+[mongosh]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "mongodb-js/mongosh" "mongosh-*-linux-x64.tgz" | quote }}
+    path = "bin/mongosh"
+    targetPath = ".local/bin/mongosh"
+    stripComponents = 1
     executable = true
     refreshPeriod = "168h"
 
@@ -83,56 +131,5 @@
     url = {{ gitHubLatestReleaseAssetURL "zellij-org/zellij" "zellij-x86_64-unknown-linux-musl.tar.gz" | quote }}
     path = "zellij"
     targetPath = ".local/bin/zellij"
-    executable = true
-    refreshPeriod = "168h"
-
-# - Kubernetes tools -
-[krew]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "kubernetes-sigs/krew" "krew-linux_amd64.tar.gz" | quote }}
-    path = "krew-linux_amd64"
-    targetPath = ".local/bin/krew"
-    stripComponents = 1
-    executable = true
-    refreshPeriod = "168h"
-
-[k9s]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "derailed/k9s" "k9s_Linux_amd64.tar.gz" | quote }}
-    targetPath = ".local/bin/k9s"
-    path = "k9s"
-    executable = true
-    refreshPeriod = "168h"
-
-[minikube]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "kubernetes/minikube" "minikube-linux-amd64" | quote }}
-    targetPath = ".local/bin/minikube"
-    executable = true
-    refreshPeriod = "168h"
-
-# - Docker utilities -
-[docker-scout]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "docker/scout" "docker-scout_*_linux_amd64.tar.gz" | quote }}
-    path = "docker-scout"
-    targetPath = ".docker/cli-plugins/docker-scout"
-    executable = true
-    refreshPeriod = "168h"
-
-[docker-credential-secretservice]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "docker/docker-credential-helpers" "docker-credential-secretservice-v*.linux-amd64" | quote }}
-    targetPath = ".local/bin/docker-credential-secretservice"
-    executable = true
-    refreshPeriod = "168h"
-
-# - MongoDB utilities -
-[mongosh]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "mongodb-js/mongosh" "mongosh-*-linux-x64.tgz" | quote }}
-    path = "bin/mongosh"
-    targetPath = ".local/bin/mongosh"
-    stripComponents = 1
     executable = true
     refreshPeriod = "168h"
