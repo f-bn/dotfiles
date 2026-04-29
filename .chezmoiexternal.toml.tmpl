@@ -1,122 +1,146 @@
-# - ohmyzsh and plugins -
-[".oh-my-zsh"]
-    type = "archive"
-    url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
-    exact = true
-    stripComponents = 1
-    refreshPeriod = "168h"
-
-[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
-    type = "archive"
-    url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
-    exact = true
-    stripComponents = 1
-    refreshPeriod = "168h"
-
 # - vim -
-[".vim/autoload/plug.vim"]
+[vim-plug]
     type = "file"
     url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    targetPath = ".vim/autoload/plug.vim"
+    refreshPeriod = "168h"
+
+# - ohmyzsh and plugins -
+[oh-my-zsh]
+    type = "archive"
+    url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
+    targetPath = ".oh-my-zsh"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+
+[zsh-autosuggestions]
+    type = "archive"
+    url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
+    targetPath = ".oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+
+# - Utilities -
+[copilot]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "github/copilot-cli" "copilot-linux-x64.tar.gz" | quote }}
+    path = "copilot"
+    targetPath = ".local/bin/copilot"
+    executable = true
+    refreshPeriod = "24h"
+
+[crane]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "google/go-containerregistry" "go-containerregistry_Linux_x86_64.tar.gz" | quote }}
+    path = "crane"
+    targetPath = ".local/bin/crane"
+    executable = true
     refreshPeriod = "168h"
 
 [distrobox]
     type = "archive"
     url = "https://github.com/89luca89/distrobox/archive/refs/tags/{{ (gitHubLatestRelease "89luca89/distrobox").TagName }}.tar.gz"
+    targetPath = ".local/bin"
     stripComponents = 1
     include = ["*/distrobox", "*/distrobox-*"]
-    targetPath = ".local/bin"
     refreshPeriod = "168h"
 
-# - Utilities -
-[".local/bin/copilot"]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "github/copilot-cli" "copilot-linux-x64.tar.gz" | quote }}
-    path = "copilot"
-    executable = true
-    refreshPeriod = "24h"
-
-[".local/bin/crane"]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "google/go-containerregistry" "go-containerregistry_Linux_x86_64.tar.gz" | quote }}
-    path = "crane"
-    executable = true
+[distrobox-completions]
+    type = "archive"
+    url = "https://github.com/89luca89/distrobox/archive/refs/tags/{{ (gitHubLatestRelease "89luca89/distrobox").TagName }}.tar.gz"
+    targetPath = ".oh-my-zsh/custom/completions"
+    stripComponents = 1
+    include = ["*/completions/zsh/*"]
     refreshPeriod = "168h"
 
-[".local/bin/dive"]
+[dive]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "wagoodman/dive" "dive_*_linux_amd64.tar.gz" | quote }}
     path = "dive"
+    targetPath = ".local/bin/dive"
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/kafkactl"]
+[kafkactl]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "deviceinsight/kafkactl" "kafkactl_*_linux_amd64.tar.gz" | quote }}
     path = "kafkactl"
+    targetPath = ".local/bin/kafkactl"
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/mise"]
+[mise]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "jdx/mise" "mise-v*-linux-x64" | quote }}
+    targetPath = ".local/bin/mise"
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/usage"]
+[usage]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "jdx/usage" "usage-x86_64-unknown-linux-gnu.tar.gz" | quote }}
     path = "usage"
+    targetPath = ".local/bin/usage"
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/zellij"]
+[zellij]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "zellij-org/zellij" "zellij-x86_64-unknown-linux-musl.tar.gz" | quote }}
     path = "zellij"
+    targetPath = ".local/bin/zellij"
     executable = true
     refreshPeriod = "168h"
 
 # - Kubernetes tools -
-[".local/bin/krew"]
+[krew]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "kubernetes-sigs/krew" "krew-linux_amd64.tar.gz" | quote }}
     path = "krew-linux_amd64"
+    targetPath = ".local/bin/krew"
     stripComponents = 1
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/k9s"]
+[k9s]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "derailed/k9s" "k9s_Linux_amd64.tar.gz" | quote }}
+    targetPath = ".local/bin/k9s"
     path = "k9s"
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/minikube"]
+[minikube]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "kubernetes/minikube" "minikube-linux-amd64" | quote }}
+    targetPath = ".local/bin/minikube"
     executable = true
     refreshPeriod = "168h"
 
 # - Docker utilities -
-[".docker/cli-plugins/docker-scout"]
+[docker-scout]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "docker/scout" "docker-scout_*_linux_amd64.tar.gz" | quote }}
     path = "docker-scout"
+    targetPath = ".docker/cli-plugins/docker-scout"
     executable = true
     refreshPeriod = "168h"
 
-[".local/bin/docker-credential-secretservice"]
+[docker-credential-secretservice]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "docker/docker-credential-helpers" "docker-credential-secretservice-v*.linux-amd64" | quote }}
+    targetPath = ".local/bin/docker-credential-secretservice"
     executable = true
     refreshPeriod = "168h"
 
 # - MongoDB utilities -
-[".local/bin/mongosh"]
+[mongosh]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "mongodb-js/mongosh" "mongosh-*-linux-x64.tgz" | quote }}
     path = "bin/mongosh"
+    targetPath = ".local/bin/mongosh"
     stripComponents = 1
     executable = true
     refreshPeriod = "168h"
