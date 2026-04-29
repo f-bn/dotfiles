@@ -23,7 +23,7 @@
     type = "archive"
     url = "https://github.com/89luca89/distrobox/archive/refs/tags/{{ (gitHubLatestRelease "89luca89/distrobox").TagName }}.tar.gz"
     stripComponents = 1
-    include = ["distrobox", "distrobox-*"]
+    include = ["*/distrobox", "*/distrobox-*"]
     targetPath = ".local/bin"
     refreshPeriod = "168h"
 
