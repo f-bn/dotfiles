@@ -52,6 +52,7 @@
     url = "https://github.com/89luca89/distrobox/archive/refs/tags/{{ (gitHubLatestRelease "89luca89/distrobox").TagName }}.tar.gz"
     targetPath = ".oh-my-zsh/custom/completions"
     stripComponents = 1
+    exact = true
     include = ["*/completions/zsh/*"]
     refreshPeriod = "168h"
 
