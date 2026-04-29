@@ -3,8 +3,7 @@ import json, sys
 
 current = json.loads(sys.stdin.read() or "{}")
 desired = {
-    "credsStore": "{{- if .laptop }}secretservice{{- else }}wincred{{- end }}",
-    "cliPluginsExtraDirs": ["{{ .chezmoi.homeDir }}/.docker/scout"],
+    "credsStore": "{{- if .laptop }}secretservice{{- else }}wincred{{- end }}"
 }
 
 # Merge current file values with desired values
