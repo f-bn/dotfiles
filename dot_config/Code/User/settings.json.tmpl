@@ -13,9 +13,7 @@
     "window.autoDetectColorScheme": true,
     "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
     "github.copilot.nextEditSuggestions.enabled": true,
-    "mise.binPath": "/home/fbobin/.local/bin/mise",
-    "terminal.integrated.gpuAcceleration": "off",
-    "terminal.integrated.shellIntegration.enabled": false,
+    "mise.binPath": "{{ .chezmoi.homeDir }}/.local/bin/mise",
     "terminal.integrated.fontFamily": "Cascadia Mono PL",
 {{- if .laptop }}
     "terminal.integrated.fontSize": 15
