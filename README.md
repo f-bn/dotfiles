@@ -61,8 +61,7 @@ Before getting started, ensure you have the following tools installed:
 
 ### AI Tools
 
-- 🤖 [**Copilot CLI**](https://github.com/github/copilot-cli) - GitHub Copilot CLI brings the power of Copilot coding agent directly to your terminal
-- 🌐 [**OpenCode**](https://github.com/anomalyco/opencode) - The open source coding agent
+- 📝 [**OpenCode**](https://github.com/anomalyco/opencode) - The open source coding agent
 
 ### Containers & Kubernetes
 

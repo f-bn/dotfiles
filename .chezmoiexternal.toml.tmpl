@@ -23,14 +23,6 @@
     refreshPeriod = "168h"
 
 # - Utilities -
-[copilot]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "github/copilot-cli" "copilot-linux-x64.tar.gz" | quote }}
-    path = "copilot"
-    targetPath = ".local/bin/copilot"
-    executable = true
-    refreshPeriod = "24h"
-
 [crane]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "google/go-containerregistry" "go-containerregistry_Linux_x86_64.tar.gz" | quote }}
