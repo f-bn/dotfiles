@@ -118,6 +118,15 @@
     executable = true
     refreshPeriod = "168h"
 
+[opencode]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "anomalyco/opencode" "opencode-linux-x64.tar.gz" | quote }}
+    path = "opencode"
+    targetPath = ".local/bin/opencode"
+    stripComponents = 1
+    executable = true
+    refreshPeriod = "24h"
+
 [usage]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "jdx/usage" "usage-x86_64-unknown-linux-gnu.tar.gz" | quote }}
