@@ -41,12 +41,17 @@ tap-to-click=false
 two-finger-scrolling-enabled=true
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/','/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Control>Print'
 command='gradia --screenshot=INTERACTIVE'
-name='Open Gradia with Screenshot'
+name='Take screenshot with Gradia'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Control><Alt>f'
+command='nautilus --new-window'
+name='Launch Files'
 
 [org/gnome/shell]
 favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','snap-store_snap-store.desktop','feishin.desktop','discord_discord.desktop','bruno_bruno.desktop']
@@ -84,6 +89,18 @@ login-shell=true
 bold-is-bright=true
 opacity=0.95
 preserve-directory='never'
+
+[org/gnome/TextEditor]
+style-scheme='Adwaita Dark'
+custom-font='Cascadia Mono 12'
+use-system-font=false
+highlight-current-line=true
+show-line-numbers=true
+indent-style='space'
+tab-width=uint32 4
+show-map=false
+spellcheck=false
+restore-session=false
 
 [io/bassi/Amberol]
 background-play=false
