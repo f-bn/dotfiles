@@ -3,6 +3,9 @@
 # dconf: {{ include "gnome.dconf" | sha256sum }}
 # wallpaper: {{ include "dot_local/share/backgrounds/wallpaper.jpg" | sha256sum }}
 DCONF_BIN="$(which dconf)"
+GSETTINGS_BIN="$(which gsettings)"
 echo "* Import GNOME configuration settings"
 ${DCONF_BIN} load / < {{ joinPath .chezmoi.sourceDir "gnome.dconf" | quote }}
+echo "* Reset GNOME applications grid ordering"
+${GSETTINGS_BIN} reset org.gnome.shell app-picker-layout
 {{ end -}}
