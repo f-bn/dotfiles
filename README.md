@@ -41,7 +41,7 @@ Before getting started, ensure you have the following tools installed:
 
 2. **Retrieve GitHub token**
    ```shell
-   export GITHUB_TOKEN="$(bw get password <item id>)"
+   export GITHUB_TOKEN="$(bw get password 278887eb-97b2-4fb3-8d32-b38c013096d2)"
    ```
 
 3. **Initialize chezmoi source repository**
