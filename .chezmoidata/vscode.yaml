@@ -1,20 +1,18 @@
 ---
 vscode:
   extensions:
-    base:
-      - github.vscode-github-actions
-      - golang.go
-      - hashicorp.hcl
-      - hashicorp.terraform
-      - hverlin.mise-vscode
-      - ms-azuretools.vscode-containers
-      - ms-vscode-remote.remote-containers
-      - ms-kubernetes-tools.vscode-kubernetes-tools
-      - ms-python.python
-      - redhat.ansible
-      - redhat.vscode-yaml
-      - samuelcolvin.jinjahtml
-      - tamasfe.even-better-toml
-    extras:
-      - zhuangtongfa.material-theme
-      - vscode-icons-team.vscode-icons
+    - github.vscode-github-actions
+    - golang.go
+    - hashicorp.hcl
+    - hashicorp.terraform
+    - hverlin.mise-vscode
+    - ms-azuretools.vscode-containers
+    - ms-vscode-remote.remote-containers
+    - ms-kubernetes-tools.vscode-kubernetes-tools
+    - ms-python.python
+    - redhat.ansible
+    - redhat.vscode-yaml
+    - samuelcolvin.jinjahtml
+    - tamasfe.even-better-toml
+    - zhuangtongfa.material-theme
+    - vscode-icons-team.vscode-icons

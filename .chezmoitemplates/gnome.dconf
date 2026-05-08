@@ -1,5 +1,9 @@
 [org/gnome/shell/extensions/dash-to-dock]
+{{- if .laptop }}
 dash-max-icon-size=48
+{{ else if .desktop }}
+dash-max-icon-size=40
+{{ end }}
 dock-fixed=false
 dock-position='BOTTOM'
 extend-height=false
@@ -23,22 +27,46 @@ automatic-timezone=true
 clock-show-weekday=true
 color-scheme='prefer-dark'
 gtk-theme='Yaru-dark'
+{{- if .laptop }}
 font-name='Ubuntu Sans 12'
 document-font-name='Ubuntu Sans Mono 12'
 monospace-font-name='Sans 12'
 show-battery-percentage=true
+{{ else if .desktop }}
+font-name='Ubuntu Sans 11'
+document-font-name='Ubuntu Sans Mono 11'
+monospace-font-name='Sans 11'
+{{ end }}
 
 [org/gnome/desktop/session]
+{{- if .laptop }}
 idle-delay=uint32 900
+{{ else if .desktop }}
+idle-delay=uint32 0
+{{ end }}
 
 [org/gnome/desktop/privacy]
 old-files-age=uint32 7
 recent-files-max-age=7
 remove-old-trash-files=true
 
+{{ if .laptop }}
 [org/gnome/desktop/peripherals/touchpad]
 tap-to-click=false
 two-finger-scrolling-enabled=true
+{{ end }}
+
+{{ if .desktop }}
+[org/gnome/desktop/peripherals/mouse]
+accel-profile='flat'
+{{ end }}
+
+[org/gnome/settings-daemon/plugins/power]
+sleep-inactive-ac-type='nothing'
+{{- if .laptop }}
+sleep-inactive-battery-type='suspend'
+sleep-inactive-battery-timeout=900
+{{ end }}
 
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/','/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
@@ -54,7 +82,7 @@ command='nautilus --new-window'
 name='Launch Files'
 
 [org/gnome/shell]
-favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','snap-store_snap-store.desktop','feishin.desktop','discord_discord.desktop','bruno_bruno.desktop']
+favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','snap-store_snap-store.desktop','feishin.desktop','discord_discord.desktop','steam.desktop','bruno_bruno.desktop']
 
 [org/gnome/shell/extensions/ding]
 show-home=false
@@ -63,7 +91,7 @@ show-home=false
 apps=['nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.gnome.Sysprof.desktop', 'org.gnome.SystemMonitor.desktop', 'htop.desktop', 'org.gnome.PowerStats.desktop', 'gnome-session-properties.desktop', 'software-properties-drivers.desktop', 'firmware-updater_firmware-updater.desktop']
 
 [org/gnome/desktop/app-folders/folders/Utilities]
-apps=['org.gnome.Papers.desktop','org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop', 'info.desktop', 'org.gnome.Yelp.desktop', 'nvim.desktop', 'vim.desktop']
+apps=['org.gnome.Papers.desktop','org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop', 'info.desktop', 'org.gnome.Yelp.desktop', 'nvim.desktop', 'vim.desktop', 'btop.desktop', 'nvtop.desktop']
 
 [org/gnome/mutter]
 edge-tiling=true
@@ -72,7 +100,11 @@ experimental-features=['scale-monitor-framebuffer','xwayland-native-scaling','va
 [org/gnome/Ptyxis]
 default-profile-uuid='4d25db42c21d080779cd522068693dbd'
 interface-style='dark'
+{{- if .laptop }}
 font-name='Cascadia Mono PL 12'
+{{ else if .desktop }}
+font-name='Cascadia Mono PL 10'
+{{ end }}
 use-system-font=false
 text-blink-mode='never'
 audible-bell=false
@@ -92,7 +124,11 @@ preserve-directory='never'
 
 [org/gnome/TextEditor]
 style-scheme='Adwaita Dark'
+{{- if .laptop }}
 custom-font='Cascadia Mono 12'
+{{ else if .desktop }}
+custom-font='Cascadia Mono 11'
+{{ end }}
 use-system-font=false
 highlight-current-line=true
 show-line-numbers=true
