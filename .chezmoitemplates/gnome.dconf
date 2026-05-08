@@ -2,7 +2,7 @@
 {{- if .laptop }}
 dash-max-icon-size=48
 {{ else if .desktop }}
-dash-max-icon-size=48
+dash-max-icon-size=40
 {{ end }}
 dock-fixed=false
 dock-position='BOTTOM'
@@ -50,10 +50,15 @@ old-files-age=uint32 7
 recent-files-max-age=7
 remove-old-trash-files=true
 
-{{- if .laptop }}
+{{ if .laptop }}
 [org/gnome/desktop/peripherals/touchpad]
 tap-to-click=false
 two-finger-scrolling-enabled=true
+{{ end }}
+
+{{ if .desktop }}
+[org/gnome/desktop/peripherals/mouse]
+accel-profile='flat'
 {{ end }}
 
 [org/gnome/settings-daemon/plugins/power]
