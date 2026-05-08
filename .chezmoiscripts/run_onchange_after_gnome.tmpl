@@ -2,7 +2,7 @@
 DCONF_BIN="$(which dconf)"
 GSETTINGS_BIN="$(which gsettings)"
 echo "* Import GNOME configuration settings"
-${DCONF_BIN} load / < << 'EOF'
+${DCONF_BIN} load / << 'EOF'
 {{ template "gnome.dconf" . }}
 EOF
 echo "* Reset GNOME applications grid ordering"
