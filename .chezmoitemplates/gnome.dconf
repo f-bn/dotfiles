@@ -82,7 +82,7 @@ command='nautilus --new-window'
 name='Launch Files'
 
 [org/gnome/shell]
-favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','snap-store_snap-store.desktop','feishin.desktop','discord_discord.desktop','bruno_bruno.desktop']
+favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','snap-store_snap-store.desktop','feishin.desktop','discord_discord.desktop','bruno_bruno.desktop','steam.desktop']
 
 [org/gnome/shell/extensions/ding]
 show-home=false
@@ -91,7 +91,7 @@ show-home=false
 apps=['nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.gnome.Sysprof.desktop', 'org.gnome.SystemMonitor.desktop', 'htop.desktop', 'org.gnome.PowerStats.desktop', 'gnome-session-properties.desktop', 'software-properties-drivers.desktop', 'firmware-updater_firmware-updater.desktop']
 
 [org/gnome/desktop/app-folders/folders/Utilities]
-apps=['org.gnome.Papers.desktop','org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop', 'info.desktop', 'org.gnome.Yelp.desktop', 'nvim.desktop', 'vim.desktop', 'btop.desktop']
+apps=['org.gnome.Papers.desktop','org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop', 'info.desktop', 'org.gnome.Yelp.desktop', 'nvim.desktop', 'vim.desktop', 'btop.desktop', 'nvtop.desktop']
 
 [org/gnome/mutter]
 edge-tiling=true
