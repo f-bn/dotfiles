@@ -1,0 +1,4 @@
+[data]
+hostname = "buran"
+laptop   = false
+desktop  = true

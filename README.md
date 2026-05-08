@@ -18,10 +18,10 @@ Configuration is managed using `chezmoi` for seamless synchronization.
 
 ### 💻 Environments
 
-| Machine | Description | OS |
-|---------|-------------|-----|
-| **buran** | Main workstation | Ubuntu 24.04 (WSL2) |
-| **foton** | [ThinkPad P14s Gen 5](https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadp/thinkpad-p14s-gen-5-14-inch-intel-mobile-workstation/len101t0106) | Ubuntu 26.04 + GNOME ❤️ |
+| Machine   | Description          | OS                   |
+|-----------|----------------------|----------------------|
+| **buran** | Custom desktop build | Ubuntu 26.04 (GNOME) |
+| **foton** | ThinkPad P14s Gen 5  | Ubuntu 26.04 (GNOME) |
 
 ## 🚀 Quick Start
 
@@ -108,9 +108,3 @@ Custom wrappers born from pure laziness to avoid doing things manually 😁
 - 🔀 [**dfwd**](dot_local/bin/executable_dfwd) - Forward ports dynamically from host to running Docker containers (much like `kubectl port-forward` but locally)
 
 </details>
-
-## 🎨 Credits
-
-### Wallpapers
-
-Wallpaper by [**Luca Bravo**](https://unsplash.com/@lucabravo)

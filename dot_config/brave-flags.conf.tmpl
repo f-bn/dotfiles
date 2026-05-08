@@ -1,10 +1,10 @@
-{{ range $key, $value := .brave.flags -}}
-{{ if kindIs "bool" $value -}}
-{{ if $value }}--{{ $key }}
-{{ end -}}
-{{ else if kindIs "slice" $value -}}
---{{ $key }}={{ join "," $value }}
-{{ else -}}
---{{ $key }}={{ $value }}
-{{ end -}}
-{{ end -}}
+--ignore-gpu-blocklist
+--enable-gpu-rasterization
+--enable-zero-copy
+--ozone-platform-hint=auto
+--disable-features=Vulkan
+{{- if .laptop }}
+--enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,AcceleratedVideoEncoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,TouchpadOverscrollHistoryNavigation,VaapiVideoDecoder,VaapiVideoEncoder
+{{- else if .desktop }}
+--enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,AcceleratedVideoEncoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo,VaapiVideoDecoder,VaapiVideoEncoder,VaapiIgnoreDriverChecks
+{{- end }}
