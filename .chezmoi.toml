@@ -1,4 +1,7 @@
 [data]
 hostname = "buran"
-laptop   = false
-desktop  = true
+# laptop   = false
+# desktop  = true
+
+laptop   = true
+desktop  = false
