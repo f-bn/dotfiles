@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# config: {{ include "dot_config/ghostty/config" | sha256sum }}
+echo "* Reload Ghostty configuration"
+systemctl reload --user app-com.mitchellh.ghostty.service
