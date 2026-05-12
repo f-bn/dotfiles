@@ -1,6 +1,6 @@
 # Custom Tango Dark theme
 background = #242424
-foreground = #d3d7cf
+foreground = #c3c3c3
 cursor-color = #d3d7cf
 palette = 0=#2e3436
 palette = 1=#cc0000
