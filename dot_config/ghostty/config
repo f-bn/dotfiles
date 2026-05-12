@@ -24,6 +24,10 @@ bell-features = no-attention,no-title
 # Shell integrations
 shell-integration-features = sudo,title,ssh-env,no-cursor
 
+# systemd+dbus integration
+quit-after-last-window-closed = true
+quit-after-last-window-closed-delay = 5m
+
 # Working directory
 working-directory = home
 window-inherit-working-directory = false

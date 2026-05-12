@@ -76,7 +76,7 @@ name='Launch Files'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Control><Alt>t'
-command='ghostty'
+command='ghostty +new-window'
 name='Launch Terminal (Ghostty)'
 
 [org/gnome/shell]
