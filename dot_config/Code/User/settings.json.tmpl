@@ -1,9 +1,5 @@
 {
-{{- if .laptop }}
     "editor.fontSize": 15,
-{{- else }}
-    "editor.fontSize": 14,
-{{- end }}
     "editor.fontFamily": "Cascadia Mono",
     "editor.fontLigatures": true,
     "files.autoSave": "afterDelay",
@@ -15,9 +11,5 @@
     "github.copilot.nextEditSuggestions.enabled": true,
     "mise.binPath": "{{ .chezmoi.homeDir }}/.local/bin/mise",
     "terminal.integrated.fontFamily": "Cascadia Mono PL",
-{{- if .laptop }}
     "terminal.integrated.fontSize": 15
-{{- else }}
-    "terminal.integrated.fontSize": 14
-{{- end }}
 }
