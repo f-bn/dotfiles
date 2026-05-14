@@ -3,7 +3,7 @@ import json, sys
 
 current = json.loads(sys.stdin.read() or "{}")
 desired = {
-    "credsStore": "{{- if .laptop }}secretservice{{- else }}wincred{{- end }}"
+    "credsStore": "secretservice"
 }
 
 # Merge current file values with desired values
