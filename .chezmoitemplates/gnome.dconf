@@ -23,11 +23,16 @@ automatic-timezone=true
 clock-show-weekday=true
 color-scheme='prefer-dark'
 gtk-theme='Yaru-dark'
+{{- if .laptop }}
 font-name='Ubuntu Sans 12'
 document-font-name='Ubuntu Sans Mono 12'
 monospace-font-name='Sans 12'
-{{- if .laptop }}
 show-battery-percentage=true
+{{ else if .desktop }}
+font-name='Ubuntu Sans 11'
+document-font-name='Ubuntu Sans Mono 11'
+monospace-font-name='Sans 11'
+text-scaling-factor=1.13
 {{ end }}
 
 [org/gnome/desktop/session]
@@ -62,7 +67,6 @@ sleep-inactive-battery-timeout=900
 
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
-terminal=@as []
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Control>Print'
@@ -74,13 +78,8 @@ binding='<Control><Alt>f'
 command='nautilus --new-window'
 name='Launch Files'
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
-binding='<Control><Alt>t'
-command='ghostty +new-window'
-name='Launch Terminal (Ghostty)'
-
 [org/gnome/shell]
-favorite-apps=['brave-browser.desktop','com.mitchellh.ghostty.desktop','org.gnome.Nautilus.desktop','code.desktop','snap-store_snap-store.desktop','feishin.desktop','discord_discord.desktop','steam.desktop','bruno_bruno.desktop']
+favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','snap-store_snap-store.desktop','feishin.desktop','discord_discord.desktop','steam.desktop','bruno_bruno.desktop']
 
 [org/gnome/shell/extensions/ding]
 show-home=false
@@ -89,7 +88,7 @@ show-home=false
 apps=['nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.gnome.Sysprof.desktop', 'org.gnome.SystemMonitor.desktop', 'htop.desktop', 'org.gnome.PowerStats.desktop', 'gnome-session-properties.desktop', 'software-properties-drivers.desktop', 'firmware-updater_firmware-updater.desktop']
 
 [org/gnome/desktop/app-folders/folders/Utilities]
-apps=['org.gnome.Papers.desktop','org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop', 'info.desktop', 'org.gnome.Yelp.desktop', 'nvim.desktop', 'vim.desktop', 'btop.desktop', 'nvtop.desktop', 'org.gnome.Ptyxis.desktop']
+apps=['org.gnome.Papers.desktop','org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop', 'info.desktop', 'org.gnome.Yelp.desktop', 'nvim.desktop', 'vim.desktop', 'btop.desktop', 'nvtop.desktop']
 
 [org/gnome/mutter]
 edge-tiling=true
@@ -99,9 +98,9 @@ experimental-features=['scale-monitor-framebuffer','xwayland-native-scaling','va
 default-profile-uuid='4d25db42c21d080779cd522068693dbd'
 interface-style='dark'
 {{- if .laptop }}
-font-name='Cascadia Mono PL 12'
+font-name='Ubuntu Mono Medium 12 @wght=500'
 {{ else if .desktop }}
-font-name='Cascadia Mono PL 11'
+font-name='Ubuntu Mono Medium 11 @wght=500'
 {{ end }}
 use-system-font=false
 text-blink-mode='never'
@@ -122,7 +121,11 @@ preserve-directory='never'
 
 [org/gnome/TextEditor]
 style-scheme='Adwaita Dark'
-custom-font='Cascadia Mono 12'
+{{- if .laptop }}
+custom-font='Cascadia Mono PL 12'
+{{ else if .desktop }}
+custom-font='Cascadia Mono PL 11'
+{{ end }}
 use-system-font=false
 highlight-current-line=true
 show-line-numbers=true
