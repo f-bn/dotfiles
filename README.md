@@ -86,8 +86,8 @@ Before getting started, ensure you have the following tools installed:
 
 ### Terminal
 
-- 👻 [**Ghostty**](https://github.com/ghostty-org/ghostty) - Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration
 - 🐚 [**oh-my-zsh**](https://github.com/ohmyzsh/ohmyzsh) - A delightful community-driven framework for managing your zsh configuration
+- 📟 [**Ptyxis**](https://gitlab.gnome.org/chergert/ptyxis) - A terminal for a container-oriented desktop
 - 🪟 [**Zellij**](https://github.com/zellij-org/zellij) - A terminal workspace with batteries included
 
 ### Utilities
