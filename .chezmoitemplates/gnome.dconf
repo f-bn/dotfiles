@@ -98,9 +98,9 @@ experimental-features=['scale-monitor-framebuffer','xwayland-native-scaling','va
 default-profile-uuid='4d25db42c21d080779cd522068693dbd'
 interface-style='dark'
 {{- if .laptop }}
-font-name='Ubuntu Mono Medium 12 @wght=500'
+font-name='Cascadia Mono PL 12'
 {{ else if .desktop }}
-font-name='Ubuntu Mono Medium 11 @wght=500'
+font-name='Cascadia Mono PL 11'
 {{ end }}
 use-system-font=false
 text-blink-mode='never'
