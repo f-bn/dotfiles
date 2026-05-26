@@ -23,16 +23,11 @@ automatic-timezone=true
 clock-show-weekday=true
 color-scheme='prefer-dark'
 gtk-theme='Yaru-dark'
-{{- if .laptop }}
 font-name='Ubuntu Sans 12'
 document-font-name='Ubuntu Sans Mono 12'
 monospace-font-name='Sans 12'
+{{- if .laptop }}
 show-battery-percentage=true
-{{ else if .desktop }}
-font-name='Ubuntu Sans 11'
-document-font-name='Ubuntu Sans Mono 11'
-monospace-font-name='Sans 11'
-text-scaling-factor=1.13
 {{ end }}
 
 [org/gnome/desktop/session]
@@ -97,11 +92,7 @@ experimental-features=['scale-monitor-framebuffer','xwayland-native-scaling','va
 [org/gnome/Ptyxis]
 default-profile-uuid='4d25db42c21d080779cd522068693dbd'
 interface-style='dark'
-{{- if .laptop }}
 font-name='Cascadia Mono PL 12'
-{{ else if .desktop }}
-font-name='Cascadia Mono PL 11'
-{{ end }}
 use-system-font=false
 text-blink-mode='never'
 audible-bell=false
@@ -121,11 +112,7 @@ preserve-directory='never'
 
 [org/gnome/TextEditor]
 style-scheme='Adwaita Dark'
-{{- if .laptop }}
 custom-font='Cascadia Mono PL 12'
-{{ else if .desktop }}
-custom-font='Cascadia Mono PL 11'
-{{ end }}
 use-system-font=false
 highlight-current-line=true
 show-line-numbers=true
