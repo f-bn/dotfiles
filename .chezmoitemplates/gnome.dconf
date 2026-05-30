@@ -70,10 +70,22 @@ name='Launch Files'
 
 [org/gnome/shell]
 favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','org.gnome.Software.desktop','org.jeffvli.feishin.desktop','com.discordapp.Discord.desktop','steam.desktop','com.heroicgameslauncher.hgl.desktop']
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com','dash-to-dock@micxgx.gmail.com']
 
 [org/gnome/shell/extensions/appindicator]
 compact-mode-enabled=true
-icon-brightness=0.20000000000000004
+icon-brightness=0.30000000000000004
+
+[org/gnome/shell/extensions/dash-to-dock]
+dash-max-icon-size=48
+disable-overview-on-startup=true
+custom-theme-shrink=true
+dock-position='BOTTOM'
+show-mounts=false
+show-mounts-only-mounted=false
+show-trash=true
+transparency-mode='FIXED'
+background-opacity=0.94999999999999996
 
 [org/gnome/desktop/app-folders/folders/System]
 apps=['org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.tweaks.desktop', 'btop.desktop', 'nvtop.desktop']
