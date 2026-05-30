@@ -6,4 +6,4 @@ ${DCONF_BIN} load / << 'EOF'
 {{ template "gnome.dconf" . }}
 EOF
 echo "* Reset GNOME applications grid ordering"
-${GSETTINGS_BIN} reset org.gnome.shell app-picker-layout
+${GSETTINGS_BIN} set org.gnome.shell app-picker-layout "[]"
