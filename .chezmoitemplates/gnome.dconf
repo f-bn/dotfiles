@@ -88,6 +88,8 @@ transparency-mode='FIXED'
 background-color='rgb(42,42,42)'
 background-opacity=0.90000000000000002
 custom-background-color=true
+running-indicator-dominant-color=false
+running-indicator-style='DOT'
 
 [org/gnome/desktop/app-folders/folders/System]
 apps=['org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.tweaks.desktop', 'btop.desktop', 'nvtop.desktop']
