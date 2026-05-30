@@ -7,12 +7,12 @@ LOGIN=0
 
 usage() {
   cat << EOF
-Usage: dshell CONTAINER [OPTIONS]
+Usage: psh CONTAINER [OPTIONS]
 
-Open an interactive shell in a Docker container easily.
+Open an interactive shell in a Podman container easily.
 
 Arguments:
-  CONTAINER         Docker container name 
+  CONTAINER         Container name 
 
 Options:
   -h, --help        Display this help message
@@ -20,9 +20,9 @@ Options:
   -u, --user USER   User to run the shell as (default: root)
 
 Examples:
-  dshell c1
-  dshell c1 --user myuser
-  dshell c1 --login --user myuser
+  psh c1
+  psh c1 --user myuser
+  psh c1 --login --user myuser
 
 EOF
 }
@@ -33,17 +33,17 @@ generate_shell_command() {
     local login_flag=""
 
     if [[ "${LOGIN}" -eq 1 ]]; then
-        if login_path=$(docker exec "${container}" which login 2>/dev/null); then
-            echo "docker exec -ti -u root ${container} ${login_path} -f ${user}"
+        if login_path=$(podman exec "${container}" which login 2>/dev/null); then
+            echo "podman exec -ti -u root ${container} ${login_path} -f ${user}"
             return
         fi
         login_flag="-l"
     fi
 
-    if bash_path=$(docker exec "${container}" which bash 2>/dev/null); then
-        echo "docker exec -ti -u ${user} ${container} ${bash_path} ${login_flag}"
+    if bash_path=$(podman exec "${container}" which bash 2>/dev/null); then
+        echo "podman exec -ti -u ${user} ${container} ${bash_path} ${login_flag}"
     else
-        echo "docker exec -ti -u ${user} ${container} sh ${login_flag}"
+        echo "podman exec -ti -u ${user} ${container} sh ${login_flag}"
     fi
 }
 

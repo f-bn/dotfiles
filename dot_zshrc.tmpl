@@ -24,10 +24,6 @@ DISABLE_AUTO_UPDATE=true
 {{ $key }}={{ $value | quote }}
 {{- end }}
 
-# Enable Docker option-stacking completion
-zstyle ':completion:*:*:docker:*' option-stacking yes
-zstyle ':completion:*:*:docker-*:*' option-stacking yes
-
 # Plugins
 plugins=(
 {{- range .zsh.plugins }}
@@ -45,9 +41,4 @@ export {{ $key }}={{ $value | quote }}
 # Aliases
 {{- range $key, $value := .zsh.aliases }}
 alias {{ $key }}='{{ $value }}'
-{{- end }}
-
-# Completions commands
-{{- range $key, $value := .zsh.completions }}
-compdef _{{ $key }} {{ $value }}
 {{- end }}

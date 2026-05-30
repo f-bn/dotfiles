@@ -23,42 +23,11 @@
     refreshPeriod = "168h"
 
 # - Utilities -
-[crane]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "google/go-containerregistry" "go-containerregistry_Linux_x86_64.tar.gz" | quote }}
-    path = "crane"
-    targetPath = ".local/bin/crane"
-    executable = true
-    refreshPeriod = "168h"
-
-[distrobox]
-    type = "archive"
-    url = "https://github.com/89luca89/distrobox/archive/refs/tags/{{ (gitHubLatestRelease "89luca89/distrobox").TagName }}.tar.gz"
-    targetPath = ".local/bin"
-    stripComponents = 1
-    include = ["*/distrobox", "*/distrobox-*"]
-    refreshPeriod = "168h"
-
 [dive]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "wagoodman/dive" "dive_*_linux_amd64.tar.gz" | quote }}
     path = "dive"
     targetPath = ".local/bin/dive"
-    executable = true
-    refreshPeriod = "168h"
-
-[docker-credential-secretservice]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "docker/docker-credential-helpers" "docker-credential-secretservice-v*.linux-amd64" | quote }}
-    targetPath = ".local/bin/docker-credential-secretservice"
-    executable = true
-    refreshPeriod = "168h"
-
-[docker-scout]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "docker/scout" "docker-scout_*_linux_amd64.tar.gz" | quote }}
-    path = "docker-scout"
-    targetPath = ".docker/cli-plugins/docker-scout"
     executable = true
     refreshPeriod = "168h"
 
@@ -78,6 +47,13 @@
     executable = true
     refreshPeriod = "168h"
 
+[kind]
+    type = "file"
+    url = {{ gitHubLatestReleaseAssetURL "kubernetes-sigs/kind" "kind-linux-amd64" | quote }}
+    targetPath = ".local/bin/kind"
+    executable = true
+    refreshPeriod = "168h"
+
 [krew]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "kubernetes-sigs/krew" "krew-linux_amd64.tar.gz" | quote }}
@@ -91,13 +67,6 @@
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "jdx/mise" "mise-v*-linux-x64" | quote }}
     targetPath = ".local/bin/mise"
-    executable = true
-    refreshPeriod = "168h"
-
-[minikube]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "kubernetes/minikube" "minikube-linux-amd64" | quote }}
-    targetPath = ".local/bin/minikube"
     executable = true
     refreshPeriod = "168h"
 

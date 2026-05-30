@@ -3,30 +3,24 @@ zsh:
   theme: gentoo
   plugins:
     - command-not-found
-    - docker
     - extract
     - fzf
     - git
     - helm
     - kubectl
     - mise
+    - podman
     - uv
     - zoxide
     - zsh-autosuggestions
   aliases:
     bwlogin: export BW_SESSION="$(bw login --raw)"
     bwunlock: export BW_SESSION="$(bw unlock --raw)"
-    cr: crane
-    dx: distrobox
-    fd: fdfind
     ghtoken: export GITHUB_TOKEN="$(bw get password 278887eb-97b2-4fb3-8d32-b38c013096d2)"
-    lsblk: lsblk -e1,7
-    sysupdate: sudo sh -c "apt update && apt upgrade -y && snap refresh"
+    sysupdate: sudo sh -c "dnf upgrade -y && flatpak upgrade -y"
     zj: zellij
-  completions:
-    fd: fdfind
   environment:
-    PATH: $PATH:/snap/bin:$HOME/.local/bin:$HOME/.krew/bin
+    PATH: $PATH:$HOME/.local/bin:$HOME/.krew/bin
     EDITOR: vim
   extra_configurations:
     ZOXIDE_CMD_OVERRIDE: "cd"
