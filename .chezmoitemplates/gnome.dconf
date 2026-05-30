@@ -60,7 +60,7 @@ name='Launch Terminal'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Control>Print'
-command='gradia --screenshot=INTERACTIVE'
+command='flatpak run be.alexandervanhee.gradia --screenshot=INTERACTIVE'
 name='Take screenshot with Gradia'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
