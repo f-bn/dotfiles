@@ -98,7 +98,7 @@ running-indicator-dominant-color=false
 running-indicator-style='DOT'
 
 [org/gnome/desktop/app-folders/folders/System]
-apps=['org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.gnome.SystemMonitor.desktop', 'org.gnome.tweaks.desktop', 'btop.desktop', 'nvtop.desktop']
+apps=['org.gnome.baobab.desktop','org.gnome.DiskUtility.desktop','org.gnome.Logs.desktop','org.gnome.tweaks.desktop','nvtop.desktop','net.nokyan.Resources.desktop']
 name='X-GNOME-Shell-System.directory'
 
 [org/gnome/desktop/app-folders/folders/Utilities]
