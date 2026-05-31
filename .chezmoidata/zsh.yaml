@@ -3,13 +3,13 @@ zsh:
   theme: gentoo
   plugins:
     - command-not-found
+    - docker
     - extract
     - fzf
     - git
     - helm
     - kubectl
     - mise
-    - podman
     - uv
     - zoxide
     - zsh-autosuggestions
