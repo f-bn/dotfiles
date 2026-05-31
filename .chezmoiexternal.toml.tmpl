@@ -31,11 +31,18 @@
     executable = true
     refreshPeriod = "168h"
 
-[k9s]
+[docker-credential-secretservice]
+    type = "file"
+    url = {{ gitHubLatestReleaseAssetURL "docker/docker-credential-helpers" "docker-credential-secretservice-v*.linux-amd64" | quote }}
+    targetPath = ".local/bin/docker-credential-secretservice"
+    executable = true
+    refreshPeriod = "168h"
+
+[docker-scout]
     type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "derailed/k9s" "k9s_Linux_amd64.tar.gz" | quote }}
-    targetPath = ".local/bin/k9s"
-    path = "k9s"
+    url = {{ gitHubLatestReleaseAssetURL "docker/scout" "docker-scout_*_linux_amd64.tar.gz" | quote }}
+    path = "docker-scout"
+    targetPath = ".docker/cli-plugins/docker-scout"
     executable = true
     refreshPeriod = "168h"
 
@@ -44,13 +51,6 @@
     url = {{ gitHubLatestReleaseAssetURL "deviceinsight/kafkactl" "kafkactl_*_linux_amd64.tar.gz" | quote }}
     path = "kafkactl"
     targetPath = ".local/bin/kafkactl"
-    executable = true
-    refreshPeriod = "168h"
-
-[kind]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "kubernetes-sigs/kind" "kind-linux-amd64" | quote }}
-    targetPath = ".local/bin/kind"
     executable = true
     refreshPeriod = "168h"
 

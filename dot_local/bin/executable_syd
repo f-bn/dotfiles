@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+CONTAINER_FLAGS=(
+  --detach=true
+  --tty=true
+  --entrypoint=/usr/lib/systemd/systemd
+  --env=container="docker"
+  --stop-signal=SIGRTMIN+3
+  --cgroupns=private
+  --security-opt=writable-cgroups=true
+  --tmpfs=/run
+  --tmpfs=/run/lock
+  --tmpfs=/tmp
+)
+
+HAS_ARGS=0
+
+usage() {
+  cat << EOF
+Usage: syd [OPTIONS] IMAGE
+
+Launch a system container with Docker using systemd-compatible configuration.
+
+Arguments:
+  IMAGE     Docker image to run (must always be in last position).
+
+Options:
+  -h, --help        Display this help message
+  -n, --name NAME   Set container hostname
+
+  Any other Docker run options can be passed as-is and will be added to the configuration.
+
+Examples:
+  # Launch a container with the default configuration:
+  syd ghcr.io/f-bn/ubuntu:24.04-init
+
+  # Launch a container with custom configurations:
+  syd --name c1 --net=my-network ghcr.io/f-bn/ubuntu:24.04-init
+
+EOF
+}
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -h|--help)
+      usage ; exit 0 ;;
+    -n|--name)
+      CONTAINER_FLAGS+=(--name="$2" --hostname="$2");
+      shift 2 ;;
+    *)
+      CONTAINER_FLAGS+=("$1"); HAS_ARGS=1;
+      shift ;;
+  esac
+done
+
+if [[ $HAS_ARGS -eq 0 ]]; then
+  usage ; exit 0
+fi
+
+echo "Launching systemd container with Docker"
+exec docker run "${CONTAINER_FLAGS[@]}"
