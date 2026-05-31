@@ -109,6 +109,16 @@ name='X-GNOME-Shell-Utilities.directory'
 edge-tiling=true
 experimental-features=['scale-monitor-framebuffer','xwayland-native-scaling','variable-refresh-rate']
 
+[org/gnome/nautilus/preferences]
+default-folder-viewer='list-view'
+
+[org/gnome/nautilus/list-view]
+use-tree-view=false
+
+[org/gtk/gtk4/settings/file-chooser]
+show-hidden=false
+sort-directories-first=true
+
 [org/gnome/Ptyxis]
 default-profile-uuid='4d25db42c21d080779cd522068693dbd'
 interface-style='dark'
