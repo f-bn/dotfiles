@@ -13,6 +13,9 @@ automatic-timezone=true
 [org/gnome/desktop/interface]
 clock-show-weekday=true
 color-scheme='prefer-dark'
+cursor-theme='Yaru'
+gtk-theme='Yaru-dark'
+icon-theme='Yaru-blue'
 font-antialiasing='rgba'
 font-name='Cantarell 12'
 document-font-name='Cantarell 12'
@@ -70,11 +73,14 @@ name='Launch Files'
 
 [org/gnome/shell]
 favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','org.gnome.Software.desktop','org.jeffvli.feishin.desktop','com.discordapp.Discord.desktop','steam.desktop','com.heroicgameslauncher.hgl.desktop']
-enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com','dash-to-dock@micxgx.gmail.com']
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com','dash-to-dock@micxgx.gmail.com','user-theme@gnome-shell-extensions.gcampax.github.com']
 
 [org/gnome/shell/extensions/appindicator]
 compact-mode-enabled=true
 icon-brightness=0.00000000000000000
+
+[org/gnome/shell/extensions/user-theme]
+name='Yaru-dark'
 
 [org/gnome/shell/extensions/dash-to-dock]
 dash-max-icon-size=48
