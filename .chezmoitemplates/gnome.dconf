@@ -105,6 +105,9 @@ name='X-GNOME-Shell-System.directory'
 apps=['org.gnome.Connections.desktop', 'org.gnome.Papers.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.Snapshot.desktop']
 name='X-GNOME-Shell-Utilities.directory'
 
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'
+
 [org/gnome/mutter]
 edge-tiling=true
 experimental-features=['scale-monitor-framebuffer','xwayland-native-scaling','variable-refresh-rate']
