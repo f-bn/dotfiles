@@ -1,0 +1,5 @@
+---
+distrobox:
+  manager: docker
+  generate_entry: false
+  default_image: ghcr.io/f-bn/ubuntu:26.04-toolbox
