@@ -8,15 +8,15 @@ usage() {
   cat << EOF
 Usage: steam-gamescope ARGUMENTS [OPTIONS]
 
-Launch Gamescope without inheriting the LD_PRELOAD environment variable (set by Steam) to avoid the infamous 'Gamescope Lag Bomb' bug. 
+Launch Gamescope without inheriting the LD_PRELOAD environment variable from Steam to avoid the infamous 'Gamescope Lag Bomb' bug. 
 
-Games still inherit the LD_PRELOAD variable, so this allows Steam features to still work in-game (such as Steam Overlay).
+Games still inherit the LD_PRELOAD variable, so Steam features still work in-game (such as the Steam Overlay).
 
 Options:
   --help        Display this help message
 
 Arguments:
-  ARGUMENTS         Arguments to pass to 'gamescope' binary (mandatory)
+  ARGUMENTS         Arguments to pass to the 'gamescope' binary (mandatory)
 
 Examples:
   # Using as Steam game launch option
