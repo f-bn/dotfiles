@@ -15,6 +15,7 @@ This repository contains my dotfiles for Linux environments, providing a consist
 | Machine   | Description          | OS                   |
 |-----------|----------------------|----------------------|
 | **buran** | Custom desktop build | Fedora 44 (GNOME)    |
+| **foton** | Thinkpad P14s Gen 5  | Fedora 44 (GNOME)    |
 
 
 ## 🚀 Quick Start
