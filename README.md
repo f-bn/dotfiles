@@ -1,27 +1,22 @@
 <div align="center">
 
-![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Fedora](https://img.shields.io/badge/Fedora-51A2DA?style=for-the-badge&logo=fedora&logoColor=white)
 ![GNOME](https://img.shields.io/badge/GNOME-4A86CF?style=for-the-badge&logo=gnome&logoColor=white)
-
-**Personal dotfiles for Linux environments managed with [chezmoi](https://www.chezmoi.io/)**
 
 </div>
 
----
-
 ## 📋 Overview
 
-This repository contains my dotfiles for my Linux environments, providing a consistent setup across multiple machines.
-
-Configuration is managed using `chezmoi` for seamless synchronization.
+This repository contains my dotfiles for Linux environments, providing a consistent setup across my personal devices and managed with [chezmoi](https://www.chezmoi.io/).
 
 ### 💻 Environments
 
 | Machine   | Description          | OS                   |
 |-----------|----------------------|----------------------|
-| **buran** | Custom desktop build | Ubuntu 26.04 (GNOME) |
-| **foton** | ThinkPad P14s Gen 5  | Ubuntu 26.04 (GNOME) |
+| **buran** | Custom desktop build | Fedora 44 (GNOME)    |
+| **foton** | Thinkpad P14s Gen 5  | Fedora 44 (GNOME)    |
+
 
 ## 🚀 Quick Start
 
@@ -65,12 +60,12 @@ Before getting started, ensure you have the following tools installed:
 
 ### Containers & Kubernetes
 
-- 🏗️ [**crane**](https://github.com/google/go-containerregistry) - Go library and CLIs for working with container registries
 - 📦 [**distrobox**](https://distrobox.it/) - Use any Linux distribution inside your terminal
 - 🐳 [**dive**](https://github.com/wagoodman/dive) - A tool for exploring each layer in a docker image
+- 🔍 [**Docker Scout**](https://github.com/docker/scout-cli) - Docker Scout CLI
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
+- ☸️ [**kind**](https://kind.sigs.k8s.io/) - Kubernetes IN Docker - local clusters for testing Kubernetes
 - ⚙️ [**krew**](https://krew.sigs.k8s.io/) - kubectl plugin manager
-- ☸️ [**minikube**](https://minikube.sigs.k8s.io) - Run Kubernetes locally
 
 ### Database & Messaging
 
@@ -103,8 +98,8 @@ Before getting started, ensure you have the following tools installed:
 
 Custom wrappers born from pure laziness to avoid doing things manually 😁
 
-- 🐳 [**syd**](dot_local/bin/executable_syd) - Launch systemd-compatible Docker containers with a single command
-- 🔗 [**dshell**](dot_local/bin/executable_dshell) - Open an interactive shell in a Docker container easily (`docker exec` is too much typing 🙈)
+- 🔗 [**dsh**](dot_local/bin/executable_dsh) - Open an interactive shell in a Docker container easily (`docker exec` is too much typing 🙈)
 - 🔀 [**dfwd**](dot_local/bin/executable_dfwd) - Forward ports dynamically from host to running Docker containers (much like `kubectl port-forward` but locally)
+- 🐳 [**syd**](dot_local/bin/executable_syd) - Launch systemd-compatible Docker containers with a single command
 
 </details>

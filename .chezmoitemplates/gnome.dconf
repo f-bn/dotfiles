@@ -1,19 +1,10 @@
-[org/gnome/shell/extensions/dash-to-dock]
-dash-max-icon-size=48
-dock-fixed=false
-dock-position='BOTTOM'
-extend-height=false
-show-mounts=false
-show-mounts-network=false
-show-mounts-only-mounted=true
-
 [org/gnome/desktop/background]
-picture-uri='file:///usr/share/backgrounds/osselo-Ask_a_friend.jpg'
-picture-uri-dark='file:///usr/share/backgrounds/osselo-Ask_a_friend.jpg'
+picture-uri='file:///usr/share/backgrounds/gnome/adwaita-l.jxl'
+picture-uri-dark='file:///usr/share/backgrounds/gnome/adwaita-d.jxl'
 picture-options='zoom'
 
 [org/gnome/desktop/screensaver]
-picture-uri='file:///usr/share/backgrounds/osselo-Ask_a_friend.jpg'
+picture-uri='file:///usr/share/backgrounds/gnome/adwaita-l.jxl'
 picture-options='zoom'
 
 [org/gnome/desktop/datetime]
@@ -22,10 +13,12 @@ automatic-timezone=true
 [org/gnome/desktop/interface]
 clock-show-weekday=true
 color-scheme='prefer-dark'
+cursor-theme='Yaru'
 gtk-theme='Yaru-dark'
-font-name='Ubuntu Sans 12'
-document-font-name='Ubuntu Sans Mono 12'
-monospace-font-name='Sans 12'
+icon-theme='Yaru-blue'
+font-antialiasing='rgba'
+font-name='Cantarell 12'
+document-font-name='Cantarell 12'
 {{- if .laptop }}
 show-battery-percentage=true
 {{ end }}
@@ -64,30 +57,70 @@ sleep-inactive-battery-timeout=900
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Control>Print'
-command='gradia --screenshot=INTERACTIVE'
-name='Take screenshot with Gradia'
+binding='<Control><Alt>t'
+command='ptyxis --new-window'
+name='Launch Terminal'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Control>Print'
+command='flatpak run be.alexandervanhee.gradia --screenshot=INTERACTIVE'
+name='Take screenshot with Gradia'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Control><Alt>f'
 command='nautilus --new-window'
 name='Launch Files'
 
 [org/gnome/shell]
-favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','snap-store_snap-store.desktop','feishin.desktop','discord_discord.desktop','steam.desktop','bruno_bruno.desktop']
+favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','org.gnome.Software.desktop','org.jeffvli.feishin.desktop','com.discordapp.Discord.desktop','steam.desktop','com.heroicgameslauncher.hgl.desktop']
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com','dash-to-dock@micxgx.gmail.com','user-theme@gnome-shell-extensions.gcampax.github.com']
 
-[org/gnome/shell/extensions/ding]
-show-home=false
+[org/gnome/shell/extensions/appindicator]
+compact-mode-enabled=true
+icon-brightness=0.00000000000000000
+
+[org/gnome/shell/extensions/user-theme]
+name='Yaru-dark'
+
+[org/gnome/shell/extensions/dash-to-dock]
+dash-max-icon-size=48
+disable-overview-on-startup=true
+custom-theme-shrink=true
+dock-position='BOTTOM'
+show-mounts=false
+show-mounts-only-mounted=false
+show-trash=true
+transparency-mode='FIXED'
+background-color='rgb(42,42,42)'
+background-opacity=0.90000000000000002
+custom-background-color=true
+running-indicator-dominant-color=false
+running-indicator-style='DOTS'
 
 [org/gnome/desktop/app-folders/folders/System]
-apps=['nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.gnome.Sysprof.desktop', 'org.gnome.SystemMonitor.desktop', 'htop.desktop', 'org.gnome.PowerStats.desktop', 'gnome-session-properties.desktop', 'software-properties-drivers.desktop', 'firmware-updater_firmware-updater.desktop']
+apps=['org.gnome.baobab.desktop','org.gnome.DiskUtility.desktop','org.gnome.Logs.desktop','org.gnome.tweaks.desktop','nvtop.desktop','net.nokyan.Resources.desktop']
+name='X-GNOME-Shell-System.directory'
 
 [org/gnome/desktop/app-folders/folders/Utilities]
-apps=['org.gnome.Papers.desktop','org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'gnome-language-selector.desktop', 'info.desktop', 'org.gnome.Yelp.desktop', 'nvim.desktop', 'vim.desktop', 'btop.desktop', 'nvtop.desktop']
+apps=['org.gnome.Connections.desktop', 'org.gnome.Papers.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.Snapshot.desktop']
+name='X-GNOME-Shell-Utilities.directory'
+
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'
 
 [org/gnome/mutter]
 edge-tiling=true
 experimental-features=['scale-monitor-framebuffer','xwayland-native-scaling','variable-refresh-rate']
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='list-view'
+
+[org/gnome/nautilus/list-view]
+use-tree-view=false
+
+[org/gtk/gtk4/settings/file-chooser]
+show-hidden=false
+sort-directories-first=true
 
 [org/gnome/Ptyxis]
 default-profile-uuid='4d25db42c21d080779cd522068693dbd'

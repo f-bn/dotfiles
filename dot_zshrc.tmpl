@@ -19,14 +19,14 @@ DISABLE_AUTO_TITLE="true"
 # Disable auto-updates (managed by chezmoi)
 DISABLE_AUTO_UPDATE=true
 
+# Enable Docker option-stacking completion
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
 # Extra configurations vars
 {{- range $key, $value := .zsh.extra_configurations }}
 {{ $key }}={{ $value | quote }}
 {{- end }}
-
-# Enable Docker option-stacking completion
-zstyle ':completion:*:*:docker:*' option-stacking yes
-zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # Plugins
 plugins=(
@@ -45,9 +45,4 @@ export {{ $key }}={{ $value | quote }}
 # Aliases
 {{- range $key, $value := .zsh.aliases }}
 alias {{ $key }}='{{ $value }}'
-{{- end }}
-
-# Completions commands
-{{- range $key, $value := .zsh.completions }}
-compdef _{{ $key }} {{ $value }}
 {{- end }}

@@ -7,12 +7,12 @@ LOGIN=0
 
 usage() {
   cat << EOF
-Usage: dshell CONTAINER [OPTIONS]
+Usage: dsh CONTAINER [OPTIONS]
 
 Open an interactive shell in a Docker container easily.
 
 Arguments:
-  CONTAINER         Docker container name 
+  CONTAINER         Container name 
 
 Options:
   -h, --help        Display this help message
@@ -20,9 +20,9 @@ Options:
   -u, --user USER   User to run the shell as (default: root)
 
 Examples:
-  dshell c1
-  dshell c1 --user myuser
-  dshell c1 --login --user myuser
+  dsh c1
+  dsh c1 --user myuser
+  dsh c1 --login --user myuser
 
 EOF
 }

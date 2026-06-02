@@ -1,4 +1,0 @@
-{
-    "container-runtime": "containerd",
-    "driver": "docker"
-}

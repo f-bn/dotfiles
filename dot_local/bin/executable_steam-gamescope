@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Credits to https://github.com/ValveSoftware/gamescope/issues/163#issuecomment-4550014274
+
+GAMESCOPE_ARGS=()
+STEAM_LD_PRELOAD="${LD_PRELOAD}"
+
+usage() {
+  cat << EOF
+Usage: steam-gamescope ARGUMENTS [OPTIONS]
+
+Launch Gamescope without inheriting the LD_PRELOAD environment variable from Steam to avoid the infamous 'Gamescope Lag Bomb' bug. 
+
+Games still inherit the LD_PRELOAD variable, so Steam features still work in-game (such as the Steam Overlay).
+
+Options:
+  --help        Display this help message
+
+Arguments:
+  ARGUMENTS         Arguments to pass to the 'gamescope' binary (mandatory)
+
+Examples:
+  # Using as Steam game launch option
+  steam-gamescope -f -w 3840 -h 2160 -- %command%
+
+  # Using as Steam game launch option (with Proton environment variables)
+  PROTON_FSR4_UPGRADE=1 steam-gamescope -f -w 3840 -h 2160 -- %command%
+
+EOF
+}
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --help)
+      usage ; exit 0 ;;
+    --)
+      shift ; break ;;
+    *)
+      GAMESCOPE_ARGS+=("$1"); shift ;;
+    esac
+done
+
+if [[ "${#GAMESCOPE_ARGS[@]}" -eq 0 ]]; then
+  echo -e "Error: Missing gamescope argument(s), exiting\n"; usage; exit 1
+fi
+
+LD_PRELOAD="" exec gamescope "${GAMESCOPE_ARGS[@]}" -- env LD_PRELOAD="${STEAM_LD_PRELOAD}" "$@"
