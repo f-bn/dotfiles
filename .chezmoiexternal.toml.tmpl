@@ -87,6 +87,15 @@
     executable = true
     refreshPeriod = "24h"
 
+[scopebuddy]
+    type = "archive"
+    url = "https://github.com/OpenGamingCollective/ScopeBuddy/archive/refs/tags/{{ (gitHubLatestRelease "OpenGamingCollective/ScopeBuddy").TagName }}.tar.gz"
+    path = "bin/scopebuddy"
+    targetPath = ".local/bin/gamescope-scb"
+    executable = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+
 [usage]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "jdx/usage" "usage-x86_64-unknown-linux-gnu.tar.gz" | quote }}
