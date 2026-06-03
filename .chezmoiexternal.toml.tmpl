@@ -87,6 +87,7 @@
     executable = true
     refreshPeriod = "24h"
 
+{{ if .desktop }}
 [scopebuddy]
     type = "archive-file"
     url = "https://github.com/OpenGamingCollective/ScopeBuddy/archive/refs/tags/{{ (gitHubLatestRelease "OpenGamingCollective/ScopeBuddy").TagName }}.tar.gz"
@@ -95,6 +96,7 @@
     executable = true
     stripComponents = 1
     refreshPeriod = "168h"
+{{ end }}
 
 [usage]
     type = "archive-file"
