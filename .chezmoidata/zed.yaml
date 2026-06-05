@@ -34,3 +34,4 @@ zed:
       terraform: true
       toml: true
       xml: true
+    format_on_save: off
