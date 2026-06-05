@@ -107,7 +107,7 @@ apps=['org.gnome.baobab.desktop','org.gnome.DiskUtility.desktop','org.gnome.Logs
 name='X-GNOME-Shell-System.directory'
 
 [org/gnome/desktop/app-folders/folders/Utilities]
-apps=['org.gnome.Connections.desktop', 'org.gnome.Papers.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.Snapshot.desktop']
+apps=['org.gnome.Connections.desktop', 'org.gnome.Papers.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.Snapshot.desktop', 'org.gnome.seahorse.Application.desktop']
 name='X-GNOME-Shell-Utilities.directory'
 
 [org/gnome/desktop/wm/preferences]
