@@ -22,6 +22,12 @@
     stripComponents = 1
     refreshPeriod = "168h"
 
+# - Applications -
+[zed]
+    type = "archive"
+    url = {{ gitHubLatestReleaseAssetURL "zed-industries/zed" "zed-linux-x86_64.tar.gz" | quote }}
+    targetPath = ".local"
+
 # - Utilities -
 [dive]
     type = "archive-file"

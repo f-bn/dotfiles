@@ -54,7 +54,7 @@ sleep-inactive-battery-timeout=900
 {{ end }}
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Control><Alt>t'
@@ -71,8 +71,13 @@ binding='<Control><Alt>f'
 command='nautilus --new-window'
 name='Launch Files'
 
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+binding='<Control><Alt>z'
+command='zed'
+name='Launch Zed'
+
 [org/gnome/shell]
-favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','org.gnome.Software.desktop','org.jeffvli.feishin.desktop','com.discordapp.Discord.desktop','steam.desktop','com.heroicgameslauncher.hgl.desktop']
+favorite-apps=['brave-browser.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','dev.zed.Zed.desktop','org.gnome.Software.desktop','org.jeffvli.feishin.desktop','com.discordapp.Discord.desktop','steam.desktop','com.heroicgameslauncher.hgl.desktop']
 enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com','dash-to-dock@micxgx.gmail.com','user-theme@gnome-shell-extensions.gcampax.github.com']
 
 [org/gnome/shell/extensions/appindicator]

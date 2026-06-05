@@ -78,6 +78,7 @@ Before getting started, ensure you have the following tools installed:
 - ⌨️ [**vim**](https://www.vim.org/) - Highly configurable text editor built to make creating and changing any kind of text very efficient
 - 🔌 [**vim-plug**](https://github.com/junegunn/vim-plug) - Minimalist Vim Plugin Manager
 - 💻 [**Visual Studio Code**](https://code.visualstudio.com/) - Code editing. Redefined
+- ✏️ [**Zed**](https://zed.dev/) - High-performance, multiplayer code editor from the creators of Atom and Tree-sitter
 
 ### Terminal
 
