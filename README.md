@@ -65,7 +65,6 @@ Before getting started, ensure you have the following tools installed:
 - 🔍 [**Docker Scout**](https://github.com/docker/scout-cli) - Docker Scout CLI
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
 - ☸️ [**kind**](https://kind.sigs.k8s.io/) - Kubernetes IN Docker - local clusters for testing Kubernetes
-- ⚙️ [**krew**](https://krew.sigs.k8s.io/) - kubectl plugin manager
 
 ### Database & Messaging
 
