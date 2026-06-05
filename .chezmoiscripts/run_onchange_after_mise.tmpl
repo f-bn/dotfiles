@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# mise.yaml: {{ include ".chezmoidata/mise.yaml" | sha256sum }}
+MISE_BIN="$(which mise)"
+echo "* Install CLI tools (via Mise)"
+"${MISE_BIN}" install

@@ -1,0 +1,11 @@
+---
+mise:
+  tools:
+    - dive
+    - fnox
+    - kafkactl
+    - mongosh
+    - opencode
+    - pitchfork
+    - usage
+    - zellij

@@ -74,7 +74,9 @@ Before getting started, ensure you have the following tools installed:
 
 ### Development Tools
 
+- 🔐 [**fnox**](https://github.com/jdx/fnox) - Fort Knox for your secrets — encrypted/remote secret manager
 - 🔧 [**mise**](https://github.com/jdx/mise) - The front-end to your dev env
+- 🌾 [**pitchfork**](https://github.com/endevco/pitchfork) - CLI for managing daemons with a focus on developer experience
 - ⌨️ [**vim**](https://www.vim.org/) - Highly configurable text editor built to make creating and changing any kind of text very efficient
 - 🔌 [**vim-plug**](https://github.com/junegunn/vim-plug) - Minimalist Vim Plugin Manager
 - 💻 [**Visual Studio Code**](https://code.visualstudio.com/) - Code editing. Redefined
