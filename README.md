@@ -54,15 +54,10 @@ Before getting started, ensure you have the following tools installed:
 <details>
 <summary><b>Click to expand full toolset</b></summary>
 
-### AI Tools
-
-- 📝 [**OpenCode**](https://github.com/anomalyco/opencode) - The open source coding agent
-
 ### Containers & Kubernetes
 
 - 📦 [**distrobox**](https://distrobox.it/) - Use any Linux distribution inside your terminal
 - 🐳 [**dive**](https://github.com/wagoodman/dive) - A tool for exploring each layer in a docker image
-- 🔍 [**Docker Scout**](https://github.com/docker/scout-cli) - Docker Scout CLI
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
 - ☸️ [**kind**](https://kind.sigs.k8s.io/) - Kubernetes IN Docker - local clusters for testing Kubernetes
 

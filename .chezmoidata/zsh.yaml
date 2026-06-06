@@ -20,7 +20,7 @@ zsh:
     sysupdate: sudo sh -c "dnf upgrade -y && flatpak upgrade -y"
     zj: zellij
   environment:
-    PATH: $PATH:$HOME/.local/bin:$HOME/.krew/bin
+    PATH: $PATH:$HOME/.local/bin
     EDITOR: vim
   extra_configurations:
     ZOXIDE_CMD_OVERRIDE: "cd"
