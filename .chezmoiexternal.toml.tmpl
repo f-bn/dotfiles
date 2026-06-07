@@ -44,14 +44,6 @@
     executable = true
     refreshPeriod = "168h"
 
-[fnox]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "jdx/fnox" "fnox-x86_64-unknown-linux-gnu.tar.gz" | quote }}
-    path = "fnox"
-    targetPath = ".local/bin/fnox"
-    executable = true
-    refreshPeriod = "168h"
-
 [kafkactl]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "deviceinsight/kafkactl" "kafkactl_*_linux_amd64.tar.gz" | quote }}
@@ -74,14 +66,6 @@
     targetPath = ".local/bin/mongosh"
     executable = true
     stripComponents = 1
-    refreshPeriod = "168h"
-
-[pitchfork]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "endevco/pitchfork" "pitchfork-x86_64-unknown-linux-gnu.tar.gz" | quote }}
-    path = "pitchfork"
-    targetPath = ".local/bin/pitchfork"
-    executable = true
     refreshPeriod = "168h"
 
 {{ if .desktop }}
