@@ -35,3 +35,5 @@ zed:
       toml: true
       xml: true
     format_on_save: off
+    close_on_file_delete: true
+    ensure_final_newline_on_save: false
