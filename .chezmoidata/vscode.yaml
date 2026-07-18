@@ -14,5 +14,6 @@ vscode:
     - redhat.vscode-yaml
     - samuelcolvin.jinjahtml
     - tamasfe.even-better-toml
-    - zhuangtongfa.material-theme
+    - vizards.deepseek-v4-for-copilot
     - vscode-icons-team.vscode-icons
+    - zhuangtongfa.material-theme
