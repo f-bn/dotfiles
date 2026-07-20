@@ -1,6 +1,7 @@
 ---
 vscode:
   extensions:
+    - chadalen.vscode-jetbrains-icon-theme
     - github.vscode-github-actions
     - golang.go
     - hashicorp.hcl
@@ -10,10 +11,9 @@ vscode:
     - ms-vscode-remote.remote-containers
     - ms-kubernetes-tools.vscode-kubernetes-tools
     - ms-python.python
+    - peterjonsson.kickstart-language-support
     - redhat.ansible
     - redhat.vscode-yaml
     - samuelcolvin.jinjahtml
     - tamasfe.even-better-toml
     - vizards.deepseek-v4-for-copilot
-    - vscode-icons-team.vscode-icons
-    - zhuangtongfa.material-theme
