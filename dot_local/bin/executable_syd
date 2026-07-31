@@ -27,16 +27,16 @@ Arguments:
 
 Options:
   -h, --help        Display this help message
-  -n, --name NAME   Set container hostname
+  -n, --name NAME   Set container name with associated hostname
 
   Any other Docker run options can be passed as-is and will be added to the configuration.
 
 Examples:
   # Launch a container with the default configuration:
-  syd ghcr.io/f-bn/ubuntu:24.04-init
+  syd ghcr.io/f-bn/fedora:44-init
 
   # Launch a container with custom configurations:
-  syd --name c1 --net=my-network ghcr.io/f-bn/ubuntu:24.04-init
+  syd --name c1 --net=my-network ghcr.io/f-bn/fedora:44-init
 
 EOF
 }
