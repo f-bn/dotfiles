@@ -15,7 +15,7 @@ Arguments:
   CONTAINER       Docker container name
   PORT-MAPPING    Port mapping in the following formats:
                   - SRC_PORT:DST_PORT -> explicit port mapping
-                  - :DST_PORT -> only specify the container port, listen on a random port locally
+                  - DST_PORT -> only specify the container port, listen on a random port locally
 
 Options:
   -d, --debug     Enable debug logging (socat 'd3' debug mode)
@@ -23,7 +23,7 @@ Options:
 
 Examples:
   dfwd c1 8080:80
-  dfwd c1 :80
+  dfwd c1 80
 
 EOF
 }
@@ -43,7 +43,7 @@ while [[ $# -gt 0 ]]; do
   case $1 in
     -d|--debug)
       SOCAT_EXTRA_OPTS+=("-d3"); shift ;;
-    -h|--help) 
+    -h|--help)
       usage ; exit 0 ;;
     -*)
       echo -e "Error: unknown option: $1\n"; usage ; exit 1 ;;
@@ -71,11 +71,11 @@ CONTAINER_IP_ADDR=$(jq -r ".[].NetworkSettings.Networks.${CONTAINER_NETWORK}.IPA
 if [[ "${PORT_MAPPING}" =~ ^[0-9]+:[0-9]+$ ]]; then
   SRC_PORT=$(awk -F: '{print $1}' <<< "${PORT_MAPPING}")
   DST_PORT=$(awk -F: '{print $2}' <<< "${PORT_MAPPING}")
-elif [[ "${PORT_MAPPING}" =~ ^:[0-9]+$ ]]; then
+elif [[ "${PORT_MAPPING}" =~ ^[0-9]+$ ]]; then
   SRC_PORT="$(find_random_available_port)"
-  DST_PORT=$(awk -F: '{print $2}' <<< "${PORT_MAPPING}")
+  DST_PORT="${PORT_MAPPING}"
 else
-  echo -e "Error: PORT-MAPPING must be in format 'SRC_PORT:DST_PORT' or ':DST_PORT' (e.g. 8080:80 or :80)\n"; usage; exit 1
+  echo -e "Error: PORT-MAPPING must be in format 'SRC_PORT:DST_PORT' or 'DST_PORT' (e.g. 8080:80 or 80)\n"; usage; exit 1
 fi
 
 echo -e "Forwarding from 127.0.0.1:${SRC_PORT} -> ${CONTAINER}:${DST_PORT}\n"
