@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "* Prune Docker build cache"
+
+echo "> Checking for non-reclaimable build cache snapshots..."
+if docker builder du --format=json | jq -en '[inputs] | any(.Reclaimable == false)' >/dev/null ; then
+    echo "/!\ Non-reclaimable snapshots detected"
+    echo "> Restart Docker daemon to resync build cache state"
+    systemctl restart docker.service
+fi
+
+echo "> Prune build cache"
+docker builder prune --all --force
+
+echo "* Prune other Docker resources"
+docker system prune --all --volumes --force
+
+echo "Done !"
