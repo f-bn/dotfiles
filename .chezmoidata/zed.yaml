@@ -47,7 +47,7 @@ zed:
             - name: qwen3.7-max
               display_name: "Qwen 3.7 Max"
               max_tokens: 1000000
-              max_output_tokens: 65536
+              max_output_tokens: 131000
               max_completion_tokens: 16384
               reasoning_effort: high
               capabilities:
@@ -61,7 +61,7 @@ zed:
             - name: qwen3.7-plus
               display_name: "Qwen 3.7 Plus"
               max_tokens: 1000000
-              max_output_tokens: 65536
+              max_output_tokens: 131000
               max_completion_tokens: 16384
               reasoning_effort: high
               capabilities:
@@ -72,24 +72,10 @@ zed:
                 chat_completions: true
                 interleaved_reasoning: false
                 max_tokens_parameter: false
-            - name: qwen3.6-plus
-              display_name: "Qwen 3.6 Plus"
+            - name: qwen3.7-flash
+              display_name: "Qwen 3.7 Flash"
               max_tokens: 1000000
-              max_output_tokens: 65536
-              max_completion_tokens: 16384
-              reasoning_effort: high
-              capabilities:
-                tools: true
-                images: true
-                parallel_tool_calls: true
-                prompt_cache_key: false
-                chat_completions: true
-                interleaved_reasoning: false
-                max_tokens_parameter: false
-            - name: qwen3.6-flash
-              display_name: "Qwen 3.6 Flash"
-              max_tokens: 1000000
-              max_output_tokens: 65536
+              max_output_tokens: 131000
               max_completion_tokens: 16384
               reasoning_effort: high
               capabilities:
