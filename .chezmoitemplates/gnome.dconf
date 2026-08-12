@@ -159,8 +159,3 @@ tab-width=uint32 4
 show-map=false
 spellcheck=false
 restore-session=false
-
-[io/bassi/Amberol]
-background-play=false
-enable-recoloring=true
-replay-gain='off'
