@@ -1,19 +1,44 @@
 ---
 vscode:
+  settings:
+    # General settings
+    editor.fontFamily: Cascadia Mono
+    editor.fontSize: 15
+    editor.fontLigatures: true
+    files.autoSave: afterDelay
+    files.exclude:
+      - "**/__pycache__"
+      - "**/.pytest_cache"
+      - "**/.mypy_cache"
+      - "**/.ruff_cache"
+    terminal.integrated.fontFamily: Cascadia Mono PL
+    terminal.integrated.fontSize: 15
+    window.zoomLevel: 0.1
+    workbench.colorTheme: One Dark Pro Darker
+    workbench.preferredDarkColorTheme: One Dark Pro Darker
+    workbench.iconTheme: vscode-jetbrains-icon-theme-2023-dark
+    # Extension settings
+    containers.containerClient: com.microsoft.visualstudio.containers.docker
+    mise.binPath: /home/fbobin/.local/bin/mise
+    yaml.disableSchemaDetection:
+      - "**/.github/workflows/*.yml"
+      - "**/.github/workflows/*.yaml"
   extensions:
     - chadalen.vscode-jetbrains-icon-theme
+    - docker.docker
     - github.vscode-github-actions
     - golang.go
     - hashicorp.hcl
     - hashicorp.terraform
     - hverlin.mise-vscode
     - ms-azuretools.vscode-containers
-    - ms-vscode-remote.remote-containers
     - ms-kubernetes-tools.vscode-kubernetes-tools
     - ms-python.python
+    - openai.chatgpt
     - peterjonsson.kickstart-language-support
+    - qwenlm.qwen-code-vscode-ide-companion
     - redhat.ansible
     - redhat.vscode-yaml
     - samuelcolvin.jinjahtml
     - tamasfe.even-better-toml
-    - vizards.deepseek-v4-for-copilot
+    - zhuangtongfa.material-theme

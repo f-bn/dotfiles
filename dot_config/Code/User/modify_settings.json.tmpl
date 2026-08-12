@@ -1,27 +1,23 @@
 #!/usr/bin/env python3
-import json, sys
+import json
+import sys
+
+
+def deep_merge(base, override):
+    """Recursively merge override into base, preserving nested keys."""
+    result = dict(base)
+    for key, value in override.items():
+        if key in result and isinstance(result[key], dict) and isinstance(value, dict):
+            result[key] = deep_merge(result[key], value)
+        else:
+            result[key] = value
+    return result
+
 
 current = json.loads(sys.stdin.read() or "{}")
-desired = {
-    "editor.fontFamily": "Cascadia Mono",
-    "editor.fontLigatures": True,
-    "files.autoSave": "afterDelay",
-    "workbench.colorTheme": "One Dark Pro Darker",
-    "workbench.preferredDarkColorTheme": "One Dark Pro Darker",
-    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
-    "window.autoDetectColorScheme": True,
-    "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
-    "github.copilot.nextEditSuggestions.enabled": True,
-    "mise.binPath": "{{ .chezmoi.homeDir }}/.local/bin/mise",
-    "terminal.integrated.fontFamily": "Cascadia Mono PL",
-    "terminal.integrated.fontSize": 15,
-    "editor.fontSize": 15,
-{{- if .desktop }}
-    "window.zoomLevel": 0.2
-{{- end }}
-}
+desired = json.loads("""{{ .vscode.settings | toJson }}""")
 
 # Merge current file values with desired values
-merged = current | desired
+merged = deep_merge(current, desired)
 
 print(json.dumps(merged, indent=2))
