@@ -7,10 +7,10 @@ vscode:
     editor.fontLigatures: true
     files.autoSave: afterDelay
     files.exclude:
-      - "**/__pycache__"
-      - "**/.pytest_cache"
-      - "**/.mypy_cache"
-      - "**/.ruff_cache"
+      "**/__pycache__": true
+      "**/.pytest_cache": true
+      "**/.mypy_cache": true
+      "**/.ruff_cache": true
     terminal.integrated.fontFamily: Cascadia Mono PL
     terminal.integrated.fontSize: 15
     window.zoomLevel: 0.1
