@@ -38,6 +38,14 @@
     executable = true
     refreshPeriod = "168h"
 
+[duckdb]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "duckdb/duckdb" "duckdb_cli-linux-amd64.zip" | quote }}
+    path = "duckdb"
+    targetPath = ".local/bin/duckdb"
+    executable = true
+    refreshPeriod = "168h"
+
 [kafkactl]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "deviceinsight/kafkactl" "kafkactl_*_linux_amd64.tar.gz" | quote }}

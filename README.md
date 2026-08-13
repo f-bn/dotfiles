@@ -63,6 +63,7 @@ Before getting started, ensure you have the following tools installed:
 
 ### Database & Messaging
 
+- 🦆 [**duckdb**](https://duckdb.org/) - In-process analytical SQL database
 - 📨 [**kafkactl**](https://github.com/deviceinsight/kafkactl) - Command Line Tool for managing Apache Kafka
 - 🍃 [**mongosh**](https://www.mongodb.com/products/tools/shell) - MongoDB Shell
 
