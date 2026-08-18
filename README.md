@@ -59,7 +59,7 @@ Before getting started, ensure you have the following tools installed:
 - 📦 [**distrobox**](https://distrobox.it/) - Use any Linux distribution inside your terminal
 - 🐳 [**dive**](https://github.com/wagoodman/dive) - A tool for exploring each layer in a docker image
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
-- ☸️ [**kind**](https://kind.sigs.k8s.io/) - Kubernetes IN Docker - local clusters for testing Kubernetes
+- ☸️ [**minikube**](https://minikube.sigs.k8s.io) - Run Kubernetes locally
 
 ### Database & Messaging
 

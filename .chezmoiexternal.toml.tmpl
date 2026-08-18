@@ -54,6 +54,13 @@
     executable = true
     refreshPeriod = "168h"
 
+[minikube]
+    type = "file"
+    url = {{ gitHubLatestReleaseAssetURL "kubernetes/minikube" "minikube-linux-amd64" | quote }}
+    targetPath = ".local/bin/minikube"
+    executable = true
+    refreshPeriod = "168h"
+
 [mise]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "jdx/mise" "mise-v*-linux-x64" | quote }}
