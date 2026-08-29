@@ -17,6 +17,7 @@ vscode:
     workbench.colorTheme: One Dark Pro Darker
     workbench.preferredDarkColorTheme: One Dark Pro Darker
     workbench.iconTheme: vscode-jetbrains-icon-theme-2023-dark
+    workbench.experimental.modernUI: false
     # Extension settings
     containers.containerClient: com.microsoft.visualstudio.containers.docker
     mise.binPath: /home/fbobin/.local/bin/mise
