@@ -1,10 +1,10 @@
 [org/gnome/desktop/background]
-picture-uri='file:///usr/share/backgrounds/gnome/adwaita-l.jxl'
-picture-uri-dark='file:///usr/share/backgrounds/gnome/adwaita-d.jxl'
+picture-uri='file://{{ .chezmoi.homeDir }}/.local/share/backgrounds/wallpaper.jpg'
+picture-uri-dark='file://{{ .chezmoi.homeDir }}/.local/share/backgrounds/wallpaper.jpg'
 picture-options='zoom'
 
 [org/gnome/desktop/screensaver]
-picture-uri='file:///usr/share/backgrounds/gnome/adwaita-l.jxl'
+picture-uri='file://{{ .chezmoi.homeDir }}/.local/share/backgrounds/wallpaper.jpg'
 picture-options='zoom'
 
 [org/gnome/desktop/datetime]
