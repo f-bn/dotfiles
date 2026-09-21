@@ -13,9 +13,9 @@ automatic-timezone=true
 [org/gnome/desktop/interface]
 clock-show-weekday=true
 color-scheme='prefer-dark'
-cursor-theme='Yaru'
-gtk-theme='Yaru-dark'
-icon-theme='Yaru-blue'
+cursor-theme='Adwaita'
+gtk-theme='Adwaita'
+icon-theme='Adwaita'
 font-antialiasing='rgba'
 font-name='Cantarell 12'
 document-font-name='Cantarell 12'
@@ -83,9 +83,6 @@ enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com','dash-to-dock@micxg
 [org/gnome/shell/extensions/appindicator]
 compact-mode-enabled=true
 icon-brightness=0.00000000000000000
-
-[org/gnome/shell/extensions/user-theme]
-name='Yaru-dark'
 
 [org/gnome/shell/extensions/dash-to-dock]
 dash-max-icon-size=48
