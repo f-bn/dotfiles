@@ -54,7 +54,7 @@ sleep-inactive-battery-timeout=900
 {{ end }}
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Control><Alt>t'
@@ -70,11 +70,6 @@ name='Take screenshot with Gradia'
 binding='<Control><Alt>f'
 command='nautilus --new-window'
 name='Launch Files'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
-binding='<Control><Alt>z'
-command='zed'
-name='Launch Zed'
 
 [org/gnome/shell]
 favorite-apps=['org.mozilla.firefox.desktop','org.gnome.Ptyxis.desktop','org.gnome.Nautilus.desktop','code.desktop','org.gnome.Software.desktop','org.jeffvli.feishin.desktop','com.discordapp.Discord.desktop','steam.desktop','com.heroicgameslauncher.hgl.desktop']
