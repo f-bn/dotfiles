@@ -95,6 +95,7 @@ Custom wrappers born from pure laziness to avoid doing things manually 😁
 
 - 🔗 [**dsh**](dot_local/bin/executable_dsh) - Open an interactive shell in a Docker container easily (`docker exec` is too much typing 🙈)
 - 🔀 [**dfwd**](dot_local/bin/executable_dfwd) - Forward ports dynamically from host to running Docker containers (much like `kubectl port-forward` but locally)
+- 🧹 [**dpr**](dot_local/bin/executable_dpr) - Prune Docker resources *correctly* with containerd image store
 - 🐳 [**syd**](dot_local/bin/executable_syd) - Launch systemd-compatible Docker containers with a single command
 
 </details>
