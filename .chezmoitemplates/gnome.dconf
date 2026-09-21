@@ -91,7 +91,7 @@ transparency-mode='FIXED'
 background-color='rgb(42,42,42)'
 background-opacity=0.90000000000000002
 custom-background-color=true
-running-indicator-dominant-color=false
+running-indicator-dominant-color=true
 running-indicator-style='DOTS'
 
 [org/gnome/desktop/app-folders/folders/System]
