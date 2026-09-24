@@ -59,6 +59,7 @@
     url = {{ gitHubLatestReleaseAssetURL "kubernetes-sigs/krew" "krew-linux_amd64.tar.gz" | quote }}
     path = "krew-linux_amd64"
     targetPath = ".local/bin/krew"
+    stripComponents = 1
     executable = true
     refreshPeriod = "168h"
 
