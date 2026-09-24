@@ -31,6 +31,14 @@
     executable = true
     refreshPeriod = "168h"
 
+[cloud-provider-kind]
+    type = "archive-file"
+    url = {{ gitHubLatestReleaseAssetURL "kubernetes-sigs/cloud-provider-kind" "cloud-provider-kind_*_linux_amd64.tar.gz" | quote }}
+    path = "cloud-provider-kind"
+    targetPath = ".local/bin/cloud-provider-kind"
+    executable = true
+    refreshPeriod = "168h"
+
 [docker-credential-secretservice]
     type = "file"
     url = {{ gitHubLatestReleaseAssetURL "docker/docker-credential-helpers" "docker-credential-secretservice-v*.linux-amd64" | quote }}
