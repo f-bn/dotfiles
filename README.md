@@ -59,11 +59,9 @@ Before getting started, ensure you have the following tools installed:
 - 📦 [**distrobox**](https://distrobox.it/) - Use any Linux distribution inside your terminal
 - 🐳 [**dive**](https://github.com/wagoodman/dive) - A tool for exploring each layer in a docker image
 - 🎯 [**k9s**](https://k9scli.io/) - Kubernetes CLI To Manage Your Clusters In Style!
-- ☸️ [**minikube**](https://minikube.sigs.k8s.io) - Run Kubernetes locally
 
 ### Database & Messaging
 
-- 🦆 [**duckdb**](https://duckdb.org/) - In-process analytical SQL database
 - 📨 [**kafkactl**](https://github.com/deviceinsight/kafkactl) - Command Line Tool for managing Apache Kafka
 - 🍃 [**mongosh**](https://www.mongodb.com/products/tools/shell) - MongoDB Shell
 
@@ -95,7 +93,7 @@ Custom wrappers born from pure laziness to avoid doing things manually 😁
 
 - 🔗 [**dsh**](dot_local/bin/executable_dsh) - Open an interactive shell in a Docker container easily (`docker exec` is too much typing 🙈)
 - 🔀 [**dfwd**](dot_local/bin/executable_dfwd) - Forward ports dynamically from host to running Docker containers (much like `kubectl port-forward` but locally)
-- 🧹 [**dpr**](dot_local/bin/executable_dpr) - Prune Docker resources *correctly* with containerd image store
+- 🧹 [**dpr**](dot_local/bin/executable_dpr) - Prune Docker resources *correctly* when using containerd image store
 - 🐳 [**syd**](dot_local/bin/executable_syd) - Launch systemd-compatible Docker containers with a single command
 
 </details>

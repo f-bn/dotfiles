@@ -38,26 +38,11 @@
     executable = true
     refreshPeriod = "168h"
 
-[duckdb]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "duckdb/duckdb" "duckdb_cli-linux-amd64.zip" | quote }}
-    path = "duckdb"
-    targetPath = ".local/bin/duckdb"
-    executable = true
-    refreshPeriod = "168h"
-
 [kafkactl]
     type = "archive-file"
     url = {{ gitHubLatestReleaseAssetURL "deviceinsight/kafkactl" "kafkactl_*_linux_amd64.tar.gz" | quote }}
     path = "kafkactl"
     targetPath = ".local/bin/kafkactl"
-    executable = true
-    refreshPeriod = "168h"
-
-[minikube]
-    type = "file"
-    url = {{ gitHubLatestReleaseAssetURL "kubernetes/minikube" "minikube-linux-amd64" | quote }}
-    targetPath = ".local/bin/minikube"
     executable = true
     refreshPeriod = "168h"
 
