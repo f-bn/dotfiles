@@ -21,7 +21,7 @@ zsh:
     sysupdate: sudo sh -c "dnf upgrade -y && flatpak upgrade -y --no-static-deltas"
     zj: zellij
   environment:
-    PATH: $PATH:$HOME/.local/bin
+    PATH: $PATH:$HOME/.local/bin:$HOME/.krew/bin
     EDITOR: vim
   extra_configurations:
     ZOXIDE_CMD_OVERRIDE: "cd"

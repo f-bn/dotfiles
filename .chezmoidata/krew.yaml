@@ -1,0 +1,7 @@
+---
+krew:
+  plugins:
+    - ctx
+    - fd
+    - ns
+    - tail
