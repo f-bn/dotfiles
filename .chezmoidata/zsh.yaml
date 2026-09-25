@@ -17,6 +17,7 @@ zsh:
     bwlogin: export BW_SESSION="$(bw login --raw)"
     bwunlock: export BW_SESSION="$(bw unlock --raw)"
     cpk: cloud-provider-kind
+    dl: aria2c
     ghtoken: export GITHUB_TOKEN="$(bw get password 278887eb-97b2-4fb3-8d32-b38c013096d2)"
     sysupdate: sudo sh -c "dnf upgrade -y && flatpak upgrade -y --no-static-deltas"
     zj: zellij
