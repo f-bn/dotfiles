@@ -5,6 +5,7 @@ vscode:
     editor.fontFamily: Cascadia Mono
     editor.fontSize: 15
     editor.fontLigatures: true
+    extensions.verifySignature: false
     files.autoSave: afterDelay
     files.exclude:
       "**/__pycache__": true
