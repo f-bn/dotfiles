@@ -71,6 +71,10 @@ Before getting started, ensure you have the following tools installed:
 - 🔌 [**vim-plug**](https://github.com/junegunn/vim-plug) - Minimalist Vim Plugin Manager
 - 💻 [**Visual Studio Code**](https://code.visualstudio.com/) - Code editing. Redefined
 
+### Gaming
+
+- 🎮 [**ScopeBuddy**](https://github.com/OpenGamingCollective/ScopeBuddy) - A manager script to make gamescope easier to use on the desktop
+
 ### Terminal
 
 - 🐚 [**oh-my-zsh**](https://github.com/ohmyzsh/ohmyzsh) - A delightful community-driven framework for managing your zsh configuration
