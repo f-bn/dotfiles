@@ -4,5 +4,5 @@ git:
     name: f-bn
     email: contact@fbobin.fr
   core:
-    editor: nvim
+    editor: vim
     whitespace: trailing-space,space-before-tab
